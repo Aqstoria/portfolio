@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import Image from "next/image"
 import {
   Github,
@@ -50,8 +52,6 @@ import {
   Award,
   Eye,
   Flame,
-  FileInputIcon as Input,
-  TextIcon as Textarea,
 } from "lucide-react"
 import Footer from "@/components/footer"
 
@@ -904,8 +904,12 @@ export default function Portfolio() {
   }
 
   const navigateToPage = (page: string) => {
-    setCurrentPage(page)
-    setMobileMenuOpen(false)
+    if (page === "about" || page === "services" || page === "portfolio" || page === "contact") {
+      window.location.href = `/${page}`
+    } else {
+      setCurrentPage(page)
+      setMobileMenuOpen(false)
+    }
   }
 
   const scrollToSection = (sectionId: string) => {
@@ -1804,13 +1808,10 @@ export default function Portfolio() {
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               {[
-                { label: "About", action: () => scrollToSection("about") },
-                { label: "Team", action: () => scrollToSection("team") },
+                { label: "About", action: () => navigateToPage("about") },
                 { label: "Services", action: () => navigateToPage("services") },
-                { label: "Projects", action: () => scrollToSection("projects") },
-                { label: "Case Studies", action: () => navigateToPage("case-studies") },
-                { label: "Testimonials", action: () => scrollToSection("testimonials") },
-                { label: "Contact", action: () => scrollToSection("contact") },
+                { label: "Portfolio", action: () => navigateToPage("portfolio") },
+                { label: "Contact", action: () => navigateToPage("contact") },
               ].map((item, index) => (
                 <button
                   key={index}
@@ -1851,13 +1852,10 @@ export default function Portfolio() {
           {mobileMenuOpen && (
             <div className="md:hidden mt-6 pb-6 space-y-4 border-t border-gray-200/50 pt-6">
               {[
-                { label: "About", action: () => scrollToSection("about") },
-                { label: "Team", action: () => scrollToSection("team") },
+                { label: "About", action: () => navigateToPage("about") },
                 { label: "Services", action: () => navigateToPage("services") },
-                { label: "Projects", action: () => scrollToSection("projects") },
-                { label: "Case Studies", action: () => navigateToPage("case-studies") },
-                { label: "Testimonials", action: () => scrollToSection("testimonials") },
-                { label: "Contact", action: () => scrollToSection("contact") },
+                { label: "Portfolio", action: () => navigateToPage("portfolio") },
+                { label: "Contact", action: () => navigateToPage("contact") },
               ].map((item, index) => (
                 <button
                   key={index}
@@ -1873,137 +1871,221 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative">
-        <div
-          className={`text-center transform transition-all duration-1000 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}
-        >
-          {/* Logo Section */}
-          <div className="mb-16">
-            <div className="relative w-80 h-80 mx-auto mb-12">
-              {/* Outer rotating ring */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500 via-gray-700 to-red-500 p-2 animate-spin-slow shadow-2xl">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center relative">
-                  {/* Inner logo container */}
-                  <div className="w-64 h-64 rounded-full bg-gradient-to-br from-gray-50 to-white flex items-center justify-center shadow-inner border-4 border-gray-100">
-                    <Image
-                      src="/logo.png"
-                      alt="Aqstoria Logo"
-                      width={180}
-                      height={90}
-                      className="h-20 w-auto filter drop-shadow-lg"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating accent elements */}
-              <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center shadow-xl animate-bounce">
-                <Flame className="h-6 w-6 text-white" />
-              </div>
-              <div className="absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full flex items-center justify-center shadow-lg animate-pulse">
-                <Code className="h-5 w-5 text-white" />
-              </div>
-              <div className="absolute top-1/2 -right-8 w-8 h-8 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center shadow-lg animate-ping">
-                <Rocket className="h-4 w-4 text-white" />
-              </div>
-            </div>
-          </div>
-
-          {/* Main Heading */}
-          <div className="mb-12">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
-              <span className="block bg-gradient-to-r from-gray-800 via-red-600 to-gray-800 bg-clip-text text-transparent">
-                Elite Digital
-              </span>
-              <span className="block bg-gradient-to-r from-red-600 via-gray-700 to-red-600 bg-clip-text text-transparent">
-                Solutions Team
-              </span>
-            </h1>
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-1 w-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
-              <p className="text-xl md:text-2xl text-red-600 font-bold italic tracking-wide">
-                Freelance Flair, Digital Dare
-              </p>
-              <div className="h-1 w-16 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full"></div>
-            </div>
-          </div>
-
-          {/* Description */}
-          <p className="text-lg md:text-xl mb-16 max-w-5xl mx-auto text-gray-600 leading-relaxed font-medium">
-            From stunning graphic design to enterprise software development • Our expert team of 20+ professionals
-            delivers comprehensive digital solutions including{" "}
-            <span className="text-red-600 font-semibold">MERN/MEAN Stack</span>,{" "}
-            <span className="text-gray-700 font-semibold">Shopify</span>,{" "}
-            <span className="text-red-600 font-semibold">WordPress</span>,{" "}
-            <span className="text-gray-700 font-semibold">Mobile Apps</span>,{" "}
-            <span className="text-red-600 font-semibold">E-commerce</span>,{" "}
-            <span className="text-gray-700 font-semibold">ERP Systems</span>,{" "}
-            <span className="text-red-600 font-semibold">Digital Marketing</span>, SEO & More
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button
-              size="lg"
-              onClick={() => navigateToPage("services")}
-              className="bg-gradient-to-r from-red-600 to-gray-700 hover:from-red-700 hover:to-gray-800 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-10 py-5 text-lg font-bold"
-            >
-              <Flame className="mr-3 h-6 w-6" />
-              Explore Our Services
-              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => scrollToSection("contact")}
-              className="border-3 border-red-600 text-red-600 hover:bg-red-600 hover:text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-10 py-5 text-lg font-bold bg-white"
-            >
-              <Rocket className="mr-3 h-6 w-6" />
-              Get Free Quote
-            </Button>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center space-x-8">
-            {[
-              { icon: Github, href: "#", color: "hover:text-gray-800" },
-              { icon: Linkedin, href: "#", color: "hover:text-red-600" },
-              { icon: Mail, href: "#", color: "hover:text-red-500" },
-              { icon: Globe, href: "#", color: "hover:text-gray-600" },
-              { icon: MessageCircle, href: "https://wa.me/923001234567", color: "hover:text-red-600" },
-            ].map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                target={social.href.startsWith("http") ? "_blank" : undefined}
-                rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className={`text-gray-500 ${social.color} transition-all duration-300 transform hover:scale-125 hover:-translate-y-1`}
-              >
-                <social.icon className="h-8 w-8" />
-              </a>
-            ))}
+      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
+        {/* Modern Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Gradient Orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-cyan-600/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+          
+          {/* Floating Shapes */}
+          <div className="absolute top-1/3 right-1/3 w-4 h-4 bg-blue-500 rounded-full animate-bounce opacity-60" />
+          <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-cyan-600 rounded-full animate-bounce opacity-60" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-teal-400 rounded-full animate-bounce opacity-60" style={{ animationDelay: '2s' }} />
+          
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0)`,
+              backgroundSize: '40px 40px'
+            }} />
           </div>
         </div>
 
-        {/* Floating Elements */}
-        <div
-          className="absolute top-1/4 left-10 w-4 h-4 bg-red-500 rounded-full animate-bounce opacity-60"
-          style={{ animationDelay: "0s" }}
-        />
-        <div
-          className="absolute top-1/3 right-20 w-3 h-3 bg-gray-600 rounded-full animate-bounce opacity-60"
-          style={{ animationDelay: "1s" }}
-        />
-        <div
-          className="absolute bottom-1/4 left-20 w-5 h-5 bg-red-600 rounded-full animate-bounce opacity-60"
-          style={{ animationDelay: "2s" }}
-        />
-        <div
-          className="absolute bottom-1/3 right-10 w-2 h-2 bg-gray-700 rounded-full animate-bounce opacity-60"
-          style={{ animationDelay: "0.5s" }}
-        />
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
+            <div className={`transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}>
+              {/* Badge */}
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 mb-8">
+                <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse" />
+                <span className="text-sm font-semibold text-gray-700">Leading Digital Agency</span>
+              </div>
+
+              {/* Main Heading */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 leading-tight">
+                <span className="block bg-gradient-to-r from-gray-900 via-blue-600 to-gray-900 bg-clip-text text-transparent">
+                  We Build
+                </span>
+                <span className="block bg-gradient-to-r from-blue-600 via-cyan-800 to-blue-600 bg-clip-text text-transparent">
+                  Digital Dreams
+                </span>
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed font-medium">
+                Transform your business with cutting-edge{" "}
+                <span className="text-blue-600 font-bold">web solutions</span> and{" "}
+                <span className="text-cyan-800 font-bold">innovative design</span>
+              </p>
+
+              {/* Tech Stack Pills */}
+              <div className="flex flex-wrap gap-3 mb-10">
+                {[
+                  { name: "MERN Stack", color: "from-blue-500 to-blue-600" },
+                  { name: "MEAN Stack", color: "from-cyan-600 to-cyan-700" },
+                  { name: "Shopify", color: "from-teal-600 to-teal-700" },
+                  { name: "WordPress", color: "from-blue-600 to-blue-700" },
+                  { name: "Mobile Apps", color: "from-cyan-500 to-cyan-600" },
+                  { name: "E-commerce", color: "from-teal-500 to-teal-600" },
+                ].map((tech, index) => (
+                  <div
+                    key={index}
+                    className={`px-4 py-2 rounded-full bg-gradient-to-r ${tech.color} text-white text-sm font-semibold shadow-lg transform hover:scale-105 transition-all duration-300`}
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {tech.name}
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <Button
+                  size="lg"
+                  onClick={() => navigateToPage("contact")}
+                  className="bg-gradient-to-r from-blue-600 to-cyan-700 hover:from-blue-700 hover:to-cyan-800 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-bold group"
+                >
+                  <Rocket className="mr-3 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  Start Your Project
+                  <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => navigateToPage("services")}
+                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-blue-400 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-bold bg-white/80 backdrop-blur-sm"
+                >
+                  <MessageCircle className="mr-3 h-5 w-5" />
+                  View Services
+                </Button>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex items-center space-x-6">
+                <span className="text-sm text-gray-500 font-medium">Follow us:</span>
+                {[
+                  { icon: Github, href: "#", label: "GitHub" },
+                  { icon: Linkedin, href: "#", label: "LinkedIn" },
+                  { icon: MessageCircle, href: "https://wa.me/923001234567", label: "WhatsApp" },
+                ].map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target={social.href.startsWith("http") ? "_blank" : undefined}
+                    rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="text-gray-400 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group"
+                    title={social.label}
+                  >
+                    <social.icon className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column - Visual Elements */}
+            <div className={`transform transition-all duration-1000 delay-300 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}>
+              <div className="relative">
+                {/* Main Visual Container */}
+                <div className="relative w-full h-96 lg:h-[500px] bg-gradient-to-br from-blue-50 via-white to-cyan-50 rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
+                  {/* Floating Cards */}
+                  <div className="absolute top-8 left-8 w-32 h-20 bg-white rounded-2xl shadow-xl border border-gray-100 transform rotate-12 animate-float">
+                    <div className="p-4">
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg mb-2" />
+                      <div className="w-16 h-2 bg-gray-200 rounded" />
+                      <div className="w-12 h-2 bg-gray-200 rounded mt-1" />
+                    </div>
+                  </div>
+
+                  <div className="absolute top-16 right-12 w-28 h-16 bg-white rounded-2xl shadow-xl border border-gray-100 transform -rotate-6 animate-float" style={{ animationDelay: '1s' }}>
+                    <div className="p-3">
+                      <div className="w-6 h-6 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg mb-2" />
+                      <div className="w-14 h-2 bg-gray-200 rounded" />
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-20 left-12 w-36 h-24 bg-white rounded-2xl shadow-xl border border-gray-100 transform rotate-3 animate-float" style={{ animationDelay: '2s' }}>
+                    <div className="p-4">
+                      <div className="w-10 h-10 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg mb-2" />
+                      <div className="w-20 h-2 bg-gray-200 rounded" />
+                      <div className="w-16 h-2 bg-gray-200 rounded mt-1" />
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-12 right-8 w-24 h-16 bg-white rounded-2xl shadow-xl border border-gray-100 transform -rotate-12 animate-float" style={{ animationDelay: '3s' }}>
+                    <div className="p-3">
+                      <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg mb-2" />
+                      <div className="w-12 h-2 bg-gray-200 rounded" />
+                    </div>
+                  </div>
+
+                  {/* Central Logo */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="relative">
+                      <div className="w-32 h-32 bg-gradient-to-r from-blue-500 to-cyan-700 rounded-3xl shadow-2xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                        <Image
+                          src="/logo.png"
+                          alt="Aqstoria Logo"
+                          width={80}
+                          height={40}
+                          className="h-10 w-auto filter drop-shadow-lg"
+                        />
+                      </div>
+                      
+                      {/* Orbiting Elements */}
+                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full shadow-lg animate-spin-slow" />
+                      <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-cyan-600 rounded-full shadow-lg animate-spin-slow" style={{ animationDirection: 'reverse' }} />
+                    </div>
+                  </div>
+
+                  {/* Connection Lines */}
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none">
+                    <defs>
+                      <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+                        <stop offset="100%" stopColor="#0891b2" stopOpacity="0.3" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M 50 100 Q 200 50 350 150"
+                      stroke="url(#lineGradient)"
+                      strokeWidth="2"
+                      fill="none"
+                      className="animate-pulse"
+                    />
+                    <path
+                      d="M 100 300 Q 250 250 400 350"
+                      stroke="url(#lineGradient)"
+                      strokeWidth="2"
+                      fill="none"
+                      className="animate-pulse"
+                      style={{ animationDelay: '1s' }}
+                    />
+                  </svg>
+                </div>
+
+                {/* Stats Cards */}
+                <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 transform hover:scale-105 transition-transform duration-300">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">300+</div>
+                    <div className="text-sm text-gray-600">Projects</div>
+                  </div>
+                </div>
+
+                <div className="absolute -top-8 -right-8 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 transform hover:scale-105 transition-transform duration-300">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-cyan-700">150+</div>
+                    <div className="text-sm text-gray-600">Clients</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Stats Section */}
