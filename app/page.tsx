@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, Play, Pause, Filter, CheckCircle, Send, Eye, Zap, Award, Shield, Globe, Moon, Sun, Menu, X } from "lucide-react"
+import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User, Users, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, Play, Pause, Filter, CheckCircle, Send, Eye, Zap, Award, Shield, Globe, Moon, Sun, Menu, X } from "lucide-react"
 import { services } from '@/lib/data'
 import Chatbot from '@/components/chatbot'
 import HeroSection from '@/components/hero-section'
@@ -42,46 +42,67 @@ export default function Portfolio() {
 
   const portfolio = [
     {
-      title: "E-commerce Platform",
+      title: "E-commerce Platform - TechMart",
       category: "Software",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Full-stack e-commerce solution with payment integration",
-      tagline: "Scalable online store with 300% revenue increase"
+      description: "Full-stack e-commerce solution with advanced inventory management, payment processing, and analytics dashboard",
+      tagline: "300% revenue increase in 6 months"
     },
     {
-      title: "Social Media Campaign",
+      title: "Social Media Campaign - FashionBrand",
       category: "Marketing",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Multi-platform campaign with 300% engagement increase",
-      tagline: "40% engagement boost across all platforms"
+      description: "Multi-platform social media campaign across Instagram, TikTok, and Facebook with influencer partnerships",
+      tagline: "40% engagement boost, 2.5M reach"
     },
     {
-      title: "SaaS Dashboard",
+      title: "SaaS Dashboard - DataFlow",
       category: "Software",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Analytics dashboard with real-time data visualization",
-      tagline: "Real-time insights with 60% faster decision making"
+      description: "Real-time analytics dashboard with data visualization, user management, and automated reporting",
+      tagline: "60% faster decision making"
     },
     {
-      title: "Brand Identity",
+      title: "Brand Identity - StartupXYZ",
       category: "Design",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Complete brand identity and marketing collateral",
-      tagline: "Cohesive brand that increased recognition by 200%"
+      description: "Complete brand identity including logo design, style guide, marketing collateral, and website redesign",
+      tagline: "200% brand recognition increase"
     },
     {
-      title: "Mobile App",
+      title: "Mobile App - FitnessTracker",
       category: "Software",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Cross-platform mobile application with offline sync",
-      tagline: "Native performance with 4.8-star app store rating"
+      description: "Cross-platform fitness tracking app with GPS, workout plans, and social features",
+      tagline: "4.8-star rating, 50K+ downloads"
     },
     {
-      title: "Content Strategy",
+      title: "Content Strategy - B2B Company",
       category: "Marketing",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Comprehensive content marketing and SEO strategy",
-      tagline: "Organic traffic growth of 150% in 6 months"
+      description: "Comprehensive content marketing strategy with SEO optimization, blog management, and lead generation",
+      tagline: "150% organic traffic growth"
+    },
+    {
+      title: "API Integration - PaymentSystem",
+      category: "Software",
+      image: "/placeholder.svg?height=300&width=400",
+      description: "Secure payment gateway integration with multiple payment methods and fraud protection",
+      tagline: "99.9% uptime, 0% fraud rate"
+    },
+    {
+      title: "Website Redesign - LawFirm",
+      category: "Design",
+      image: "/placeholder.svg?height=300&width=400",
+      description: "Professional website redesign with improved user experience and lead capture optimization",
+      tagline: "80% increase in lead generation"
+    },
+    {
+      title: "Cloud Migration - Enterprise Corp",
+      category: "Software",
+      image: "/placeholder.svg?height=300&width=400",
+      description: "Legacy system migration to AWS with containerization and automated deployment",
+      tagline: "70% cost reduction, 3x performance"
     }
   ]
 
@@ -320,30 +341,82 @@ export default function Portfolio() {
             {filteredPortfolio.map((project, index) => (
               <div
                 key={index}
-                className={`group neumorphic hover-lift overflow-hidden rounded-3xl ${
+                className={`group relative neumorphic hover-lift overflow-hidden rounded-3xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
-                style={{ animationDelay: `${index * 200}ms` }}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="relative h-64 bg-gradient-to-br from-[#ef3a5d] to-[#ff6b6b] flex items-center justify-center overflow-hidden">
-                  <div className="text-center text-white">
-                    <Palette className="h-16 w-16 mx-auto mb-4" />
-                    <p className="font-semibold text-lg">{project.title}</p>
+                {/* Project Image/Preview */}
+                <div className="relative h-48 bg-gradient-to-br from-[#ef3a5d] to-[#ff6b6b] flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0a1a2e]/20 to-[#1a2a3e]/20" />
+                  <div className="text-center text-white relative z-10">
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                      {project.category === "Software" && <Code className="h-8 w-8" />}
+                      {project.category === "Marketing" && <TrendingUp className="h-8 w-8" />}
+                      {project.category === "Design" && <Palette className="h-8 w-8" />}
+                    </div>
+                    <p className="font-semibold text-lg">{project.title.split(' - ')[0]}</p>
+                    <p className="text-sm opacity-90">{project.title.split(' - ')[1]}</p>
                   </div>
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <button className="px-6 py-3 bg-white text-[#ef3a5d] rounded-full font-semibold transform scale-95 group-hover:scale-100 transition-transform duration-300">
-                      View Project
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#ef3a5d]/80 to-[#ff6b6b]/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                    <button className="px-6 py-3 bg-white text-[#ef3a5d] rounded-full font-semibold transform scale-95 group-hover:scale-100 transition-transform duration-300 shadow-lg">
+                      View Case Study
                     </button>
                   </div>
                 </div>
+                
+                {/* Project Details */}
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-semibold text-[#ef3a5d]">{project.category}</span>
+                  {/* Category Badge */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      project.category === "Software" ? "bg-blue-100 text-blue-700" :
+                      project.category === "Marketing" ? "bg-green-100 text-green-700" :
+                      "bg-purple-100 text-purple-700"
+                    }`}>
+                      {project.category}
+                    </span>
+                    <div className="flex space-x-1">
+                      <div className="w-2 h-2 bg-[#ef3a5d] rounded-full animate-pulse" />
+                      <div className="w-2 h-2 bg-[#ff6b6b] rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-[#0a1a2e]">{project.title}</h3>
-                  <p className="text-gray-600 leading-relaxed mb-3">{project.description}</p>
-                  <p className="text-[#ef3a5d] font-semibold text-sm">{project.tagline}</p>
+                  
+                  {/* Project Title */}
+                  <h3 className="text-lg font-bold mb-3 text-[#0a1a2e] group-hover:text-[#ef3a5d] transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  
+                  {/* Project Description */}
+                  <p className="text-gray-600 leading-relaxed text-sm mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                    {project.description}
+                  </p>
+                  
+                  {/* Results Tagline */}
+                  <div className="bg-gradient-to-r from-[#ef3a5d]/10 to-[#ff6b6b]/10 rounded-lg p-3 border-l-4 border-[#ef3a5d]">
+                    <p className="text-[#ef3a5d] font-semibold text-sm group-hover:text-[#ff6b6b] transition-colors duration-300">
+                      ✨ {project.tagline}
+                    </p>
+                  </div>
+                  
+                  {/* Project Stats */}
+                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                    <div className="flex items-center text-xs text-gray-500">
+                      <Calendar className="h-3 w-3 mr-1" />
+                      <span>3-6 months</span>
+                    </div>
+                    <div className="flex items-center text-xs text-gray-500">
+                      <Users className="h-3 w-3 mr-1" />
+                      <span>Team of 4-6</span>
+                    </div>
+                  </div>
                 </div>
+                
+                {/* Floating Elements on Hover */}
+                <div className="absolute top-4 right-4 w-2 h-2 bg-[#ef3a5d] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500" />
+                <div className="absolute bottom-4 left-4 w-1 h-1 bg-[#ff6b6b] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-100" />
               </div>
             ))}
           </div>
