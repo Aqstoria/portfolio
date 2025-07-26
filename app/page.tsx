@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
+import { services } from '@/lib/data'
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false)
@@ -31,33 +32,6 @@ export default function Portfolio() {
       return () => clearInterval(interval)
     }
   }, [isPlaying])
-
-  const services = [
-    {
-      icon: Code,
-      title: "Custom Software Development",
-      description: "Scalable web applications, SaaS platforms, and enterprise solutions built with modern technologies.",
-      color: "from-[#ef3a5d] to-[#d62f4f]"
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile App Development",
-      description: "Native iOS/Android apps and cross-platform solutions with React Native and Flutter.",
-      color: "from-[#d62f4f] to-[#c42a47]"
-    },
-    {
-      icon: TrendingUp,
-      title: "Social Media Marketing",
-      description: "Strategic campaigns across all platforms with data-driven analytics and ROI tracking.",
-      color: "from-[#ef3a5d] to-[#d62f4f]"
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "User-centered design solutions that enhance engagement and drive conversions.",
-      color: "from-[#d62f4f] to-[#c42a47]"
-    }
-  ]
 
   const portfolio = [
     {
@@ -295,7 +269,7 @@ export default function Portfolio() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
+            {services.slice(0, 4).map((service, index) => (
               <div
                 key={index}
                 className={`bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20 ${

@@ -1,6 +1,6 @@
 "use client"
 
-import { services } from '../page'
+import { services } from '@/lib/data'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 

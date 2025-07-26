@@ -1,4 +1,4 @@
-import { services } from '../../page'
+import { services } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import { CheckCircle } from 'lucide-react'
 
