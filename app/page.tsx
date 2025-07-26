@@ -243,26 +243,42 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.slice(0, 4).map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
               <div
                 key={index}
-                className={`neumorphic hover-lift p-8 rounded-3xl ${
+                className={`group relative neumorphic hover-lift p-8 rounded-3xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
-                style={{ animationDelay: `${index * 200}ms` }}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6 shadow-lg`}>
-                  <service.icon className="h-8 w-8 text-white" />
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6 shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:rotate-3`}>
+                  <service.icon className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-[#0a1a2e]">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-lg mb-4">{service.description}</p>
-                <p className="text-[#ef3a5d] font-semibold text-sm">
+                <h3 className="text-xl font-bold mb-4 text-[#0a1a2e] group-hover:text-[#ef3a5d] transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-base mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                  {service.description}
+                </p>
+                <p className="text-[#ef3a5d] font-semibold text-sm group-hover:text-[#ff6b6b] transition-colors duration-300">
                   {service.title === "Custom Software Development" && "Build scalable apps with cutting-edge tech"}
                   {service.title === "Mobile App Development" && "Native performance with cross-platform reach"}
-                  {service.title === "Social Media Marketing" && "Strategic campaigns that drive real engagement"}
                   {service.title === "UI/UX Design" && "User-centered design that converts visitors to customers"}
+                  {service.title === "E-commerce Development" && "Complete online store solutions with payment processing"}
+                  {service.title === "Digital Marketing" && "Strategic campaigns that drive real engagement"}
+                  {service.title === "Cloud Solutions" && "Scalable cloud infrastructure for modern applications"}
+                  {service.title === "API Development" && "Robust APIs for seamless system integration"}
+                  {service.title === "Database Design" && "Optimized database architecture for performance"}
+                  {service.title === "Maintenance & Support" && "24/7 technical support and maintenance"}
                 </p>
+                
+                {/* Hover Overlay Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ef3a5d]/0 to-[#ff6b6b]/0 group-hover:from-[#ef3a5d]/5 group-hover:to-[#ff6b6b]/5 rounded-3xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                
+                {/* Floating Elements on Hover */}
+                <div className="absolute top-4 right-4 w-2 h-2 bg-[#ef3a5d] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500" />
+                <div className="absolute bottom-4 left-4 w-1 h-1 bg-[#ff6b6b] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-100" />
               </div>
             ))}
           </div>
