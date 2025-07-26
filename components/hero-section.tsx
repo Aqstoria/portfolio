@@ -144,7 +144,7 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}>
             {/* Main Headline with Letter-by-Letter Animation */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-8 leading-tight text-white overflow-hidden">
               {headline.split('').map((letter, index) => (
                 <span
                   key={index}
