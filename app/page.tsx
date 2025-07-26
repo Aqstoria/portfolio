@@ -238,7 +238,7 @@ export default function Portfolio() {
       </div>
 
       {/* Enhanced Header */}
-      <header className="fixed top-0 w-full z-50 glass-dark border-b border-[#ef3a5d]/20">
+      <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center cursor-pointer group">
@@ -257,7 +257,7 @@ export default function Portfolio() {
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-white hover:text-[#ef3a5d] transition-all duration-300 font-medium relative group"
+                  className="text-gray-700 hover:text-[#ef3a5d] transition-all duration-300 font-medium relative group"
                 >
                   {item}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] group-hover:w-full transition-all duration-300" />
@@ -269,35 +269,35 @@ export default function Portfolio() {
               {/* Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
-                className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 transition-all duration-300"
               >
-                {isDarkMode ? <Sun className="h-5 w-5 text-white" /> : <Moon className="h-5 w-5 text-white" />}
+                {isDarkMode ? <Sun className="h-5 w-5 text-gray-700" /> : <Moon className="h-5 w-5 text-gray-700" />}
               </button>
 
-              <button className="hidden md:block px-6 py-3 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm border border-[#ef3a5d]/20">
+              <button className="hidden md:block px-6 py-3 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 Get Started
               </button>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="md:hidden p-3 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 transition-all duration-300"
               >
-                {isMobileMenuOpen ? <X className="h-5 w-5 text-white" /> : <Menu className="h-5 w-5 text-white" />}
+                {isMobileMenuOpen ? <X className="h-5 w-5 text-gray-700" /> : <Menu className="h-5 w-5 text-gray-700" />}
               </button>
             </div>
           </div>
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden mt-4 py-4 border-t border-white/20">
+            <div className="md:hidden mt-4 py-4 border-t border-gray-200">
               <nav className="flex flex-col space-y-4">
                 {["Home", "Services", "Portfolio", "About", "Contact"].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-white hover:text-[#ef3a5d] transition-all duration-300 font-medium"
+                    className="text-gray-700 hover:text-[#ef3a5d] transition-all duration-300 font-medium"
                   >
                     {item}
                   </a>

@@ -40,6 +40,36 @@ body {
   color: var(--gray-900);
   background-color: var(--white);
   overflow-x: hidden;
+  cursor: default;
+}
+
+/* Improved Cursor Styling */
+button, 
+a, 
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+}
+
+input, 
+textarea, 
+select {
+  cursor: text;
+}
+
+.disabled,
+[disabled] {
+  cursor: not-allowed !important;
+}
+
+/* Custom cursor for interactive elements */
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  cursor: pointer;
 }
 
 /* Typography */
