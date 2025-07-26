@@ -10,20 +10,19 @@ import {
   Zap, 
   Shield, 
   Cloud,
-  React,
-  Node,
-  TypeScript,
-  Python,
-  Docker,
-  AWS,
-  Firebase,
-  MongoDB,
-  PostgreSQL,
-  Git,
-  Figma,
-  Adobe,
-  Shopify,
-  WordPress
+  Cpu,
+  Server,
+  Database2,
+  GitBranch,
+  FileCode,
+  Settings,
+  Package,
+  Layers,
+  Box,
+  HardDrive,
+  Network,
+  Monitor,
+  ShoppingBag
 } from 'lucide-react'
 
 interface TechIcon {
@@ -37,31 +36,31 @@ interface TechIcon {
 
 const techStack: TechIcon[] = [
   // Frontend
-  { id: 'react', icon: React, name: 'React', category: 'frontend', position: { x: 0.8, y: 0.2, z: 0.6 }, color: '#61DAFB' },
-  { id: 'typescript', icon: TypeScript, name: 'TypeScript', category: 'frontend', position: { x: -0.7, y: 0.3, z: 0.7 }, color: '#3178C6' },
+  { id: 'react', icon: Cpu, name: 'React', category: 'frontend', position: { x: 0.8, y: 0.2, z: 0.6 }, color: '#61DAFB' },
+  { id: 'typescript', icon: FileCode, name: 'TypeScript', category: 'frontend', position: { x: -0.7, y: 0.3, z: 0.7 }, color: '#3178C6' },
   { id: 'nextjs', icon: Code, name: 'Next.js', category: 'frontend', position: { x: 0.6, y: -0.4, z: 0.7 }, color: '#000000' },
   
   // Backend
-  { id: 'nodejs', icon: Node, name: 'Node.js', category: 'backend', position: { x: -0.8, y: -0.2, z: 0.6 }, color: '#339933' },
-  { id: 'python', icon: Python, name: 'Python', category: 'backend', position: { x: 0.3, y: 0.8, z: 0.5 }, color: '#3776AB' },
-  { id: 'docker', icon: Docker, name: 'Docker', category: 'backend', position: { x: -0.5, y: 0.7, z: 0.5 }, color: '#2496ED' },
+  { id: 'nodejs', icon: Server, name: 'Node.js', category: 'backend', position: { x: -0.8, y: -0.2, z: 0.6 }, color: '#339933' },
+  { id: 'python', icon: Package, name: 'Python', category: 'backend', position: { x: 0.3, y: 0.8, z: 0.5 }, color: '#3776AB' },
+  { id: 'docker', icon: Box, name: 'Docker', category: 'backend', position: { x: -0.5, y: 0.7, z: 0.5 }, color: '#2496ED' },
   
   // Database
-  { id: 'mongodb', icon: MongoDB, name: 'MongoDB', category: 'database', position: { x: 0.9, y: -0.1, z: 0.4 }, color: '#47A248' },
-  { id: 'postgresql', icon: PostgreSQL, name: 'PostgreSQL', category: 'database', position: { x: -0.9, y: 0.1, z: 0.4 }, color: '#336791' },
+  { id: 'mongodb', icon: Database, name: 'MongoDB', category: 'database', position: { x: 0.9, y: -0.1, z: 0.4 }, color: '#47A248' },
+  { id: 'postgresql', icon: Database2, name: 'PostgreSQL', category: 'database', position: { x: -0.9, y: 0.1, z: 0.4 }, color: '#336791' },
   
   // Cloud
-  { id: 'aws', icon: AWS, name: 'AWS', category: 'cloud', position: { x: 0.2, y: -0.9, z: 0.4 }, color: '#FF9900' },
-  { id: 'firebase', icon: Firebase, name: 'Firebase', category: 'cloud', position: { x: -0.2, y: -0.9, z: 0.4 }, color: '#FFCA28' },
+  { id: 'aws', icon: Cloud, name: 'AWS', category: 'cloud', position: { x: 0.2, y: -0.9, z: 0.4 }, color: '#FF9900' },
+  { id: 'firebase', icon: Zap, name: 'Firebase', category: 'cloud', position: { x: -0.2, y: -0.9, z: 0.4 }, color: '#FFCA28' },
   
   // Design
-  { id: 'figma', icon: Figma, name: 'Figma', category: 'design', position: { x: 0.7, y: 0.6, z: 0.3 }, color: '#F24E1E' },
-  { id: 'adobe', icon: Adobe, name: 'Adobe Suite', category: 'design', position: { x: -0.7, y: -0.6, z: 0.3 }, color: '#FF0000' },
+  { id: 'figma', icon: Palette, name: 'Figma', category: 'design', position: { x: 0.7, y: 0.6, z: 0.3 }, color: '#F24E1E' },
+  { id: 'adobe', icon: Layers, name: 'Adobe Suite', category: 'design', position: { x: -0.7, y: -0.6, z: 0.3 }, color: '#FF0000' },
   
   // Tools
-  { id: 'git', icon: Git, name: 'Git', category: 'tools', position: { x: 0.1, y: 0.9, z: 0.4 }, color: '#F05032' },
-  { id: 'shopify', icon: Shopify, name: 'Shopify', category: 'tools', position: { x: -0.1, y: 0.9, z: 0.4 }, color: '#95BF47' },
-  { id: 'wordpress', icon: WordPress, name: 'WordPress', category: 'tools', position: { x: 0.5, y: -0.8, z: 0.3 }, color: '#21759B' },
+  { id: 'git', icon: GitBranch, name: 'Git', category: 'tools', position: { x: 0.1, y: 0.9, z: 0.4 }, color: '#F05032' },
+  { id: 'shopify', icon: ShoppingBag, name: 'Shopify', category: 'tools', position: { x: -0.1, y: 0.9, z: 0.4 }, color: '#95BF47' },
+  { id: 'wordpress', icon: Globe, name: 'WordPress', category: 'tools', position: { x: 0.5, y: -0.8, z: 0.3 }, color: '#21759B' },
 ]
 
 interface TechGlobeProps {
