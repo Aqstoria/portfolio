@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { MessageCircle, Code, TrendingUp, Globe, ArrowRight, Play, Pause } from 'lucide-react'
-import TechGlobe from './tech-globe'
+import FloatingTechIcons from './tech-globe'
 
 interface HeroSectionProps {
   isVisible: boolean
@@ -208,11 +208,11 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* Right Column - Tech Stack Globe */}
+          {/* Right Column - Floating Tech Icons */}
           <div className={`transform transition-all duration-2000 delay-500 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}>
-            <TechGlobe isVisible={isVisible} />
+            <FloatingTechIcons isVisible={isVisible} />
           </div>
         </div>
       </div>
