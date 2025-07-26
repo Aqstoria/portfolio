@@ -445,13 +445,85 @@ h1, h2, h3, h4, h5, h6 {
   animation: pulse-glow 1s ease-in-out;
 }
 
+/* Enhanced Glassmorphism with Better Effects */
+.glassmorphism-enhanced {
+  background: var(--glass-bg);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glassmorphism-enhanced:hover {
+  background: var(--glass-bg);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  box-shadow: 
+    0 15px 50px 0 rgba(31, 38, 135, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Organic Layout Animations */
+@keyframes organic-float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(-5px) rotate(1deg); 
+  }
+  50% { 
+    transform: translateY(-10px) rotate(0deg); 
+  }
+  75% { 
+    transform: translateY(-5px) rotate(-1deg); 
+  }
+}
+
+.organic-float {
+  animation: organic-float 6s ease-in-out infinite;
+}
+
+.organic-float-delayed {
+  animation: organic-float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Enhanced Hover Lift Effect */
 .hover-lift-enhanced {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover-lift-enhanced:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.15),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient Border Animation */
+@keyframes gradient-border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-border {
+  background: linear-gradient(45deg, #ef3a5d, #ff6b6b, #ef3a5d);
+  background-size: 200% 200%;
+  animation: gradient-border 3s ease infinite;
+  padding: 2px;
+  border-radius: 1rem;
+}
+
+.gradient-border > * {
+  background: var(--card-bg);
+  border-radius: calc(1rem - 2px);
 }
 
 /* Smooth Transitions */

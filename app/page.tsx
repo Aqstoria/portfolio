@@ -432,20 +432,28 @@ export default function Portfolio() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`group relative glassmorphism p-6 rounded-3xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 ${
+                className={`group relative glassmorphism-enhanced p-6 rounded-3xl transition-all duration-700 transform hover:scale-105 hover:rotate-1 hover-lift-enhanced ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
+                } ${index % 2 === 0 ? 'organic-float' : 'organic-float-delayed'}`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
+                {/* Enhanced Floating Elements */}
+                <div className="absolute top-3 right-3 w-3 h-3 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500" />
+                <div className="absolute bottom-3 left-3 w-2 h-2 bg-[#ff6b6b] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-100" />
+                <div className="absolute top-1/2 right-2 w-1 h-1 bg-[#ef3a5d] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-200" />
+                
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:rotate-3 animate-pulse-glow`}>
                   <service.icon className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
+                
                 <h3 className="text-xl font-bold mb-3 text-[#0a1a2e] dark:text-white group-hover:text-[#ef3a5d] transition-colors duration-300">
                   {service.title}
                 </h3>
+                
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
                   {service.description}
                 </p>
+                
                 <p className="text-[#ef3a5d] font-semibold text-sm group-hover:text-[#ff6b6b] transition-colors duration-300">
                   {service.title === "Custom Software Development" && "Build scalable apps with cutting-edge tech"}
                   {service.title === "Mobile App Development" && "Native performance with cross-platform reach"}
@@ -458,9 +466,20 @@ export default function Portfolio() {
                   {service.title === "Maintenance & Support" && "24/7 technical support and maintenance"}
                 </p>
                 
-                {/* Floating Elements on Hover */}
-                <div className="absolute top-3 right-3 w-2 h-2 bg-[#ef3a5d] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500" />
-                <div className="absolute bottom-3 left-3 w-1 h-1 bg-[#ff6b6b] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-100" />
+                {/* Enhanced Service Features */}
+                <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
+                  <div className="flex flex-wrap gap-2">
+                    {service.features.slice(0, 3).map((feature, featureIndex) => (
+                      <span
+                        key={featureIndex}
+                        className="px-2 py-1 bg-[#ef3a5d]/10 text-[#ef3a5d] text-xs rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                        style={{ animationDelay: `${featureIndex * 100}ms` }}
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -498,72 +517,84 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Asymmetric Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+          {/* Enhanced Asymmetric Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 auto-rows-fr">
             {portfolio
               .filter((project) => portfolioFilter === "all" || project.category === portfolioFilter)
-              .map((project, index) => (
-                <div
-                  key={index}
-                  className={`group relative overflow-hidden rounded-3xl transition-all duration-700 transform hover:scale-105 hover:rotate-1 ${
-                    isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                  } ${
-                    // Asymmetric sizing based on project importance
-                    project.title.includes("E-commerce") ? "md:col-span-2 lg:col-span-2" :
-                    project.title.includes("Social Media") ? "md:row-span-2" :
-                    project.title.includes("Mobile App") ? "lg:col-span-2" : ""
-                  }`}
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <div className="relative h-full glassmorphism">
-                    <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/40 group-hover:from-black/40 group-hover:to-black/20 transition-all duration-500" />
-                    
-                    <div className="relative p-6 h-full flex flex-col justify-between">
-                      <div>
-                        <div className="flex items-center justify-between mb-4">
-                          <span className="px-3 py-1 bg-[#ef3a5d]/20 text-[#ef3a5d] rounded-full text-xs font-semibold">
-                            {project.category}
-                          </span>
-                          <div className="flex space-x-2">
-                            {project.tech.map((tech, techIndex) => (
-                              <div
-                                key={techIndex}
-                                className="w-2 h-2 bg-white rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                                style={{ animationDelay: `${techIndex * 100}ms` }}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#ef3a5d] transition-colors duration-300">
-                          {project.title}
-                        </h3>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-4 group-hover:text-gray-200 transition-colors duration-300">
-                          {project.description}
-                        </p>
-                      </div>
+              .map((project, index) => {
+                // Determine card size based on project importance and category
+                const getCardSize = (project: any) => {
+                  if (project.title.includes("E-commerce")) return "md:col-span-6 lg:col-span-8"
+                  if (project.title.includes("Social Media")) return "md:col-span-3 lg:col-span-4 md:row-span-2"
+                  if (project.title.includes("Mobile App")) return "md:col-span-3 lg:col-span-6"
+                  if (project.title.includes("Analytics")) return "md:col-span-3 lg:col-span-4"
+                  if (project.title.includes("Brand Identity")) return "md:col-span-3 lg:col-span-3"
+                  if (project.title.includes("Fitness")) return "md:col-span-3 lg:col-span-4"
+                  if (project.title.includes("Content Marketing")) return "md:col-span-3 lg:col-span-3"
+                  if (project.title.includes("Payment")) return "md:col-span-3 lg:col-span-3"
+                  if (project.title.includes("Website")) return "md:col-span-3 lg:col-span-3"
+                  if (project.title.includes("Legacy")) return "md:col-span-6 lg:col-span-6"
+                  return "md:col-span-3 lg:col-span-3" // Default size
+                }
 
-                      <div className="space-y-4">
-                        {/* Project Stats */}
-                        <div className="flex justify-between text-xs text-gray-400">
-                          <span>Duration: {project.duration}</span>
-                          <span>Team: {project.team}</span>
+                return (
+                  <div
+                    key={index}
+                    className={`group relative overflow-hidden rounded-3xl transition-all duration-700 transform hover:scale-105 hover:rotate-1 ${
+                      isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                    } ${getCardSize(project)}`}
+                    style={{ animationDelay: `${index * 200}ms` }}
+                  >
+                    <div className="relative h-full glassmorphism">
+                      <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/40 group-hover:from-black/40 group-hover:to-black/20 transition-all duration-500" />
+                      
+                      <div className="relative p-6 h-full flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-center justify-between mb-4">
+                            <span className="px-3 py-1 bg-[#ef3a5d]/20 text-[#ef3a5d] rounded-full text-xs font-semibold">
+                              {project.category}
+                            </span>
+                            <div className="flex space-x-2">
+                              {project.tech.map((tech: string, techIndex: number) => (
+                                <div
+                                  key={techIndex}
+                                  className="w-2 h-2 bg-white rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                                  style={{ animationDelay: `${techIndex * 100}ms` }}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                          
+                          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#ef3a5d] transition-colors duration-300">
+                            {project.title}
+                          </h3>
+                          <p className="text-gray-300 text-sm leading-relaxed mb-4 group-hover:text-gray-200 transition-colors duration-300">
+                            {project.description}
+                          </p>
                         </div>
-                        
-                        {/* Enhanced Action Buttons */}
-                        <div className="flex space-x-3">
-                          <button className="flex-1 px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-lg font-semibold hover:bg-white/30 transition-all duration-300 hover:scale-105 group-hover:bg-[#ef3a5d] group-hover:text-white">
-                            Learn More
-                          </button>
-                          <button className="px-4 py-2 bg-[#ef3a5d] text-white rounded-lg font-semibold hover:bg-[#ff6b6b] transition-all duration-300 hover:scale-105 hover-bounce">
-                            View Case Study
-                          </button>
+
+                        <div className="space-y-4">
+                          {/* Project Stats */}
+                          <div className="flex justify-between text-xs text-gray-400">
+                            <span>Duration: {project.duration}</span>
+                            <span>Team: {project.team}</span>
+                          </div>
+                          
+                          {/* Enhanced Action Buttons */}
+                          <div className="flex space-x-3">
+                            <button className="flex-1 px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-lg font-semibold hover:bg-white/30 transition-all duration-300 hover:scale-105 group-hover:bg-[#ef3a5d] group-hover:text-white">
+                              Learn More
+                            </button>
+                            <button className="px-4 py-2 bg-[#ef3a5d] text-white rounded-lg font-semibold hover:bg-[#ff6b6b] transition-all duration-300 hover:scale-105 hover-bounce">
+                              View Case Study
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
           </div>
         </div>
       </section>
