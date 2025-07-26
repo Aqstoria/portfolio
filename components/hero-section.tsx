@@ -9,7 +9,6 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ isVisible }: HeroSectionProps) {
-  const [currentLetter, setCurrentLetter] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -26,21 +25,6 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
-
-  useEffect(() => {
-    if (isVisible) {
-      const timer = setInterval(() => {
-        setCurrentLetter(prev => {
-          if (prev < headline.length) {
-            return prev + 1
-          }
-          return prev
-        })
-      }, 100)
-
-      return () => clearInterval(timer)
-    }
-  }, [isVisible, headline.length])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -143,22 +127,19 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
           <div className={`transform transition-all duration-2000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}>
-            {/* Main Headline with Letter-by-Letter Animation */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-8 leading-tight text-white overflow-hidden">
-              {headline.split('').map((letter, index) => (
-                <span
-                  key={index}
-                  className={`inline-block transition-all duration-500 ${
-                    index < currentLetter ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                  }`}
-                  style={{ 
-                    animationDelay: `${index * 50}ms`,
-                    color: index < currentLetter ? 'white' : 'transparent'
-                  }}
-                >
-                  {letter === ' ' ? '\u00A0' : letter}
-                </span>
-              ))}
+            {/* Main Headline with Word-by-Word Animation */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-8 leading-tight text-white">
+              <span className={`inline-block transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}>
+                Code Your Future.
+              </span>
+              <br />
+              <span className={`inline-block transition-all duration-1000 delay-500 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}>
+                Amplify Your Brand.
+              </span>
             </h1>
 
             {/* Subheadline with Fade-in */}
