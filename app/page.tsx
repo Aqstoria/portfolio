@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, Play, Pause, Filter, CheckCircle, Send, Eye, Zap, Award, Shield, Globe } from "lucide-react"
+import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, Play, Pause, Filter, CheckCircle, Send, Eye, Zap, Award, Shield, Globe, Moon, Sun, Menu, X } from "lucide-react"
 import { services } from '@/lib/data'
 import Chatbot from '@/components/chatbot'
+import HeroSection from '@/components/hero-section'
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false)
@@ -15,6 +16,8 @@ export default function Portfolio() {
   const [portfolioFilter, setPortfolioFilter] = useState("all")
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [newsletterEmail, setNewsletterEmail] = useState("")
+  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
@@ -128,24 +131,29 @@ export default function Portfolio() {
     setNewsletterEmail("")
   }
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode)
+    document.documentElement.classList.toggle('dark')
+  }
+
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className={`min-h-screen relative overflow-hidden ${isDarkMode ? 'dark' : ''}`}>
       {/* Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div
           className="absolute w-96 h-96 rounded-full opacity-10 blur-3xl transition-all duration-1000"
           style={{
-            background: `radial-gradient(circle, rgba(239, 58, 93, 0.3), rgba(214, 47, 79, 0.3), transparent 70%)`,
+            background: `radial-gradient(circle, rgba(239, 58, 93, 0.3), rgba(255, 107, 107, 0.3), transparent 70%)`,
             left: `${mousePosition.x - 200}px`,
             top: `${mousePosition.y - 200}px`,
           }}
         />
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#ef3a5d]/10 to-[#d62f4f]/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#ef3a5d]/10 to-[#c42a47]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#ef3a5d]/10 to-[#ff6b6b]/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#ef3a5d]/10 to-[#ff6b6b]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
-      {/* Header */}
-      <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/80 border-b border-gray-200/50 shadow-lg">
+      {/* Enhanced Header */}
+      <header className="fixed top-0 w-full z-50 glass-dark border-b border-[#ef3a5d]/20">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center cursor-pointer group">
@@ -164,136 +172,71 @@ export default function Portfolio() {
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-gray-700 hover:text-[#ef3a5d] transition-all duration-300 font-medium relative group"
+                  className="text-white hover:text-[#ef3a5d] transition-all duration-300 font-medium relative group"
                 >
                   {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
             </nav>
 
             <div className="flex items-center space-x-4">
-              <button className="hidden md:block px-6 py-3 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm border border-[#ef3a5d]/20">
+              {/* Dark Mode Toggle */}
+              <button
+                onClick={toggleDarkMode}
+                className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                {isDarkMode ? <Sun className="h-5 w-5 text-white" /> : <Moon className="h-5 w-5 text-white" />}
+              </button>
+
+              <button className="hidden md:block px-6 py-3 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm border border-[#ef3a5d]/20">
                 Get Started
               </button>
-              <a
-                href="https://wa.me/923001234567"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] hover:from-[#d62f4f] hover:to-[#c42a47] text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl"
-                title="Contact us on WhatsApp"
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300"
               >
-                <MessageCircle className="h-5 w-5" />
-              </a>
+                {isMobileMenuOpen ? <X className="h-5 w-5 text-white" /> : <Menu className="h-5 w-5 text-white" />}
+              </button>
             </div>
           </div>
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-4 py-4 border-t border-white/20">
+              <nav className="flex flex-col space-y-4">
+                {["Home", "Services", "Portfolio", "About", "Contact"].map((item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-white hover:text-[#ef3a5d] transition-all duration-300 font-medium"
+                  >
+                    {item}
+                  </a>
+                ))}
+                <button className="w-full px-6 py-3 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                  Get Started
+                </button>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Column - Content */}
-            <div className={`transform transition-all duration-2000 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
-            }`}>
-              {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight text-gray-900">
-                <span className="block">Build.</span>
-                <span className="block">Grow.</span>
-                <span className="block bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] bg-clip-text text-transparent">
-                  Thrive.
-                </span>
-              </h1>
-
-              {/* Subheadline */}
-              <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
-                Custom software and social media strategies that elevate your brand.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 mb-12">
-                <button className="px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-lg backdrop-blur-sm border border-[#ef3a5d]/20">
-                  Get a Quote
-                </button>
-                <button className="px-8 py-4 border-2 border-[#ef3a5d] text-[#ef3a5d] rounded-full font-semibold hover:bg-[#ef3a5d] hover:text-white transition-all duration-300 transform hover:scale-105 text-lg backdrop-blur-sm">
-                  View Portfolio
-                </button>
-              </div>
-            </div>
-
-            {/* Right Column - Interactive Slider */}
-            <div className={`transform transition-all duration-2000 delay-500 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
-            }`}>
-              <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-                <h3 className="text-2xl font-bold mb-6 text-center text-gray-900">Before & After</h3>
-                
-                {/* Interactive Slider */}
-                <div className="relative h-64 bg-gray-100 rounded-2xl overflow-hidden mb-6">
-                  <div className="absolute inset-0 flex">
-                    {/* Before Image */}
-                    <div className="w-1/2 h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                      <div className="text-center text-gray-600">
-                        <Code className="h-12 w-12 mx-auto mb-4" />
-                        <p className="font-semibold">Basic UI</p>
-                      </div>
-                    </div>
-                    
-                    {/* After Image */}
-                    <div className="w-1/2 h-full bg-gradient-to-br from-[#ef3a5d] to-[#d62f4f] flex items-center justify-center">
-                      <div className="text-center text-white">
-                        <Palette className="h-12 w-12 mx-auto mb-4" />
-                        <p className="font-semibold">Polished Design</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Slider Handle */}
-                  <div 
-                    className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-pointer"
-                    style={{ left: `${sliderValue}%` }}
-                    onMouseDown={(e) => {
-                      const handleMouseMove = (e: MouseEvent) => {
-                        const target = e.currentTarget as HTMLElement
-                        if (!target) return
-                        const rect = target.getBoundingClientRect()
-                        const x = e.clientX - rect.left
-                        const percentage = (x / rect.width) * 100
-                        setSliderValue(Math.max(0, Math.min(100, percentage)))
-                      }
-                      const handleMouseUp = () => {
-                        document.removeEventListener('mousemove', handleMouseMove)
-                        document.removeEventListener('mouseup', handleMouseUp)
-                      }
-                      document.addEventListener('mousemove', handleMouseMove)
-                      document.addEventListener('mouseup', handleMouseUp)
-                    }}
-                  >
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg border-2 border-[#ef3a5d] flex items-center justify-center">
-                      <div className="w-2 h-2 bg-[#ef3a5d] rounded-full" />
-                    </div>
-                  </div>
-                </div>
-                
-                <p className="text-center text-gray-600 text-sm">
-                  Drag to see the transformation
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* New Cinematic Hero Section */}
+      <HeroSection isVisible={isVisible} />
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-gray-50">
+      <section id="services" className="py-20 px-6 bg-[#f8f1e9]">
         <div className="max-w-7xl mx-auto">
           <div className={`text-center mb-16 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Our <span className="text-[#ef3a5d]">Services</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
+              Our <span className="gradient-text">Services</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive solutions that drive growth and innovation
@@ -304,7 +247,7 @@ export default function Portfolio() {
             {services.slice(0, 4).map((service, index) => (
               <div
                 key={index}
-                className={`bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20 ${
+                className={`neumorphic hover-lift p-8 rounded-3xl ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
                 style={{ animationDelay: `${index * 200}ms` }}
@@ -312,7 +255,7 @@ export default function Portfolio() {
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6 shadow-lg`}>
                   <service.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">{service.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 text-[#0a1a2e]">{service.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-lg mb-4">{service.description}</p>
                 <p className="text-[#ef3a5d] font-semibold text-sm">
                   {service.title === "Custom Software Development" && "Build scalable apps with cutting-edge tech"}
@@ -332,8 +275,8 @@ export default function Portfolio() {
           <div className={`text-center mb-16 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Our <span className="text-[#ef3a5d]">Portfolio</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
+              Our <span className="gradient-text">Portfolio</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Showcasing our best work across software and marketing
@@ -347,7 +290,7 @@ export default function Portfolio() {
                   onClick={() => setPortfolioFilter(filter)}
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                     portfolioFilter === filter
-                      ? "bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white shadow-lg"
+                      ? "bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white shadow-lg"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
@@ -361,12 +304,12 @@ export default function Portfolio() {
             {filteredPortfolio.map((project, index) => (
               <div
                 key={index}
-                className={`group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
+                className={`group neumorphic hover-lift overflow-hidden rounded-3xl ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="relative h-64 bg-gradient-to-br from-[#ef3a5d] to-[#d62f4f] flex items-center justify-center overflow-hidden">
+                <div className="relative h-64 bg-gradient-to-br from-[#ef3a5d] to-[#ff6b6b] flex items-center justify-center overflow-hidden">
                   <div className="text-center text-white">
                     <Palette className="h-16 w-16 mx-auto mb-4" />
                     <p className="font-semibold text-lg">{project.title}</p>
@@ -381,7 +324,7 @@ export default function Portfolio() {
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-sm font-semibold text-[#ef3a5d]">{project.category}</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-900">{project.title}</h3>
+                  <h3 className="text-xl font-bold mb-3 text-[#0a1a2e]">{project.title}</h3>
                   <p className="text-gray-600 leading-relaxed mb-3">{project.description}</p>
                   <p className="text-[#ef3a5d] font-semibold text-sm">{project.tagline}</p>
                 </div>
@@ -392,13 +335,13 @@ export default function Portfolio() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 px-6 bg-gray-50">
+      <section id="testimonials" className="py-20 px-6 bg-[#f8f1e9]">
         <div className="max-w-4xl mx-auto">
           <div className={`text-center mb-16 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              What Our <span className="text-[#ef3a5d]">Clients Say</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
+              What Our <span className="gradient-text">Clients Say</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Don't just take our word for it - hear from our satisfied clients
@@ -413,29 +356,29 @@ export default function Portfolio() {
               >
                 {testimonials.map((testimonial, index) => (
                   <div key={index} className="w-full flex-shrink-0">
-                    <div className="bg-white rounded-3xl shadow-xl p-12 text-center">
+                    <div className="neumorphic p-12 text-center">
                       <div className="flex justify-center mb-6">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star key={i} className="h-6 w-6 fill-[#ef3a5d] text-[#ef3a5d] mx-1" />
                         ))}
                       </div>
                       <Quote className="h-12 w-12 text-[#ef3a5d] mx-auto mb-8" />
-                      <blockquote className="text-2xl font-light text-gray-900 mb-8 leading-relaxed">
+                      <blockquote className="text-2xl font-light text-[#0a1a2e] mb-8 leading-relaxed">
                         "{testimonial.content}"
                       </blockquote>
                       
                       {/* Success Metric */}
-                      <div className="bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white rounded-2xl p-4 mb-8 inline-block">
+                      <div className="bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-2xl p-4 mb-8 inline-block">
                         <div className="text-3xl font-bold">{testimonial.metricValue}</div>
                         <div className="text-sm opacity-90">{testimonial.metric}</div>
                       </div>
                       
                       <div className="flex items-center justify-center">
-                        <div className="w-16 h-16 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full flex items-center justify-center mr-4">
+                        <div className="w-16 h-16 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-full flex items-center justify-center mr-4">
                           <User className="h-8 w-8 text-white" />
                         </div>
                         <div>
-                          <h4 className="text-xl font-semibold text-gray-900">{testimonial.name}</h4>
+                          <h4 className="text-xl font-semibold text-[#0a1a2e]">{testimonial.name}</h4>
                           <p className="text-gray-600">{testimonial.role}</p>
                           <p className="text-sm text-[#ef3a5d] font-semibold">{testimonial.company}</p>
                         </div>
@@ -478,8 +421,8 @@ export default function Portfolio() {
             <div className={`transform transition-all duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">
-                About <span className="text-[#ef3a5d]">Aqstoria</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#0a1a2e]">
+                About <span className="gradient-text">Aqstoria</span>
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
                 We are a passionate team of developers, designers, and marketers dedicated to helping businesses thrive in the digital age. Our mission is to create innovative software solutions and strategic marketing campaigns that drive real results.
@@ -505,7 +448,7 @@ export default function Portfolio() {
             <div className={`transform transition-all duration-1000 delay-500 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}>
-              <div className="bg-gradient-to-br from-[#ef3a5d] to-[#d62f4f] rounded-3xl p-8 text-white text-center">
+              <div className="bg-gradient-to-br from-[#ef3a5d] to-[#ff6b6b] rounded-3xl p-8 text-white text-center">
                 <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Code className="h-16 w-16 text-white" />
                 </div>
@@ -520,13 +463,13 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-gray-50">
+      <section id="contact" className="py-20 px-6 bg-[#f8f1e9]">
         <div className="max-w-4xl mx-auto">
           <div className={`text-center mb-16 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Get In <span className="text-[#ef3a5d]">Touch</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
+              Get In <span className="gradient-text">Touch</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to start your next project? Let's discuss how we can help you achieve your goals.
@@ -540,35 +483,35 @@ export default function Portfolio() {
             }`}>
               <form onSubmit={handleFormSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Name</label>
+                  <label className="block text-[#0a1a2e] font-semibold mb-2">Name</label>
                   <input 
                     type="text" 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 neumorphic-inset focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
                     placeholder="Your name"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Email</label>
+                  <label className="block text-[#0a1a2e] font-semibold mb-2">Email</label>
                   <input 
                     type="email" 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 neumorphic-inset focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
                     placeholder="your@email.com"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Message</label>
+                  <label className="block text-[#0a1a2e] font-semibold mb-2">Message</label>
                   <textarea 
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 neumorphic-inset focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
                     placeholder="Tell us about your project..."
                     required
                   />
                 </div>
                 <button 
                   type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                 >
                   {formSubmitted ? (
                     <>
@@ -591,29 +534,29 @@ export default function Portfolio() {
             }`}>
               <div className="space-y-8">
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-full flex items-center justify-center mr-4">
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Email</h3>
+                    <h3 className="font-semibold text-[#0a1a2e]">Email</h3>
                     <p className="text-gray-600">hello@aqstoria.com</p>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-full flex items-center justify-center mr-4">
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Phone</h3>
+                    <h3 className="font-semibold text-[#0a1a2e]">Phone</h3>
                     <p className="text-gray-600">+92 300 123 4567</p>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-full flex items-center justify-center mr-4">
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Location</h3>
+                    <h3 className="font-semibold text-[#0a1a2e]">Location</h3>
                     <p className="text-gray-600">Lahore, Pakistan</p>
                   </div>
                 </div>
@@ -624,7 +567,7 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16 px-6">
+      <footer className="bg-[#0a1a2e] text-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
@@ -653,7 +596,7 @@ export default function Portfolio() {
                   />
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-r-lg hover:from-[#d62f4f] hover:to-[#c42a47] transition-all duration-300"
+                    className="px-4 py-2 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-r-lg hover:from-[#ff6b6b] hover:to-[#ef3a5d] transition-all duration-300"
                   >
                     <Send className="h-4 w-4" />
                   </button>
