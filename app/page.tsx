@@ -706,55 +706,7 @@ export default function Portfolio() {
     },
   ]
 
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO, Fashion Boutique",
-      content:
-        "The Aqstoria team created our entire e-commerce platform using MERN stack and brand identity. Sales increased by 500%!",
-      rating: 5,
-      service: "MERN Stack + Branding",
-    },
-    {
-      name: "Michael Chen",
-      role: "Restaurant Chain Owner",
-      content:
-        "Their MEAN stack ERP system has revolutionized our operations across 20 locations. Outstanding technical expertise!",
-      rating: 5,
-      service: "MEAN Stack ERP",
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "E-commerce Owner",
-      content:
-        "From Shopify store setup to custom app development - the complete package. Their team expertise is unmatched.",
-      rating: 5,
-      service: "Shopify Development",
-    },
-    {
-      name: "David Wilson",
-      role: "Manufacturing Director",
-      content:
-        "The custom ERP solution and real-time monitoring has streamlined our entire production process. Excellent work!",
-      rating: 5,
-      service: "Enterprise Solutions",
-    },
-    {
-      name: "Lisa Thompson",
-      role: "Health & Wellness Brand",
-      content: "Their Shopify optimization and custom features increased our conversions by 250%. Professional team!",
-      rating: 5,
-      service: "Shopify Optimization",
-    },
-    {
-      name: "Robert Kim",
-      role: "Tech Startup",
-      content:
-        "Complete MERN stack development with modern UI/UX. The technical quality and attention to detail is incredible.",
-      rating: 5,
-      service: "MERN Stack Development",
-    },
-  ]
+
 
   const experience = [
     {
@@ -2548,50 +2500,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-24 px-6 relative">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
-              What Our Clients Say
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mx-auto" />
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="group bg-white/90 backdrop-blur-sm border-0 hover:scale-105 transition-all duration-500 shadow-xl hover:shadow-2xl"
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                }}
-              >
-                <CardContent className="p-8">
-                  <div className="mb-6">
-                    <Quote className="h-10 w-10 text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                    <p className="mb-6 leading-relaxed text-gray-700 italic">"{testimonial.content}"</p>
-                  </div>
-                                      <div className="flex items-center justify-between mb-4">
-                      <div>
-                        <p className="font-bold text-gray-800">{testimonial.name}</p>
-                        <p className="text-sm text-gray-600">{testimonial.role}</p>
-                      </div>
-                      <div className="flex space-x-1">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 fill-blue-400 text-blue-400" />
-                        ))}
-                      </div>
-                    </div>
-                  <Badge variant="outline" className="text-xs border-blue-200 text-blue-600 bg-blue-50 font-medium">
-                    {testimonial.service}
-                  </Badge>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact & Quote Section */}
       <section id="contact" className="py-24 px-6 bg-gradient-to-r from-blue-50/50 to-gray-50/50 relative">
