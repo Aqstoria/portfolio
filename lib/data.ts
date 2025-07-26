@@ -28,7 +28,6 @@ import {
   SmartphoneIcon,
   ShoppingBag,
   BarChart,
-  Database2,
   GitBranch,
   Box,
   Globe2,
@@ -165,7 +164,7 @@ export const services = [
   {
     title: "Database Design",
     description: "Optimized database architecture and management for high-performance applications",
-    icon: Database2,
+    icon: Database,
     features: [
       "Database schema design",
       "Performance optimization",
