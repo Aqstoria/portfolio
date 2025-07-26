@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User } from "lucide-react"
+import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [sliderValue, setSliderValue] = useState(50)
+  const [isPlaying, setIsPlaying] = useState(true)
 
   useEffect(() => {
     setIsVisible(true)
@@ -20,42 +23,78 @@ export default function Portfolio() {
     }
   }, [])
 
+  useEffect(() => {
+    if (isPlaying) {
+      const interval = setInterval(() => {
+        setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
+      }, 5000)
+      return () => clearInterval(interval)
+    }
+  }, [isPlaying])
+
   const services = [
     {
       icon: Code,
-      title: "Web Development",
-      description: "Modern, responsive websites built with cutting-edge technologies",
+      title: "Custom Software Development",
+      description: "Scalable web applications, SaaS platforms, and enterprise solutions built with modern technologies.",
       color: "from-[#ef3a5d] to-[#d62f4f]"
     },
     {
       icon: Smartphone,
-      title: "Mobile Apps",
-      description: "Native and cross-platform mobile applications for iOS and Android",
-      color: "from-[#d62f4f] to-[#c42a47]"
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Professional user interface and experience design services",
-      color: "from-[#ef3a5d] to-[#d62f4f]"
-    },
-    {
-      icon: ShoppingCart,
-      title: "E-commerce",
-      description: "Custom Shopify stores, themes, and app development",
+      title: "Mobile App Development",
+      description: "Native iOS/Android apps and cross-platform solutions with React Native and Flutter.",
       color: "from-[#d62f4f] to-[#c42a47]"
     },
     {
       icon: TrendingUp,
-      title: "Digital Marketing",
-      description: "Comprehensive digital marketing strategies and campaigns",
+      title: "Social Media Marketing",
+      description: "Strategic campaigns across all platforms with data-driven analytics and ROI tracking.",
       color: "from-[#ef3a5d] to-[#d62f4f]"
     },
     {
-      icon: Server,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and DevOps services",
+      icon: Palette,
+      title: "UI/UX Design",
+      description: "User-centered design solutions that enhance engagement and drive conversions.",
       color: "from-[#d62f4f] to-[#c42a47]"
+    }
+  ]
+
+  const portfolio = [
+    {
+      title: "E-commerce Platform",
+      category: "Software",
+      image: "/placeholder.svg?height=300&width=400",
+      description: "Full-stack e-commerce solution with payment integration"
+    },
+    {
+      title: "Social Media Campaign",
+      category: "Marketing",
+      image: "/placeholder.svg?height=300&width=400",
+      description: "Multi-platform campaign with 300% engagement increase"
+    },
+    {
+      title: "SaaS Dashboard",
+      category: "Software",
+      image: "/placeholder.svg?height=300&width=400",
+      description: "Analytics dashboard with real-time data visualization"
+    },
+    {
+      title: "Brand Identity",
+      category: "Design",
+      image: "/placeholder.svg?height=300&width=400",
+      description: "Complete brand identity and marketing collateral"
+    },
+    {
+      title: "Mobile App",
+      category: "Software",
+      image: "/placeholder.svg?height=300&width=400",
+      description: "Cross-platform mobile application with offline sync"
+    },
+    {
+      title: "Content Strategy",
+      category: "Marketing",
+      image: "/placeholder.svg?height=300&width=400",
+      description: "Comprehensive content marketing and SEO strategy"
     }
   ]
 
@@ -63,41 +102,23 @@ export default function Portfolio() {
     {
       name: "Sarah Johnson",
       role: "CEO, TechStart",
-      content: "Aqstoria transformed our business with their exceptional web development services. The team delivered beyond our expectations!",
-      rating: 5
+      content: "Aqstoria transformed our business with their exceptional software development services. The team delivered beyond our expectations!",
+      rating: 5,
+      company: "TechStart"
     },
     {
       name: "Michael Chen",
       role: "Founder, E-commerce Pro",
-      content: "Our Shopify store conversion rate increased by 250% after their optimization. Highly recommended!",
-      rating: 5
+      content: "Our social media campaigns increased engagement by 300% and drove 250% more conversions. Highly recommended!",
+      rating: 5,
+      company: "E-commerce Pro"
     },
     {
       name: "Emily Rodriguez",
       role: "Marketing Director",
-      content: "Professional service delivery and excellent results. The team exceeded our expectations!",
-      rating: 5
-    }
-  ]
-
-  const blogPosts = [
-    {
-      title: "The Future of Web Development in 2024",
-      excerpt: "Explore the latest trends and technologies shaping the web development landscape...",
-      date: "Jan 15, 2024",
-      readTime: "5 min read"
-    },
-    {
-      title: "Why Mobile-First Design is Crucial",
-      excerpt: "Learn why mobile-first design should be your priority in today's digital world...",
-      date: "Jan 10, 2024",
-      readTime: "4 min read"
-    },
-    {
-      title: "E-commerce Success: Shopify vs WooCommerce",
-      excerpt: "A comprehensive comparison to help you choose the right platform for your business...",
-      date: "Jan 5, 2024",
-      readTime: "6 min read"
+      content: "Professional service delivery and excellent results. The team exceeded our expectations in every project!",
+      rating: 5,
+      company: "Digital Solutions"
     }
   ]
 
@@ -117,8 +138,8 @@ export default function Portfolio() {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#ef3a5d]/10 to-[#c42a47]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/95 border-b border-gray-200/50 shadow-lg">
+      {/* Header */}
+      <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/80 border-b border-gray-200/50 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center cursor-pointer group">
@@ -131,8 +152,24 @@ export default function Portfolio() {
               />
             </div>
 
+            {/* Desktop Menu */}
+            <nav className="hidden md:flex space-x-8">
+              {["Home", "Services", "Portfolio", "About", "Contact"].map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-gray-700 hover:text-[#ef3a5d] transition-all duration-300 font-medium relative group"
+                >
+                  {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] group-hover:w-full transition-all duration-300" />
+                </a>
+              ))}
+            </nav>
+
             <div className="flex items-center space-x-4">
-              {/* WhatsApp Contact */}
+              <button className="hidden md:block px-6 py-3 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm border border-[#ef3a5d]/20">
+                Get Started
+              </button>
               <a
                 href="https://wa.me/923001234567"
                 target="_blank"
@@ -145,63 +182,106 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-      </nav>
+      </header>
 
-      {/* Main Content - Centered Logo */}
-      <div className="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div className="relative z-10 text-center">
-          {/* Logo Container */}
-          <div className={`transform transition-all duration-2000 ${
-            isVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-20 opacity-0 scale-95"
-          }`}>
-            <div className="relative">
-              {/* Main Logo */}
-              <div className="mb-8">
-                <Image
-                  src="/logo.png"
-                  alt="Aqstoria Logo"
-                  width={300}
-                  height={100}
-                  className="h-24 w-auto filter drop-shadow-2xl transform hover:scale-110 transition-all duration-500"
-                />
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Content */}
+            <div className={`transform transition-all duration-2000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+            }`}>
+              {/* Main Headline */}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight text-gray-900">
+                <span className="block">Build.</span>
+                <span className="block">Grow.</span>
+                <span className="block bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] bg-clip-text text-transparent">
+                  Thrive.
+                </span>
+              </h1>
+
+              {/* Subheadline */}
+              <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
+                Custom software and social media strategies that elevate your brand.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 mb-12">
+                <button className="px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-lg backdrop-blur-sm border border-[#ef3a5d]/20">
+                  Get a Quote
+                </button>
+                <button className="px-8 py-4 border-2 border-[#ef3a5d] text-[#ef3a5d] rounded-full font-semibold hover:bg-[#ef3a5d] hover:text-white transition-all duration-300 transform hover:scale-105 text-lg backdrop-blur-sm">
+                  View Portfolio
+                </button>
               </div>
+            </div>
 
-              {/* Subtitle */}
-              <div className={`transform transition-all duration-2000 delay-500 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}>
-                <p className="text-xl text-gray-600 font-light tracking-wide">
-                  Digital Excellence
+            {/* Right Column - Interactive Slider */}
+            <div className={`transform transition-all duration-2000 delay-500 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+            }`}>
+              <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+                <h3 className="text-2xl font-bold mb-6 text-center text-gray-900">Before & After</h3>
+                
+                {/* Interactive Slider */}
+                <div className="relative h-64 bg-gray-100 rounded-2xl overflow-hidden mb-6">
+                  <div className="absolute inset-0 flex">
+                    {/* Before Image */}
+                    <div className="w-1/2 h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                      <div className="text-center text-gray-600">
+                        <Code className="h-12 w-12 mx-auto mb-4" />
+                        <p className="font-semibold">Basic UI</p>
+                      </div>
+                    </div>
+                    
+                    {/* After Image */}
+                    <div className="w-1/2 h-full bg-gradient-to-br from-[#ef3a5d] to-[#d62f4f] flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <Palette className="h-12 w-12 mx-auto mb-4" />
+                        <p className="font-semibold">Polished Design</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Slider Handle */}
+                  <div 
+                    className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-pointer"
+                    style={{ left: `${sliderValue}%` }}
+                    onMouseDown={(e) => {
+                      const handleMouseMove = (e: MouseEvent) => {
+                        const target = e.currentTarget as HTMLElement
+                        if (!target) return
+                        const rect = target.getBoundingClientRect()
+                        const x = e.clientX - rect.left
+                        const percentage = (x / rect.width) * 100
+                        setSliderValue(Math.max(0, Math.min(100, percentage)))
+                      }
+                      const handleMouseUp = () => {
+                        document.removeEventListener('mousemove', handleMouseMove)
+                        document.removeEventListener('mouseup', handleMouseUp)
+                      }
+                      document.addEventListener('mousemove', handleMouseMove)
+                      document.addEventListener('mouseup', handleMouseUp)
+                    }}
+                  >
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg border-2 border-[#ef3a5d] flex items-center justify-center">
+                      <div className="w-2 h-2 bg-[#ef3a5d] rounded-full" />
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-center text-gray-600 text-sm">
+                  Drag to see the transformation
                 </p>
               </div>
-
-              {/* Floating Elements */}
-              <div className={`absolute -top-8 -right-8 w-6 h-6 bg-[#ef3a5d] rounded-full animate-bounce`} style={{ animationDelay: '1s' }} />
-              <div className={`absolute -bottom-8 -left-8 w-4 h-4 bg-[#d62f4f] rounded-full animate-bounce`} style={{ animationDelay: '2s' }} />
-              <div className={`absolute top-1/2 -right-12 w-3 h-3 bg-[#c42a47] rounded-full animate-pulse`} style={{ animationDelay: '3s' }} />
-              <div className={`absolute top-1/2 -left-12 w-5 h-5 bg-[#ef3a5d] rounded-full animate-pulse`} style={{ animationDelay: '4s' }} />
             </div>
           </div>
-
-          {/* Contact Button */}
-          <div className={`transform transition-all duration-2000 delay-1000 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}>
-            <a
-              href="https://wa.me/923001234567"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 mt-12 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] hover:from-[#d62f4f] hover:to-[#c42a47] text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
-            >
-              <MessageCircle className="mr-3 h-5 w-5" />
-              Get Started
-            </a>
-          </div>
         </div>
-      </div>
+      </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section id="services" className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className={`text-center mb-16 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
@@ -210,15 +290,15 @@ export default function Portfolio() {
               Our <span className="text-[#ef3a5d]">Services</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive digital solutions tailored to your business needs
+              Comprehensive solutions that drive growth and innovation
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 ${
+                className={`bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
                 style={{ animationDelay: `${index * 200}ms` }}
@@ -226,8 +306,55 @@ export default function Portfolio() {
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6 shadow-lg`}>
                   <service.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className={`text-center mb-16 transform transition-all duration-1000 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Our <span className="text-[#ef3a5d]">Portfolio</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Showcasing our best work across software and marketing
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {portfolio.map((project, index) => (
+              <div
+                key={index}
+                className={`group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className="relative h-64 bg-gradient-to-br from-[#ef3a5d] to-[#d62f4f] flex items-center justify-center overflow-hidden">
+                  <div className="text-center text-white">
+                    <Palette className="h-16 w-16 mx-auto mb-4" />
+                    <p className="font-semibold text-lg">{project.title}</p>
+                  </div>
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button className="px-6 py-3 bg-white text-[#ef3a5d] rounded-full font-semibold transform scale-95 group-hover:scale-100 transition-transform duration-300">
+                      View Project
+                    </button>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm font-semibold text-[#ef3a5d]">{project.category}</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">{project.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{project.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -235,8 +362,8 @@ export default function Portfolio() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section id="testimonials" className="py-20 px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
           <div className={`text-center mb-16 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}>
@@ -248,97 +375,258 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className={`bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
-                style={{ animationDelay: `${index * 300}ms` }}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
               >
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-[#ef3a5d] text-[#ef3a5d]" />
-                  ))}
-                </div>
-                <Quote className="h-8 w-8 text-[#ef3a5d] mb-4" />
-                <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.content}"</p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full flex items-center justify-center mr-4">
-                    <User className="h-6 w-6 text-white" />
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <div className="bg-white rounded-3xl shadow-xl p-12 text-center">
+                      <div className="flex justify-center mb-6">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="h-6 w-6 fill-[#ef3a5d] text-[#ef3a5d] mx-1" />
+                        ))}
+                      </div>
+                      <Quote className="h-12 w-12 text-[#ef3a5d] mx-auto mb-8" />
+                      <blockquote className="text-2xl font-light text-gray-900 mb-8 leading-relaxed">
+                        "{testimonial.content}"
+                      </blockquote>
+                      <div className="flex items-center justify-center">
+                        <div className="w-16 h-16 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full flex items-center justify-center mr-4">
+                          <User className="h-8 w-8 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-semibold text-gray-900">{testimonial.name}</h4>
+                          <p className="text-gray-600">{testimonial.role}</p>
+                          <p className="text-sm text-[#ef3a5d] font-semibold">{testimonial.company}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Navigation Buttons */}
+            <button 
+              onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300"
+            >
+              <ChevronLeft className="h-6 w-6 text-[#ef3a5d]" />
+            </button>
+            <button 
+              onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300"
+            >
+              <ChevronRight className="h-6 w-6 text-[#ef3a5d]" />
+            </button>
+
+            {/* Play/Pause Button */}
+            <button 
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-[#ef3a5d] rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300"
+            >
+              {isPlaying ? <Pause className="h-6 w-6 text-white" /> : <Play className="h-6 w-6 text-white" />}
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      {/* About Section */}
+      <section id="about" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className={`transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">
+                About <span className="text-[#ef3a5d]">Aqstoria</span>
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                We are a passionate team of developers, designers, and marketers dedicated to helping businesses thrive in the digital age. Our mission is to create innovative software solutions and strategic marketing campaigns that drive real results.
+              </p>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                With years of experience in both software development and social media marketing, we understand the unique challenges modern businesses face. We combine technical expertise with creative thinking to deliver solutions that not only look great but also perform exceptionally.
+              </p>
+              <div className="flex items-center space-x-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#ef3a5d]">150+</div>
+                  <div className="text-gray-600">Projects Completed</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#ef3a5d]">50+</div>
+                  <div className="text-gray-600">Happy Clients</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#ef3a5d]">5+</div>
+                  <div className="text-gray-600">Years Experience</div>
+                </div>
+              </div>
+            </div>
+            <div className={`transform transition-all duration-1000 delay-500 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}>
+              <div className="bg-gradient-to-br from-[#ef3a5d] to-[#d62f4f] rounded-3xl p-8 text-white text-center">
+                <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Code className="h-16 w-16 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Innovation Meets Excellence</h3>
+                <p className="text-lg leading-relaxed">
+                  We believe in pushing boundaries and creating solutions that make a difference.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
           <div className={`text-center mb-16 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Latest <span className="text-[#ef3a5d]">Insights</span>
+              Get In <span className="text-[#ef3a5d]">Touch</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Stay updated with the latest trends and insights in digital technology
+              Ready to start your next project? Let's discuss how we can help you achieve your goals.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <div
-                key={index}
-                className={`bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className="h-48 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] flex items-center justify-center">
-                  <Calendar className="h-16 w-16 text-white" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className={`transform transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}>
+              <form className="space-y-6">
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">Name</label>
+                  <input 
+                    type="text" 
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                    placeholder="Your name"
+                  />
                 </div>
-                <div className="p-8">
-                  <div className="flex items-center text-sm text-gray-500 mb-4">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    {post.date}
-                    <span className="mx-2">•</span>
-                    {post.readTime}
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">Email</label>
+                  <input 
+                    type="email" 
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">Message</label>
+                  <textarea 
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                    placeholder="Tell us about your project..."
+                  />
+                </div>
+                <button 
+                  type="submit"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Info */}
+            <div className={`transform transition-all duration-1000 delay-500 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}>
+              <div className="space-y-8">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full flex items-center justify-center mr-4">
+                    <Mail className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-900">{post.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{post.excerpt}</p>
-                  <button className="text-[#ef3a5d] font-semibold hover:text-[#d62f4f] transition-colors duration-300 flex items-center">
-                    Read More
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </button>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Email</h3>
+                    <p className="text-gray-600">hello@aqstoria.com</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full flex items-center justify-center mr-4">
+                    <Phone className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Phone</h3>
+                    <p className="text-gray-600">+92 300 123 4567</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full flex items-center justify-center mr-4">
+                    <MapPin className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Location</h3>
+                    <p className="text-gray-600">Lahore, Pakistan</p>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className={`transform transition-all duration-1000 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}>
-            <Quote className="h-16 w-16 text-[#ef3a5d] mx-auto mb-8" />
-            <blockquote className="text-3xl md:text-4xl font-light text-gray-900 mb-8 leading-relaxed">
-              "Innovation distinguishes between a leader and a follower."
-            </blockquote>
-            <p className="text-xl text-gray-600">- Steve Jobs</p>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <Image
+                src="/logo.png"
+                alt="Aqstoria Logo"
+                width={120}
+                height={40}
+                className="h-10 w-auto mb-6 filter brightness-0 invert"
+              />
+              <p className="text-gray-400 leading-relaxed">
+                Building digital excellence through innovative software solutions and strategic marketing campaigns.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Services</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>Web Development</li>
+                <li>Mobile Apps</li>
+                <li>UI/UX Design</li>
+                <li>Digital Marketing</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Company</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>About Us</li>
+                <li>Portfolio</li>
+                <li>Testimonials</li>
+                <li>Contact</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Connect</h3>
+              <div className="flex space-x-4">
+                {[Github, Linkedin, Twitter, Instagram].map((Icon, index) => (
+                  <a
+                    key={index}
+                    href="#"
+                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#ef3a5d] transition-all duration-300"
+                  >
+                    <Icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 Aqstoria. All rights reserved.</p>
           </div>
         </div>
-      </section>
+      </footer>
     </div>
   )
 }
