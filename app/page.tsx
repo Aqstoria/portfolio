@@ -315,12 +315,12 @@ export default function Portfolio() {
       <HeroSection isVisible={isVisible} />
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-[#f8f1e9]">
+      <section id="services" className="py-16 px-6 bg-[#f8f1e9]">
         <div className="max-w-7xl mx-auto">
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${
+          <div className={`text-center mb-12 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0a1a2e]">
               Our <span className="gradient-text">Services</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -328,25 +328,25 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`group relative neumorphic hover-lift p-8 rounded-3xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 ${
+                className={`group relative neumorphic hover-lift p-6 rounded-3xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6 shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:rotate-3`}>
-                  <service.icon className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-300" />
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:rotate-3`}>
+                  <service.icon className="h-7 w-7 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-[#0a1a2e] group-hover:text-[#ef3a5d] transition-colors duration-300">
+                <h3 className="text-lg font-bold mb-3 text-[#0a1a2e] group-hover:text-[#ef3a5d] transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-base mb-4 group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-gray-600 leading-relaxed text-sm mb-3 group-hover:text-gray-700 transition-colors duration-300">
                   {service.description}
                 </p>
-                <p className="text-[#ef3a5d] font-semibold text-sm group-hover:text-[#ff6b6b] transition-colors duration-300">
+                <p className="text-[#ef3a5d] font-semibold text-xs group-hover:text-[#ff6b6b] transition-colors duration-300">
                   {service.title === "Custom Software Development" && "Build scalable apps with cutting-edge tech"}
                   {service.title === "Mobile App Development" && "Native performance with cross-platform reach"}
                   {service.title === "UI/UX Design" && "User-centered design that converts visitors to customers"}
@@ -362,8 +362,8 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#ef3a5d]/0 to-[#ff6b6b]/0 group-hover:from-[#ef3a5d]/5 group-hover:to-[#ff6b6b]/5 rounded-3xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
                 
                 {/* Floating Elements on Hover */}
-                <div className="absolute top-4 right-4 w-2 h-2 bg-[#ef3a5d] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500" />
-                <div className="absolute bottom-4 left-4 w-1 h-1 bg-[#ff6b6b] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-100" />
+                <div className="absolute top-3 right-3 w-2 h-2 bg-[#ef3a5d] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500" />
+                <div className="absolute bottom-3 left-3 w-1 h-1 bg-[#ff6b6b] rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 delay-100" />
               </div>
             ))}
           </div>
@@ -371,25 +371,25 @@ export default function Portfolio() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 px-6 bg-white">
+      <section id="portfolio" className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${
+          <div className={`text-center mb-12 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0a1a2e]">
               Our <span className="gradient-text">Portfolio</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
               Showcasing our best work across software and marketing
             </p>
             
             {/* Portfolio Filters */}
-            <div className="flex justify-center space-x-4 mb-12">
+            <div className="flex justify-center space-x-3 mb-10">
               {["all", "software", "marketing", "design"].map((filter) => (
                 <button
                   key={filter}
                   onClick={() => setPortfolioFilter(filter)}
-                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  className={`px-5 py-2 rounded-full font-medium transition-all duration-300 text-sm ${
                     portfolioFilter === filter
                       ? "bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white shadow-lg"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -401,77 +401,69 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPortfolio.map((project, index) => (
               <div
                 key={index}
-                className={`group relative neumorphic hover-lift overflow-hidden rounded-3xl transition-all duration-500 transform hover:scale-105 hover:rotate-1 ${
+                className={`group relative neumorphic hover-lift rounded-3xl overflow-hidden transition-all duration-500 transform hover:scale-105 hover:rotate-1 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                {/* Project Image/Preview */}
-                <div className="relative h-48 bg-gradient-to-br from-[#ef3a5d] to-[#ff6b6b] flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0a1a2e]/20 to-[#1a2a3e]/20" />
-                  <div className="text-center text-white relative z-10">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                      {project.category === "Software" && <Code className="h-8 w-8" />}
-                      {project.category === "Marketing" && <TrendingUp className="h-8 w-8" />}
-                      {project.category === "Design" && <Palette className="h-8 w-8" />}
-                    </div>
-                    <p className="font-semibold text-lg">{project.title.split(' - ')[0]}</p>
-                    <p className="text-sm opacity-90">{project.title.split(' - ')[1]}</p>
-                  </div>
-                  
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#ef3a5d]/80 to-[#ff6b6b]/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                    <button className="px-6 py-3 bg-white text-[#ef3a5d] rounded-full font-semibold transform scale-95 group-hover:scale-100 transition-transform duration-300 shadow-lg">
-                      View Case Study
-                    </button>
-                  </div>
-                </div>
-                
-                {/* Project Details */}
-                <div className="p-6">
-                  {/* Category Badge */}
-                  <div className="flex items-center justify-between mb-4">
+                {/* Project Preview */}
+                <div className="relative h-48 bg-gradient-to-br from-[#0a1a2e] to-[#1a2a3e] overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#ef3a5d]/20 to-[#ff6b6b]/20" />
+                  <div className="absolute top-4 left-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      project.category === "Software" ? "bg-blue-100 text-blue-700" :
-                      project.category === "Marketing" ? "bg-green-100 text-green-700" :
-                      "bg-purple-100 text-purple-700"
+                      project.category === "Software" ? "bg-blue-100 text-blue-800" :
+                      project.category === "Marketing" ? "bg-green-100 text-green-800" :
+                      "bg-purple-100 text-purple-800"
                     }`}>
                       {project.category}
                     </span>
-                    <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-[#ef3a5d] rounded-full animate-pulse" />
-                      <div className="w-2 h-2 bg-[#ff6b6b] rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+                  </div>
+                  <div className="absolute top-4 right-4">
+                    <div className="w-2 h-2 bg-[#ef3a5d] rounded-full animate-pulse" />
+                  </div>
+                  <div className="absolute bottom-4 left-4">
+                    <div className="w-1 h-1 bg-[#ff6b6b] rounded-full animate-pulse" />
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-full flex items-center justify-center">
+                      <Code className="h-8 w-8 text-white" />
                     </div>
                   </div>
-                  
-                  {/* Project Title */}
-                  <h3 className="text-lg font-bold mb-3 text-[#0a1a2e] group-hover:text-[#ef3a5d] transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  
-                  {/* Project Description */}
-                  <p className="text-gray-600 leading-relaxed text-sm mb-4 group-hover:text-gray-700 transition-colors duration-300">
-                    {project.description}
-                  </p>
-                  
-                  {/* Results Tagline */}
-                  <div className="bg-gradient-to-r from-[#ef3a5d]/10 to-[#ff6b6b]/10 rounded-lg p-3 border-l-4 border-[#ef3a5d]">
-                    <p className="text-[#ef3a5d] font-semibold text-sm group-hover:text-[#ff6b6b] transition-colors duration-300">
-                      ✨ {project.tagline}
+                </div>
+
+                {/* Project Details */}
+                <div className="p-6">
+                  <div className="mb-3">
+                    <h3 className="text-lg font-bold text-[#0a1a2e] group-hover:text-[#ef3a5d] transition-colors duration-300">
+                      {project.title.split(' - ')[0]}
+                    </h3>
+                    <p className="text-sm text-gray-500">
+                      {project.title.split(' - ')[1]}
                     </p>
                   </div>
                   
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    {project.description}
+                  </p>
+
+                  {/* Results Tagline */}
+                  <div className="bg-gradient-to-r from-[#ef3a5d]/10 to-[#ff6b6b]/10 rounded-lg p-3 mb-4">
+                    <p className="text-[#ef3a5d] font-semibold text-sm">
+                      {project.tagline}
+                    </p>
+                  </div>
+
                   {/* Project Stats */}
-                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
-                    <div className="flex items-center text-xs text-gray-500">
+                  <div className="flex items-center justify-between text-xs text-gray-500">
+                    <div className="flex items-center">
                       <Calendar className="h-3 w-3 mr-1" />
                       <span>3-6 months</span>
                     </div>
-                    <div className="flex items-center text-xs text-gray-500">
+                    <div className="flex items-center">
                       <Users className="h-3 w-3 mr-1" />
                       <span>Team of 4-6</span>
                     </div>
@@ -488,12 +480,12 @@ export default function Portfolio() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 px-6 bg-[#f8f1e9]">
+      <section id="testimonials" className="py-16 px-6 bg-[#f8f1e9]">
         <div className="max-w-4xl mx-auto">
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${
+          <div className={`text-center mb-12 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0a1a2e]">
               What Our <span className="gradient-text">Clients Say</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -509,19 +501,19 @@ export default function Portfolio() {
               >
                 {testimonials.map((testimonial, index) => (
                   <div key={index} className="w-full flex-shrink-0">
-                    <div className="neumorphic p-12 text-center">
+                    <div className="neumorphic p-10 text-center">
                       <div className="flex justify-center mb-6">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star key={i} className="h-6 w-6 fill-[#ef3a5d] text-[#ef3a5d] mx-1" />
                         ))}
                       </div>
-                      <Quote className="h-12 w-12 text-[#ef3a5d] mx-auto mb-8" />
-                      <blockquote className="text-2xl font-light text-[#0a1a2e] mb-8 leading-relaxed">
+                      <Quote className="h-12 w-12 text-[#ef3a5d] mx-auto mb-6" />
+                      <blockquote className="text-2xl font-light text-[#0a1a2e] mb-6 leading-relaxed">
                         "{testimonial.content}"
                       </blockquote>
                       
                       {/* Success Metric */}
-                      <div className="bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-2xl p-4 mb-8 inline-block">
+                      <div className="bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-2xl p-4 mb-6 inline-block">
                         <div className="text-3xl font-bold">{testimonial.metricValue}</div>
                         <div className="text-sm opacity-90">{testimonial.metric}</div>
                       </div>
@@ -568,60 +560,33 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className={`transform transition-all duration-1000 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#0a1a2e]">
-                About <span className="gradient-text">Aqstoria</span>
-              </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                We are a passionate team of developers, designers, and marketers dedicated to helping businesses thrive in the digital age. Our mission is to create innovative software solutions and strategic marketing campaigns that drive real results.
+      <section id="about" className="py-16 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className={`transform transition-all duration-1000 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
+              About <span className="gradient-text">Aqstoria</span>
+            </h2>
+            <div className="bg-gradient-to-br from-[#ef3a5d]/10 to-[#ff6b6b]/10 rounded-3xl p-8 mb-8">
+              <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                We're a passionate team of developers, designers, and marketers dedicated to transforming businesses through innovative digital solutions.
               </p>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                With years of experience in both software development and social media marketing, we understand the unique challenges modern businesses face. We combine technical expertise with creative thinking to deliver solutions that not only look great but also perform exceptionally.
+              <p className="text-lg text-gray-600 leading-relaxed">
+                With over 5 years of experience and 150+ successful projects, we've helped businesses of all sizes achieve their digital goals. Our commitment to quality, innovation, and client success drives everything we do.
               </p>
-              <div className="flex items-center space-x-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#ef3a5d]">150+</div>
-                  <div className="text-gray-600">Projects Completed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#ef3a5d]">50+</div>
-                  <div className="text-gray-600">Happy Clients</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#ef3a5d]">5+</div>
-                  <div className="text-gray-600">Years Experience</div>
-                </div>
-              </div>
-            </div>
-            <div className={`transform transition-all duration-1000 delay-500 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}>
-              <div className="bg-gradient-to-br from-[#ef3a5d] to-[#ff6b6b] rounded-3xl p-8 text-white text-center">
-                <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Code className="h-16 w-16 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Innovation Meets Excellence</h3>
-                <p className="text-lg leading-relaxed">
-                  We believe in pushing boundaries and creating solutions that make a difference.
-                </p>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-[#f8f1e9]">
+      <section id="contact" className="py-16 px-6 bg-[#f8f1e9]">
         <div className="max-w-4xl mx-auto">
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${
+          <div className={`text-center mb-12 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0a1a2e]">
               Get In <span className="gradient-text">Touch</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -631,85 +596,86 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className={`transform transition-all duration-1000 ${
+            <div className={`transform transition-all duration-1000 delay-200 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}>
               <form onSubmit={handleFormSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-[#0a1a2e] mb-2">Name</label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full px-4 py-3 neumorphic-inset rounded-xl focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-[#0a1a2e] mb-2">Email</label>
+                    <input
+                      type="email"
+                      required
+                      className="w-full px-4 py-3 neumorphic-inset rounded-xl focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
                 <div>
-                  <label className="block text-[#0a1a2e] font-semibold mb-2">Name</label>
-                  <input 
-                    type="text" 
-                    className="w-full px-4 py-3 neumorphic-inset focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
-                    placeholder="Your name"
+                  <label className="block text-sm font-semibold text-[#0a1a2e] mb-2">Subject</label>
+                  <input
+                    type="text"
                     required
+                    className="w-full px-4 py-3 neumorphic-inset rounded-xl focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                    placeholder="What can we help you with?"
                   />
                 </div>
                 <div>
-                  <label className="block text-[#0a1a2e] font-semibold mb-2">Email</label>
-                  <input 
-                    type="email" 
-                    className="w-full px-4 py-3 neumorphic-inset focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
-                    placeholder="your@email.com"
+                  <label className="block text-sm font-semibold text-[#0a1a2e] mb-2">Message</label>
+                  <textarea
                     required
-                  />
-                </div>
-                <div>
-                  <label className="block text-[#0a1a2e] font-semibold mb-2">Message</label>
-                  <textarea 
-                    rows={4}
-                    className="w-full px-4 py-3 neumorphic-inset focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                    rows={5}
+                    className="w-full px-4 py-3 neumorphic-inset rounded-xl focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300 resize-none"
                     placeholder="Tell us about your project..."
-                    required
                   />
                 </div>
-                <button 
+                <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
-                  {formSubmitted ? (
-                    <>
-                      <CheckCircle className="h-5 w-5 mr-2" />
-                      Message Sent!
-                    </>
-                  ) : (
-                    <>
-                      <Send className="h-5 w-5 mr-2" />
-                      Send Message
-                    </>
-                  )}
+                  Send Message
                 </button>
               </form>
             </div>
 
             {/* Contact Info */}
-            <div className={`transform transition-all duration-1000 delay-500 ${
+            <div className={`transform transition-all duration-1000 delay-400 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}>
               <div className="space-y-8">
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-full flex items-center justify-center mr-4">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-xl flex items-center justify-center">
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#0a1a2e]">Email</h3>
+                    <h3 className="text-lg font-semibold text-[#0a1a2e] mb-1">Email</h3>
                     <p className="text-gray-600">hello@aqstoria.com</p>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-full flex items-center justify-center mr-4">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-xl flex items-center justify-center">
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#0a1a2e]">Phone</h3>
+                    <h3 className="text-lg font-semibold text-[#0a1a2e] mb-1">Phone</h3>
                     <p className="text-gray-600">+92 300 123 4567</p>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-full flex items-center justify-center mr-4">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] rounded-xl flex items-center justify-center">
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#0a1a2e]">Location</h3>
+                    <h3 className="text-lg font-semibold text-[#0a1a2e] mb-1">Location</h3>
                     <p className="text-gray-600">Lahore, Pakistan</p>
                   </div>
                 </div>
@@ -720,31 +686,51 @@ export default function Portfolio() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-20 px-6 bg-white">
+      <section id="blog" className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
+          <div className={`text-center mb-12 transform transition-all duration-1000 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0a1a2e]">
               Latest <span className="gradient-text">Insights</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Stay updated with our latest articles, tips, and industry news
+              Stay updated with the latest trends and insights in digital development
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, idx) => (
-              <div key={idx} className="group relative neumorphic hover-lift overflow-hidden rounded-3xl transition-all duration-500 transform hover:scale-105 hover:rotate-1">
-                <div className="relative h-48 overflow-hidden">
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#ef3a5d]/10 to-[#ff6b6b]/10 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blogPosts.map((post, index) => (
+              <div
+                key={index}
+                className={`group relative neumorphic hover-lift rounded-3xl overflow-hidden transition-all duration-500 transform hover:scale-105 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                {/* Blog Image */}
+                <div className="relative h-48 bg-gradient-to-br from-[#0a1a2e] to-[#1a2a3e] overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#ef3a5d]/20 to-[#ff6b6b]/20" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/50" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#ef3a5d] transition-colors duration-300">
+                      {post.title}
+                    </h3>
+                  </div>
                 </div>
+
+                {/* Blog Content */}
                 <div className="p-6">
-                  <h3 className="text-lg font-bold mb-2 text-[#0a1a2e] group-hover:text-[#ef3a5d] transition-colors duration-300">{post.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{post.excerpt}</p>
-                  <div className="flex items-center justify-between text-xs text-gray-400 mb-4">
-                    <span>By {post.author}</span>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <span>{post.author}</span>
                     <span>{new Date(post.date).toLocaleDateString()}</span>
                   </div>
-                  <a href={`#blog/${post.slug}`} className="inline-block px-4 py-2 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-full font-semibold shadow hover:shadow-lg transition-all duration-300">Read More</a>
+                  <button className="text-[#ef3a5d] font-semibold text-sm group-hover:text-[#ff6b6b] transition-colors duration-300">
+                    Read More →
+                  </button>
                 </div>
               </div>
             ))}
@@ -753,34 +739,56 @@ export default function Portfolio() {
       </section>
 
       {/* Our Team Section */}
-      <section id="team" className="py-20 px-6 bg-[#f8f1e9]">
+      <section id="team" className="py-16 px-6 bg-[#f8f1e9]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#0a1a2e]">
-              Meet <span className="gradient-text">Our Team</span>
+          <div className={`text-center mb-12 transform transition-all duration-1000 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#0a1a2e]">
+              Meet Our <span className="gradient-text">Team</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The passionate people behind Aqstoria’s success
+              The talented individuals behind our success
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, idx) => (
-              <div key={idx} className="group relative neumorphic hover-lift overflow-hidden rounded-3xl transition-all duration-500 transform hover:scale-105 hover:rotate-1">
-                <div className="relative h-40 w-40 mx-auto mt-6 mb-4 rounded-full overflow-hidden group-hover:ring-4 group-hover:ring-[#ef3a5d] transition-all duration-300">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-lg font-bold mb-1 text-[#0a1a2e] group-hover:text-[#ef3a5d] transition-colors duration-300">{member.name}</h3>
-                  <p className="text-[#ef3a5d] font-semibold text-sm mb-2">{member.role}</p>
-                  <p className="text-gray-600 text-sm mb-4">{member.bio}</p>
-                  <div className="flex justify-center space-x-3">
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-[#ef3a5d] transition-all duration-300">
-                      <svg className="w-4 h-4 text-[#0a1a2e] group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 10.268h-3v-4.604c0-1.099-.021-2.513-1.531-2.513-1.531 0-1.767 1.197-1.767 2.434v4.683h-3v-9h2.881v1.233h.041c.401-.761 1.381-1.563 2.845-1.563 3.042 0 3.604 2.003 3.604 4.605v4.725z"/></svg>
-                    </a>
-                    <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-[#ef3a5d] transition-all duration-300">
-                      <svg className="w-4 h-4 text-[#0a1a2e] group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.384 4.482c-4.086-.205-7.713-2.164-10.141-5.144a4.822 4.822 0 0 0-.666 2.475c0 1.708.87 3.216 2.188 4.099a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417a9.867 9.867 0 0 1-6.102 2.104c-.396 0-.787-.023-1.175-.069a13.945 13.945 0 0 0 7.548 2.212c9.057 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636a10.012 10.012 0 0 0 2.457-2.548z"/></svg>
-                    </a>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className={`group relative neumorphic hover-lift p-6 rounded-3xl text-center transition-all duration-500 transform hover:scale-105 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                {/* Team Member Image */}
+                <div className="relative mb-4">
+                  <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] p-1 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center">
+                      <User className="h-8 w-8 text-gray-500" />
+                    </div>
                   </div>
+                </div>
+
+                {/* Team Member Info */}
+                <h3 className="text-lg font-bold text-[#0a1a2e] mb-2 group-hover:text-[#ef3a5d] transition-colors duration-300">
+                  {member.name}
+                </h3>
+                <p className="text-[#ef3a5d] font-semibold text-sm mb-3">
+                  {member.role}
+                </p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  {member.bio}
+                </p>
+
+                {/* Social Links */}
+                <div className="flex justify-center space-x-3">
+                  <a href={member.linkedin} className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#ef3a5d] hover:text-white transition-all duration-300">
+                    <Linkedin className="h-4 w-4" />
+                  </a>
+                  <a href={member.twitter} className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#ef3a5d] hover:text-white transition-all duration-300">
+                    <Twitter className="h-4 w-4" />
+                  </a>
                 </div>
               </div>
             ))}

@@ -1,4 +1,53 @@
-import { Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Database, Link, FileCode, Puzzle, Shield, Headphones, Zap, CreditCard, MessageCircle, Globe, Cpu, BarChart3, SmartphoneIcon, Monitor, Camera, Users, Target, Rocket, Settings, Globe2, ShieldCheck, Zap as Lightning, Palette as Design, Code2, Smartphone2, ShoppingBag, TrendingUp2, Server2, Database2, Link2, FileCode2, Puzzle2, Shield2, Headphones2, Zap2, CreditCard2, MessageCircle2, Cloud } from "lucide-react"
+import { 
+  Code, 
+  Smartphone, 
+  Palette, 
+  ShoppingCart, 
+  TrendingUp, 
+  Server, 
+  Database, 
+  Link, 
+  FileCode, 
+  Puzzle, 
+  Shield, 
+  Headphones, 
+  Zap, 
+  CreditCard, 
+  MessageCircle, 
+  Globe, 
+  Cpu, 
+  BarChart3, 
+  Monitor, 
+  Camera, 
+  Users, 
+  Target, 
+  Rocket, 
+  Settings, 
+  Cloud,
+  Layers,
+  SmartphoneIcon,
+  ShoppingBag,
+  BarChart,
+  Database2,
+  GitBranch,
+  Box,
+  Globe2,
+  ShieldCheck,
+  Zap as Lightning,
+  Palette as Design,
+  Code2,
+  Smartphone2,
+  TrendingUp2,
+  Server2,
+  Link2,
+  FileCode2,
+  Puzzle2,
+  Shield2,
+  Headphones2,
+  Zap2,
+  CreditCard2,
+  MessageCircle2
+} from "lucide-react"
 
 export const services = [
   {
@@ -20,7 +69,7 @@ export const services = [
   {
     title: "Mobile App Development",
     description: "Native and cross-platform mobile applications that deliver exceptional user experiences",
-    icon: Smartphone,
+    icon: SmartphoneIcon,
     features: [
       "iOS & Android development",
       "React Native applications",
@@ -52,7 +101,7 @@ export const services = [
   {
     title: "E-commerce Development",
     description: "Complete online store solutions with payment processing and inventory management",
-    icon: ShoppingCart,
+    icon: ShoppingBag,
     features: [
       "Custom e-commerce platforms",
       "Payment gateway integration",
@@ -68,7 +117,7 @@ export const services = [
   {
     title: "Digital Marketing",
     description: "Strategic marketing campaigns that drive traffic, engagement, and conversions",
-    icon: TrendingUp,
+    icon: BarChart,
     features: [
       "Search engine optimization (SEO)",
       "Social media marketing",
@@ -99,50 +148,50 @@ export const services = [
   },
   {
     title: "API Development",
-    description: "Robust API design and development for seamless system integration",
+    description: "Robust and scalable APIs that enable seamless integration between systems",
     icon: Link,
     features: [
-      "RESTful API development",
+      "RESTful API design",
       "GraphQL implementation",
       "API documentation",
       "Authentication & authorization",
       "Rate limiting & caching",
-      "Third-party integrations"
+      "API testing & monitoring"
     ],
-    color: "from-[#3776AB] to-[#4ECDC4]",
+    color: "from-[#6366F1] to-[#8B5CF6]",
     category: "software",
     slug: "api-development",
   },
   {
     title: "Database Design",
-    description: "Optimized database architecture for performance, scalability, and data integrity",
-    icon: Database,
+    description: "Optimized database architecture and management for high-performance applications",
+    icon: Database2,
     features: [
-      "Database architecture design",
+      "Database schema design",
       "Performance optimization",
-      "Data migration services",
-      "Backup & recovery systems",
+      "Data migration",
+      "Backup & recovery",
       "Security implementation",
-      "Scalability planning"
+      "Monitoring & maintenance"
     ],
-    color: "from-[#47A248] to-[#336791]",
+    color: "from-[#10B981] to-[#059669]",
     category: "software",
     slug: "database-design",
   },
   {
     title: "Maintenance & Support",
-    description: "Ongoing technical support and maintenance to keep your systems running smoothly",
-    icon: Settings,
+    description: "Comprehensive technical support and maintenance services to keep your systems running smoothly",
+    icon: Shield,
     features: [
       "24/7 technical support",
-      "Regular system updates",
-      "Performance monitoring",
-      "Security patches",
-      "Backup management",
-      "Emergency response"
+      "System monitoring",
+      "Security updates",
+      "Performance optimization",
+      "Bug fixes & patches",
+      "Regular maintenance"
     ],
-    color: "from-[#6C5CE7] to-[#A29BFE]",
-    category: "software",
+    color: "from-[#F59E0B] to-[#D97706]",
+    category: "support",
     slug: "maintenance-support",
   }
 ] 
