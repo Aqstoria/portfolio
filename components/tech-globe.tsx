@@ -7,7 +7,6 @@ import {
   Server, 
   Box, 
   Database, 
-  Database2, 
   Cloud, 
   Zap, 
   Palette, 
@@ -39,7 +38,7 @@ const techStack: TechIcon[] = [
   
   // Database
   { id: 'mongodb', icon: Database, name: 'MongoDB', category: 'database', position: { x: 0.9, y: -0.1, z: 0.4 }, color: '#47A248' },
-  { id: 'postgresql', icon: Database2, name: 'PostgreSQL', category: 'database', position: { x: -0.9, y: 0.1, z: 0.4 }, color: '#336791' },
+  { id: 'postgresql', icon: Database, name: 'PostgreSQL', category: 'database', position: { x: -0.9, y: 0.1, z: 0.4 }, color: '#336791' },
   
   // Cloud
   { id: 'aws', icon: Cloud, name: 'AWS', category: 'cloud', position: { x: 0.2, y: -0.9, z: 0.4 }, color: '#FF9900' },
