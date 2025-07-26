@@ -52,9 +52,9 @@ import {
   Award,
   Eye,
   Flame,
+  UserIcon,
 } from "lucide-react"
 import Footer from "@/components/footer"
-import TestimonialsSlider from "@/components/testimonials-slider"
 import BlogSection from "@/components/blog-section"
 
 export default function Portfolio() {
@@ -2646,11 +2646,76 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Phase 2: Interactive Features */}
-      
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
-        <TestimonialsSlider />
+      {/* Testimonial Section */}
+      <section className="py-24 px-6 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900">What Our Clients Say</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Discover how we've helped businesses transform their digital presence and achieve remarkable results</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            {/* Testimonial Card */}
+            <div className="md:col-span-2">
+              <Card className="h-full bg-white/90 backdrop-blur-sm border-0 shadow-xl flex flex-col justify-between">
+                <CardContent className="p-10 flex flex-col h-full">
+                  <div className="flex items-center mb-6">
+                    <Quote className="h-8 w-8 text-blue-400 mr-3" />
+                    <span className="text-blue-400 font-bold text-lg">"Aqstoria's UI/UX design services are world-class. They redesigned our entire product interface, resulting in a 60% increase in user engagement and a 45% reduction in support tickets. The design is both beautiful and functional."</span>
+                  </div>
+                  <div className="flex items-center mt-8">
+                    <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center mr-4">
+                      <UserIcon className="h-8 w-8 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-900">Ayesha Hassan</p>
+                      <p className="text-sm text-gray-600">Product Manager at Innovate Labs</p>
+                      <div className="flex items-center mt-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400 mr-1" />
+                        ))}
+                        <span className="ml-2 px-2 py-0.5 text-xs bg-green-100 text-green-700 rounded-full font-semibold">Verified</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            {/* Results Card */}
+            <div>
+              <Card className="h-full bg-blue-50/80 border-0 shadow-xl flex flex-col justify-between">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+                      <PenTool className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-gray-900">Product Redesign</p>
+                      <p className="text-xs text-gray-600">UI/UX Design</p>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <p className="font-semibold text-gray-700 mb-2">Key Results:</p>
+                    <div className="flex justify-between items-center bg-white rounded-lg px-4 py-2 mb-2">
+                      <span className="text-gray-600">User Engagement</span>
+                      <span className="font-bold text-gray-900">60% <span className="text-green-500 text-xs font-semibold ml-1">+40%</span></span>
+                    </div>
+                    <div className="flex justify-between items-center bg-white rounded-lg px-4 py-2 mb-2">
+                      <span className="text-gray-600">Support Tickets</span>
+                      <span className="font-bold text-gray-900">45% <span className="text-green-500 text-xs font-semibold ml-1">-55%</span></span>
+                    </div>
+                    <div className="flex justify-between items-center bg-white rounded-lg px-4 py-2">
+                      <span className="text-gray-600">User Satisfaction</span>
+                      <span className="font-bold text-gray-900">92% <span className="text-green-500 text-xs font-semibold ml-1">+35%</span></span>
+                    </div>
+                  </div>
+                  <div className="text-xs text-gray-500 flex items-center mt-auto">
+                    <Calendar className="h-4 w-4 mr-1" /> December 2023
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Blog Section */}
