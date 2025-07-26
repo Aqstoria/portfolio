@@ -200,7 +200,7 @@ export default function Portfolio() {
         "Mobile App Design",
         "Web Design",
       ],
-      color: "from-blue-500 to-blue-600",
+      color: "from-red-500 to-red-600",
       category: "design",
       slug: "ui-ux-design",
     },
@@ -218,7 +218,7 @@ export default function Portfolio() {
         "SEO Implementation",
         "Responsive Design",
       ],
-      color: "from-cyan-600 to-cyan-700",
+      color: "from-red-600 to-red-700",
       category: "development",
       slug: "web-development",
     },
@@ -236,7 +236,7 @@ export default function Portfolio() {
         "Offline Functionality",
         "Performance Optimization",
       ],
-      color: "from-blue-600 to-blue-700",
+      color: "from-red-700 to-red-800",
       category: "development",
       slug: "mobile-app-development",
     },
@@ -254,7 +254,7 @@ export default function Portfolio() {
         "Performance Optimization",
         "Store Migration",
       ],
-      color: "from-gray-600 to-gray-700",
+      color: "from-red-500 to-red-600",
       category: "ecommerce",
       slug: "shopify-development",
     },
@@ -272,27 +272,27 @@ export default function Portfolio() {
         "Security Implementation",
         "Maintenance & Support",
       ],
-      color: "from-blue-500 to-blue-600",
+      color: "from-red-600 to-red-700",
       category: "cms",
       slug: "wordpress-development",
     },
     {
-      title: "E-commerce Solutions",
-      description: "Complete online store development with advanced features",
-      icon: ShoppingCart,
+      title: "Digital Marketing",
+      description: "Comprehensive digital marketing strategies and campaigns",
+      icon: TrendingUp,
       features: [
-        "Custom E-commerce Development",
-        "Shopping Cart Systems",
-        "Payment Gateway Integration",
-        "Inventory Management",
-        "Order Management System",
-        "Customer Portal",
-        "Multi-vendor Platforms",
-        "Mobile Commerce",
+        "Social Media Marketing",
+        "PPC Campaigns (Google/Facebook)",
+        "Email Marketing Campaigns",
+        "Content Marketing Strategy",
+        "Influencer Marketing",
+        "Brand Awareness Campaigns",
+        "Lead Generation",
+        "Conversion Optimization",
       ],
-      color: "from-gray-700 to-gray-800",
-      category: "ecommerce",
-      slug: "ecommerce-solutions",
+      color: "from-red-700 to-red-800",
+      category: "marketing",
+      slug: "digital-marketing",
     },
     {
       title: "Mobile App Development",
@@ -1732,13 +1732,13 @@ export default function Portfolio() {
         <div
           className="absolute w-96 h-96 rounded-full opacity-20 blur-3xl transition-all duration-1000"
           style={{
-            background: `radial-gradient(circle, rgba(220, 38, 38, 0.4), rgba(75, 85, 99, 0.4), transparent 70%)`,
+            background: `radial-gradient(circle, rgba(239, 68, 68, 0.4), rgba(220, 38, 38, 0.4), transparent 70%)`,
             left: `${mousePosition.x - 200}px`,
             top: `${mousePosition.y - 200}px`,
           }}
         />
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-gray-200/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-gray-200/20 to-blue-200/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-red-200/20 to-red-300/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-red-300/20 to-red-400/20 rounded-full blur-3xl animate-pulse" />
       </div>
 
       {/* Navigation */}
@@ -1766,10 +1766,10 @@ export default function Portfolio() {
                 <button
                   key={index}
                   onClick={item.action}
-                  className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-semibold relative group"
+                  className="text-gray-700 hover:text-red-600 transition-all duration-300 font-semibold relative group"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-gray-700 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-red-600 to-red-700 group-hover:w-full transition-all duration-300" />
                 </button>
               ))}
             </div>
@@ -1780,7 +1780,7 @@ export default function Portfolio() {
                 href="https://wa.me/923001234567"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl"
                 title="Contact us on WhatsApp"
               >
                 <MessageCircle className="h-5 w-5" />
@@ -1810,7 +1810,7 @@ export default function Portfolio() {
                 <button
                   key={index}
                   onClick={item.action}
-                  className="block py-3 text-gray-700 hover:text-blue-600 transition-colors duration-300 w-full text-left font-semibold"
+                  className="block py-3 text-gray-700 hover:text-red-600 transition-colors duration-300 w-full text-left font-semibold"
                 >
                   {item.label}
                 </button>
@@ -1822,17 +1822,18 @@ export default function Portfolio() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100">
-        {/* Professional Background Elements */}
+        {/* Beautiful Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Subtle Gradient Orbs */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-cyan-600/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-400/10 to-blue-600/10 rounded-full blur-3xl" />
+          {/* Elegant Gradient Orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-red-400/20 to-red-600/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-red-500/20 to-red-700/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-red-300/15 to-red-600/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }} />
           
-          {/* Professional Grid Pattern */}
-          <div className="absolute inset-0 opacity-3">
+          {/* Sophisticated Grid Pattern */}
+          <div className="absolute inset-0 opacity-5">
             <div className="absolute inset-0" style={{
-              backgroundImage: `linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)`,
-              backgroundSize: '50px 50px'
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)`,
+              backgroundSize: '60px 60px'
             }} />
           </div>
         </div>
@@ -1843,42 +1844,42 @@ export default function Portfolio() {
             <div className={`transform transition-all duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}>
-              {/* Professional Badge */}
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white border border-gray-200 shadow-sm mb-8">
-                <div className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
+              {/* Elegant Badge */}
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg mb-8">
+                <div className="w-2 h-2 bg-gradient-to-r from-red-600 to-red-700 rounded-full mr-3 animate-pulse" />
                 <span className="text-sm font-semibold text-gray-700">Award-Winning Digital Agency</span>
               </div>
 
-              {/* Professional Main Heading */}
+              {/* Elegant Main Heading */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight text-gray-900">
                 <span className="block">
                   We Create
                 </span>
-                <span className="block bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent">
                   Digital Excellence
                 </span>
               </h1>
 
-              {/* Professional Subtitle */}
+              {/* Elegant Subtitle */}
               <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
                 Empowering businesses with innovative{" "}
-                <span className="text-blue-600 font-semibold">digital solutions</span> and{" "}
-                <span className="text-cyan-600 font-semibold">strategic growth</span>
+                <span className="text-red-600 font-semibold">digital solutions</span> and{" "}
+                <span className="text-red-700 font-semibold">strategic growth</span>
               </p>
 
-              {/* Professional Service Pills */}
+              {/* Elegant Service Pills */}
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
-                  { name: "Web Development", color: "from-blue-500 to-blue-600" },
-                  { name: "Mobile Apps", color: "from-cyan-600 to-cyan-700" },
-                  { name: "UI/UX Design", color: "from-teal-600 to-teal-700" },
-                  { name: "E-commerce", color: "from-blue-600 to-blue-700" },
-                  { name: "Digital Marketing", color: "from-cyan-500 to-cyan-600" },
-                  { name: "Cloud Solutions", color: "from-teal-500 to-teal-600" },
+                  { name: "Web Development", color: "from-red-500 to-red-600" },
+                  { name: "Mobile Apps", color: "from-red-600 to-red-700" },
+                  { name: "UI/UX Design", color: "from-red-700 to-red-800" },
+                  { name: "E-commerce", color: "from-red-500 to-red-600" },
+                  { name: "Digital Marketing", color: "from-red-600 to-red-700" },
+                  { name: "Cloud Solutions", color: "from-red-700 to-red-800" },
                 ].map((service, index) => (
                   <div
                     key={index}
-                    className={`px-4 py-2 rounded-full bg-gradient-to-r ${service.color} text-white text-sm font-medium shadow-md transform hover:scale-105 transition-all duration-300`}
+                    className={`px-4 py-2 rounded-full bg-gradient-to-r ${service.color} text-white text-sm font-medium shadow-lg transform hover:scale-105 transition-all duration-300`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {service.name}
@@ -1886,12 +1887,12 @@ export default function Portfolio() {
                 ))}
               </div>
 
-              {/* Professional CTA Buttons */}
+              {/* Elegant CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Button
                   size="lg"
                   onClick={() => navigateToPage("contact")}
-                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold"
+                  className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold"
                 >
                   <Rocket className="mr-3 h-5 w-5" />
                   Start Your Project
@@ -1901,14 +1902,14 @@ export default function Portfolio() {
                   variant="outline"
                   size="lg"
                   onClick={() => navigateToPage("services")}
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-blue-400 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold bg-white"
+                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-red-400 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold bg-white/80 backdrop-blur-sm"
                 >
                   <MessageCircle className="mr-3 h-5 w-5" />
                   Explore Services
                 </Button>
               </div>
 
-              {/* Professional Social Links */}
+              {/* Elegant Social Links */}
               <div className="flex items-center space-x-6">
                 <span className="text-sm text-gray-500 font-medium">Connect with us:</span>
                 {[
@@ -1921,7 +1922,7 @@ export default function Portfolio() {
                     href={social.href}
                     target={social.href.startsWith("http") ? "_blank" : undefined}
                     rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-gray-400 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 group"
+                    className="text-gray-400 hover:text-red-600 transition-all duration-300 transform hover:scale-110 group"
                     title={social.label}
                   >
                     <social.icon className="h-6 w-6" />
@@ -1930,40 +1931,40 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* Right Column - Professional Visual Elements */}
+            {/* Right Column - Elegant Visual Elements */}
             <div className={`transform transition-all duration-1000 delay-300 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}>
               <div className="relative">
-                {/* Professional Visual Container */}
-                <div className="relative w-full h-96 lg:h-[500px] bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-                  {/* Professional Floating Elements */}
-                  <div className="absolute top-8 left-8 w-32 h-20 bg-white rounded-xl shadow-lg border border-gray-200 transform rotate-6">
+                {/* Elegant Visual Container */}
+                <div className="relative w-full h-96 lg:h-[500px] bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
+                  {/* Elegant Floating Elements */}
+                  <div className="absolute top-8 left-8 w-32 h-20 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200 transform rotate-6">
                     <div className="p-4">
-                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg mb-2" />
+                      <div className="w-8 h-8 bg-gradient-to-r from-red-600 to-red-700 rounded-lg mb-2" />
                       <div className="w-16 h-2 bg-gray-200 rounded" />
                       <div className="w-12 h-2 bg-gray-200 rounded mt-1" />
                     </div>
                   </div>
 
-                  <div className="absolute top-16 right-12 w-28 h-16 bg-white rounded-2xl shadow-xl border border-gray-100 transform -rotate-6 animate-float" style={{ animationDelay: '1s' }}>
+                  <div className="absolute top-16 right-12 w-28 h-16 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 transform -rotate-6 animate-float" style={{ animationDelay: '1s' }}>
                     <div className="p-3">
-                      <div className="w-6 h-6 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg mb-2" />
+                      <div className="w-6 h-6 bg-gradient-to-r from-red-500 to-red-600 rounded-lg mb-2" />
                       <div className="w-14 h-2 bg-gray-200 rounded" />
                     </div>
                   </div>
 
-                  <div className="absolute bottom-20 left-12 w-36 h-24 bg-white rounded-2xl shadow-xl border border-gray-100 transform rotate-3 animate-float" style={{ animationDelay: '2s' }}>
+                  <div className="absolute bottom-20 left-12 w-36 h-24 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 transform rotate-3 animate-float" style={{ animationDelay: '2s' }}>
                     <div className="p-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg mb-2" />
+                      <div className="w-10 h-10 bg-gradient-to-r from-red-700 to-red-800 rounded-lg mb-2" />
                       <div className="w-20 h-2 bg-gray-200 rounded" />
                       <div className="w-16 h-2 bg-gray-200 rounded mt-1" />
                     </div>
                   </div>
 
-                  <div className="absolute bottom-12 right-8 w-24 h-16 bg-white rounded-2xl shadow-xl border border-gray-100 transform -rotate-12 animate-float" style={{ animationDelay: '3s' }}>
+                  <div className="absolute bottom-12 right-8 w-24 h-16 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 transform -rotate-12 animate-float" style={{ animationDelay: '3s' }}>
                     <div className="p-3">
-                      <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg mb-2" />
+                      <div className="w-6 h-6 bg-gradient-to-r from-red-600 to-red-700 rounded-lg mb-2" />
                       <div className="w-12 h-2 bg-gray-200 rounded" />
                     </div>
                   </div>
@@ -1971,7 +1972,7 @@ export default function Portfolio() {
                   {/* Central Logo */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div className="relative">
-                      <div className="w-32 h-32 bg-gradient-to-r from-blue-500 to-cyan-700 rounded-3xl shadow-2xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                      <div className="w-32 h-32 bg-gradient-to-r from-red-600 via-red-700 to-red-800 rounded-3xl shadow-2xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
                         <Image
                           src="/logo.png"
                           alt="Aqstoria Logo"
@@ -1982,8 +1983,9 @@ export default function Portfolio() {
                       </div>
                       
                       {/* Orbiting Elements */}
-                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full shadow-lg animate-spin-slow" />
-                      <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-cyan-600 rounded-full shadow-lg animate-spin-slow" style={{ animationDirection: 'reverse' }} />
+                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-red-500 rounded-full shadow-lg animate-spin-slow" />
+                      <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-red-600 rounded-full shadow-lg animate-spin-slow" style={{ animationDirection: 'reverse' }} />
+                      <div className="absolute -top-2 -left-2 w-4 h-4 bg-red-700 rounded-full shadow-lg animate-spin-slow" style={{ animationDelay: '1s' }} />
                     </div>
                   </div>
 
@@ -1991,8 +1993,9 @@ export default function Portfolio() {
                   <svg className="absolute inset-0 w-full h-full pointer-events-none">
                     <defs>
                       <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
-                        <stop offset="100%" stopColor="#0891b2" stopOpacity="0.3" />
+                        <stop offset="0%" stopColor="#dc2626" stopOpacity="0.3" />
+                        <stop offset="50%" stopColor="#b91c1c" stopOpacity="0.3" />
+                        <stop offset="100%" stopColor="#991b1b" stopOpacity="0.3" />
                       </linearGradient>
                     </defs>
                     <path
@@ -2014,16 +2017,16 @@ export default function Portfolio() {
                 </div>
 
                 {/* Stats Cards */}
-                <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 transform hover:scale-105 transition-transform duration-300">
+                <div className="absolute -bottom-8 -left-8 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 p-4 transform hover:scale-105 transition-transform duration-300">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">300+</div>
+                    <div className="text-2xl font-bold text-red-600">300+</div>
                     <div className="text-sm text-gray-600">Projects</div>
                   </div>
                 </div>
 
-                <div className="absolute -top-8 -right-8 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 transform hover:scale-105 transition-transform duration-300">
+                <div className="absolute -top-8 -right-8 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 p-4 transform hover:scale-105 transition-transform duration-300">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-cyan-700">150+</div>
+                    <div className="text-2xl font-bold text-red-700">150+</div>
                     <div className="text-sm text-gray-600">Clients</div>
                   </div>
                 </div>
@@ -2249,10 +2252,10 @@ export default function Portfolio() {
       </section>
 
       {/* Services Preview Section */}
-      <section id="services" className="py-24 px-6 bg-gradient-to-r from-gray-50/50 to-blue-50/50 relative">
+      <section id="services" className="py-24 px-6 bg-gradient-to-r from-gray-50/50 to-red-50/50 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
               Our Core Services
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -2260,7 +2263,7 @@ export default function Portfolio() {
               services including MERN/MEAN stacks, Shopify, WordPress, and enterprise systems tailored to your business
               needs.
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -2292,7 +2295,7 @@ export default function Portfolio() {
                   <ul className="space-y-2 mb-8">
                     {service.features.slice(0, 4).map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center group/item">
-                        <CheckCircle className="h-4 w-4 text-blue-500 mr-3 group-hover/item:scale-110 transition-transform duration-200" />
+                        <CheckCircle className="h-4 w-4 text-red-500 mr-3 group-hover/item:scale-110 transition-transform duration-200" />
                         <span className="text-gray-700 text-sm group-hover/item:text-gray-900 transition-colors duration-200">
                           {feature}
                         </span>
@@ -2316,7 +2319,7 @@ export default function Portfolio() {
             <Button
               size="lg"
               onClick={() => navigateToPage("services")}
-                              className="bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
+              className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
             >
               <Flame className="mr-2 h-5 w-5" />
               View All Services
@@ -2330,10 +2333,10 @@ export default function Portfolio() {
       <section id="skills" className="py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              Our Core Services
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
+              Our Expertise
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -2347,7 +2350,7 @@ export default function Portfolio() {
               >
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-600 flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <skill.icon className="h-6 w-6 text-white" />
                     </div>
                     <div className="flex-1">
@@ -2356,7 +2359,7 @@ export default function Portfolio() {
                       </span>
                       <Badge
                         variant="outline"
-                        className="ml-2 text-xs border-blue-200 text-blue-600 bg-blue-50 font-medium"
+                        className="ml-2 text-xs border-red-200 text-red-600 bg-red-50 font-medium"
                       >
                         {skill.category}
                       </Badge>
@@ -2364,7 +2367,7 @@ export default function Portfolio() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-4 mb-3 overflow-hidden">
                     <div
-                      className="bg-gradient-to-r from-blue-500 to-cyan-600 h-4 rounded-full transition-all duration-1000 shadow-sm"
+                      className="bg-gradient-to-r from-red-500 to-red-600 h-4 rounded-full transition-all duration-1000 shadow-sm"
                       style={{ width: `${skill.level}%` }}
                     />
                   </div>
@@ -2377,22 +2380,22 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 px-6 bg-gradient-to-r from-blue-50/50 to-gray-50/50 relative">
+      <section id="projects" className="py-24 px-6 bg-gradient-to-r from-red-50/50 to-gray-50/50 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
               Featured Projects
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto" />
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             {[
-              { key: "all", label: "All Projects", color: "from-blue-600 to-gray-700" },
-              { key: "ecommerce", label: "E-commerce", color: "from-gray-700 to-gray-800" },
-              { key: "shopify", label: "Shopify", color: "from-blue-500 to-blue-600" },
-              { key: "erp", label: "Enterprise", color: "from-gray-600 to-gray-700" },
-              { key: "design", label: "Design", color: "from-blue-600 to-blue-700" },
+              { key: "all", label: "All Projects", color: "from-red-600 to-red-700" },
+              { key: "ecommerce", label: "E-commerce", color: "from-red-500 to-red-600" },
+              { key: "shopify", label: "Shopify", color: "from-red-600 to-red-700" },
+              { key: "erp", label: "Enterprise", color: "from-red-700 to-red-800" },
+              { key: "design", label: "Design", color: "from-red-500 to-red-600" },
             ].map((category) => (
               <Button
                 key={category.key}
@@ -2403,7 +2406,7 @@ export default function Portfolio() {
                   ${
                     activeProject === category.key
                       ? `bg-gradient-to-r ${category.color} text-white shadow-lg border-0`
-                      : "border-2 border-gray-300 text-gray-700 hover:border-blue-400 hover:bg-blue-50/50"
+                      : "border-2 border-gray-300 text-gray-700 hover:border-red-400 hover:bg-red-50/50"
                   }
                 `}
               >
@@ -2421,23 +2424,23 @@ export default function Portfolio() {
                   animationDelay: `${index * 100}ms`,
                 }}
               >
-                <div className="aspect-video bg-gradient-to-br from-blue-100/50 to-gray-100/50 flex items-center justify-center relative overflow-hidden">
+                <div className="aspect-video bg-gradient-to-br from-red-100/50 to-gray-100/50 flex items-center justify-center relative overflow-hidden">
                   <div className="text-center z-10">
-                    {project.category === "design" && <Palette className="h-20 w-20 text-blue-600 mx-auto mb-4" />}
+                    {project.category === "design" && <Palette className="h-20 w-20 text-red-600 mx-auto mb-4" />}
                     {project.category === "website" && <Monitor className="h-20 w-20 text-gray-700 mx-auto mb-4" />}
                     {project.category === "ecommerce" && (
-                      <ShoppingCart className="h-20 w-20 text-blue-600 mx-auto mb-4" />
+                      <ShoppingCart className="h-20 w-20 text-red-600 mx-auto mb-4" />
                     )}
-                    {project.category === "shopify" && <Package className="h-20 w-20 text-gray-700 mx-auto mb-4" />}
-                    {project.category === "android" && <Smartphone className="h-20 w-20 text-blue-600 mx-auto mb-4" />}
+                    {project.category === "shopify" && <Package className="h-20 w-20 text-red-700 mx-auto mb-4" />}
+                    {project.category === "android" && <Smartphone className="h-20 w-20 text-red-600 mx-auto mb-4" />}
                     {project.category === "erp" && <Settings className="h-20 w-20 text-gray-700 mx-auto mb-4" />}
-                    {project.category === "wordpress" && <Monitor className="h-20 w-20 text-blue-600 mx-auto mb-4" />}
+                    {project.category === "wordpress" && <Monitor className="h-20 w-20 text-red-600 mx-auto mb-4" />}
                     {project.category === "realtime" && (
                       <MessageCircle className="h-20 w-20 text-gray-700 mx-auto mb-4" />
                     )}
                   </div>
                   {project.featured && (
-                    <Badge className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-gray-700 text-white shadow-lg">
+                    <Badge className="absolute top-4 right-4 bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg">
                       <Award className="h-3 w-3 mr-1" />
                       Featured
                     </Badge>
@@ -2455,7 +2458,7 @@ export default function Portfolio() {
                       <Badge
                         key={techIndex}
                         variant="secondary"
-                        className="bg-gray-100 text-gray-700 border-gray-200 text-xs hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200 font-medium"
+                        className="bg-gray-100 text-gray-700 border-gray-200 text-xs hover:bg-red-100 hover:text-red-700 transition-colors duration-200 font-medium"
                       >
                         {tech}
                       </Badge>
@@ -2475,7 +2478,7 @@ export default function Portfolio() {
                     <Button
                       size="sm"
                       onClick={() => scrollToSection("contact")}
-                      className="flex-1 bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
+                      className="flex-1 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Get Quote
@@ -2490,7 +2493,7 @@ export default function Portfolio() {
             <Button
               size="lg"
               onClick={() => navigateToPage("case-studies")}
-              className="bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
+              className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
             >
               <BarChart3 className="mr-2 h-5 w-5" />
               View Case Studies
@@ -2503,13 +2506,13 @@ export default function Portfolio() {
 
 
       {/* Contact & Quote Section */}
-      <section id="contact" className="py-24 px-6 bg-gradient-to-r from-blue-50/50 to-gray-50/50 relative">
+      <section id="contact" className="py-24 px-6 bg-gradient-to-r from-red-50/50 to-gray-50/50 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
               Get Your Free Quote Today
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -2523,17 +2526,17 @@ export default function Portfolio() {
 
               <div className="space-y-8">
                 {[
-                  { icon: Mail, label: "Email", value: "hello@aqstoria.com", color: "from-blue-500 to-blue-600" },
-                  { icon: Phone, label: "Phone", value: "+92 300 123 4567", color: "from-gray-600 to-gray-700" },
+                  { icon: Mail, label: "Email", value: "hello@aqstoria.com", color: "from-red-500 to-red-600" },
+                  { icon: Phone, label: "Phone", value: "+92 300 123 4567", color: "from-red-600 to-red-700" },
                   {
                     icon: MessageCircle,
                     label: "WhatsApp",
                     value: "+92 300 123 4567",
-                    color: "from-blue-600 to-blue-700",
+                    color: "from-red-700 to-red-800",
                     link: "https://wa.me/923001234567",
                   },
-                  { icon: Globe, label: "Website", value: "aqstoria.com", color: "from-gray-700 to-gray-800" },
-                  { icon: Headphones, label: "Support", value: "24/7 Available", color: "from-blue-500 to-blue-600" },
+                  { icon: Globe, label: "Website", value: "aqstoria.com", color: "from-red-500 to-red-600" },
+                  { icon: Headphones, label: "Support", value: "24/7 Available", color: "from-red-600 to-red-700" },
                 ].map((contact, index) => (
                   <div key={index} className="flex items-center space-x-6 group">
                     <div
@@ -2548,7 +2551,7 @@ export default function Portfolio() {
                           href={contact.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 hover:text-blue-700 transition-colors duration-300 font-semibold"
+                          className="text-red-600 hover:text-red-700 transition-colors duration-300 font-semibold"
                         >
                           {contact.value}
                         </a>
@@ -2573,7 +2576,7 @@ export default function Portfolio() {
                       <Input
                         id="fullName"
                         placeholder="Your Full Name"
-                        className="bg-white/50 border-gray-300 focus:border-blue-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
                       />
                     </div>
                     <div>
@@ -2584,7 +2587,7 @@ export default function Portfolio() {
                         id="email"
                         type="email"
                         placeholder="your@email.com"
-                        className="bg-white/50 border-gray-300 focus:border-blue-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
                       />
                     </div>
                   </div>
@@ -2596,7 +2599,7 @@ export default function Portfolio() {
                       <Input
                         id="phone"
                         placeholder="+92 300 123 4567"
-                        className="bg-white/50 border-gray-300 focus:border-blue-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
                       />
                     </div>
                     <div>
@@ -2606,7 +2609,7 @@ export default function Portfolio() {
                       <Input
                         id="company"
                         placeholder="Your Company Name"
-                        className="bg-white/50 border-gray-300 focus:border-blue-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
                       />
                     </div>
                   </div>
@@ -2616,7 +2619,7 @@ export default function Portfolio() {
                     </label>
                     <select
                       id="budget"
-                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-blue-500 focus:outline-none h-12 font-medium"
+                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-red-500 focus:outline-none h-12 font-medium"
                     >
                       <option>Select Budget</option>
                       <option>PKR 10,000 - PKR 50,000</option>
@@ -2633,10 +2636,10 @@ export default function Portfolio() {
                       id="projectDescription"
                       rows={4}
                       placeholder="Describe your project in detail"
-                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-blue-500 focus:outline-none font-medium"
+                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-red-500 focus:outline-none font-medium"
                     />
                   </div>
-                  <Button className="bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
+                  <Button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
                     Get Detailed Quote
                   </Button>
                 </form>
@@ -2659,11 +2662,11 @@ export default function Portfolio() {
               <Card className="h-full bg-white/90 backdrop-blur-sm border-0 shadow-xl flex flex-col justify-between">
                 <CardContent className="p-10 flex flex-col h-full">
                   <div className="flex items-center mb-6">
-                    <Quote className="h-8 w-8 text-blue-400 mr-3" />
-                    <span className="text-blue-400 font-bold text-lg">"Aqstoria's UI/UX design services are world-class. They redesigned our entire product interface, resulting in a 60% increase in user engagement and a 45% reduction in support tickets. The design is both beautiful and functional."</span>
+                    <Quote className="h-8 w-8 text-red-400 mr-3" />
+                    <span className="text-red-400 font-bold text-lg">"Aqstoria's UI/UX design services are world-class. They redesigned our entire product interface, resulting in a 60% increase in user engagement and a 45% reduction in support tickets. The design is both beautiful and functional."</span>
                   </div>
                   <div className="flex items-center mt-8">
-                    <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center mr-4">
+                    <div className="w-14 h-14 rounded-full bg-red-500 flex items-center justify-center mr-4">
                       <UserIcon className="h-8 w-8 text-white" />
                     </div>
                     <div>
@@ -2682,10 +2685,10 @@ export default function Portfolio() {
             </div>
             {/* Results Card */}
             <div>
-              <Card className="h-full bg-blue-50/80 border-0 shadow-xl flex flex-col justify-between">
+              <Card className="h-full bg-red-50/80 border-0 shadow-xl flex flex-col justify-between">
                 <CardContent className="p-8 flex flex-col h-full">
                   <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+                    <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mr-3">
                       <PenTool className="h-6 w-6 text-white" />
                     </div>
                     <div>
