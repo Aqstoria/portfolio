@@ -78,23 +78,6 @@ export default function FloatingTechIcons({ isVisible }: FloatingTechIconsProps)
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
-      {/* Category Filters */}
-      <div className="flex flex-wrap justify-center gap-2 mb-8">
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            onClick={() => setSelectedCategory(category.id)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-              selectedCategory === category.id
-                ? 'bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white shadow-lg'
-                : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
-            }`}
-          >
-            {category.name}
-          </button>
-        ))}
-      </div>
-
       {/* Floating Tech Icons Container */}
       <div 
         ref={containerRef}
@@ -109,8 +92,8 @@ export default function FloatingTechIcons({ isVisible }: FloatingTechIconsProps)
         </div>
 
         {/* Floating Tech Icons */}
-        {filteredTech.map((tech, index) => {
-          const angle = (index / filteredTech.length) * 2 * Math.PI
+        {techStack.map((tech, index) => {
+          const angle = (index / techStack.length) * 2 * Math.PI
           const radius = 120
           const centerX = 192 // container width / 2
           const centerY = 192 // container height / 2
@@ -173,18 +156,18 @@ export default function FloatingTechIcons({ isVisible }: FloatingTechIconsProps)
         </div>
 
         {/* Connection Lines */}
-        {filteredTech.length > 1 && (
+        {techStack.length > 1 && (
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
-            {filteredTech.map((tech, index) => {
-              const angle = (index / filteredTech.length) * 2 * Math.PI
+            {techStack.map((tech, index) => {
+              const angle = (index / techStack.length) * 2 * Math.PI
               const radius = 120
               const centerX = 192
               const centerY = 192
               const x1 = centerX + radius * Math.cos(angle)
               const y1 = centerY + radius * Math.sin(angle)
               
-              const nextIndex = (index + 1) % filteredTech.length
-              const nextAngle = (nextIndex / filteredTech.length) * 2 * Math.PI
+              const nextIndex = (index + 1) % techStack.length
+              const nextAngle = (nextIndex / techStack.length) * 2 * Math.PI
               const x2 = centerX + radius * Math.cos(nextAngle)
               const y2 = centerY + radius * Math.sin(nextAngle)
 
@@ -204,30 +187,6 @@ export default function FloatingTechIcons({ isVisible }: FloatingTechIconsProps)
             })}
           </svg>
         )}
-      </div>
-
-      {/* Tech Stack Summary */}
-      <div className="text-center mt-8">
-        <h3 className="text-xl font-semibold text-white mb-4">Our Tech Stack</h3>
-        <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-300">
-          {categories.slice(1).map((category) => {
-            const count = techStack.filter(tech => tech.category === category.id).length
-            return (
-              <div key={category.id} className="flex items-center gap-2">
-                <div 
-                  className="w-2 h-2 rounded-full" 
-                  style={{ backgroundColor: category.color }}
-                />
-                <span>{category.name}: {count} tools</span>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-
-      {/* Interactive Instructions */}
-      <div className="text-center mt-6 text-gray-400 text-sm">
-        <p>Hover over icons to see details • Click categories to filter</p>
       </div>
     </div>
   )
