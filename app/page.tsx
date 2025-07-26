@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
+import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, Play, Pause, Filter, CheckCircle, Send, Eye, Zap, Award, Shield, Globe } from "lucide-react"
 import { services } from '@/lib/data'
+import Chatbot from '@/components/chatbot'
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false)
@@ -11,6 +12,9 @@ export default function Portfolio() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [sliderValue, setSliderValue] = useState(50)
   const [isPlaying, setIsPlaying] = useState(true)
+  const [portfolioFilter, setPortfolioFilter] = useState("all")
+  const [formSubmitted, setFormSubmitted] = useState(false)
+  const [newsletterEmail, setNewsletterEmail] = useState("")
 
   useEffect(() => {
     setIsVisible(true)
@@ -38,37 +42,43 @@ export default function Portfolio() {
       title: "E-commerce Platform",
       category: "Software",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Full-stack e-commerce solution with payment integration"
+      description: "Full-stack e-commerce solution with payment integration",
+      tagline: "Scalable online store with 300% revenue increase"
     },
     {
       title: "Social Media Campaign",
       category: "Marketing",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Multi-platform campaign with 300% engagement increase"
+      description: "Multi-platform campaign with 300% engagement increase",
+      tagline: "40% engagement boost across all platforms"
     },
     {
       title: "SaaS Dashboard",
       category: "Software",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Analytics dashboard with real-time data visualization"
+      description: "Analytics dashboard with real-time data visualization",
+      tagline: "Real-time insights with 60% faster decision making"
     },
     {
       title: "Brand Identity",
       category: "Design",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Complete brand identity and marketing collateral"
+      description: "Complete brand identity and marketing collateral",
+      tagline: "Cohesive brand that increased recognition by 200%"
     },
     {
       title: "Mobile App",
       category: "Software",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Cross-platform mobile application with offline sync"
+      description: "Cross-platform mobile application with offline sync",
+      tagline: "Native performance with 4.8-star app store rating"
     },
     {
       title: "Content Strategy",
       category: "Marketing",
       image: "/placeholder.svg?height=300&width=400",
-      description: "Comprehensive content marketing and SEO strategy"
+      description: "Comprehensive content marketing and SEO strategy",
+      tagline: "Organic traffic growth of 150% in 6 months"
     }
   ]
 
@@ -78,23 +88,45 @@ export default function Portfolio() {
       role: "CEO, TechStart",
       content: "Aqstoria transformed our business with their exceptional software development services. The team delivered beyond our expectations!",
       rating: 5,
-      company: "TechStart"
+      company: "TechStart",
+      metric: "Revenue increased by 300%",
+      metricValue: "300%"
     },
     {
       name: "Michael Chen",
       role: "Founder, E-commerce Pro",
       content: "Our social media campaigns increased engagement by 300% and drove 250% more conversions. Highly recommended!",
       rating: 5,
-      company: "E-commerce Pro"
+      company: "E-commerce Pro",
+      metric: "Engagement boost",
+      metricValue: "300%"
     },
     {
       name: "Emily Rodriguez",
       role: "Marketing Director",
       content: "Professional service delivery and excellent results. The team exceeded our expectations in every project!",
       rating: 5,
-      company: "Digital Solutions"
+      company: "Digital Solutions",
+      metric: "Conversion rate improvement",
+      metricValue: "150%"
     }
   ]
+
+  const filteredPortfolio = portfolioFilter === "all" 
+    ? portfolio 
+    : portfolio.filter(project => project.category.toLowerCase() === portfolioFilter.toLowerCase())
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setFormSubmitted(true)
+    setTimeout(() => setFormSubmitted(false), 3000)
+  }
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Newsletter signup logic here
+    setNewsletterEmail("")
+  }
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
@@ -281,7 +313,13 @@ export default function Portfolio() {
                   <service.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-lg">{service.description}</p>
+                <p className="text-gray-600 leading-relaxed text-lg mb-4">{service.description}</p>
+                <p className="text-[#ef3a5d] font-semibold text-sm">
+                  {service.title === "Custom Software Development" && "Build scalable apps with cutting-edge tech"}
+                  {service.title === "Mobile App Development" && "Native performance with cross-platform reach"}
+                  {service.title === "Social Media Marketing" && "Strategic campaigns that drive real engagement"}
+                  {service.title === "UI/UX Design" && "User-centered design that converts visitors to customers"}
+                </p>
               </div>
             ))}
           </div>
@@ -297,13 +335,30 @@ export default function Portfolio() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               Our <span className="text-[#ef3a5d]">Portfolio</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Showcasing our best work across software and marketing
             </p>
+            
+            {/* Portfolio Filters */}
+            <div className="flex justify-center space-x-4 mb-12">
+              {["all", "software", "marketing", "design"].map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setPortfolioFilter(filter)}
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                    portfolioFilter === filter
+                      ? "bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white shadow-lg"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  {filter.charAt(0).toUpperCase() + filter.slice(1)}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolio.map((project, index) => (
+            {filteredPortfolio.map((project, index) => (
               <div
                 key={index}
                 className={`group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
@@ -327,7 +382,8 @@ export default function Portfolio() {
                     <span className="text-sm font-semibold text-[#ef3a5d]">{project.category}</span>
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">{project.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{project.description}</p>
+                  <p className="text-gray-600 leading-relaxed mb-3">{project.description}</p>
+                  <p className="text-[#ef3a5d] font-semibold text-sm">{project.tagline}</p>
                 </div>
               </div>
             ))}
@@ -367,6 +423,13 @@ export default function Portfolio() {
                       <blockquote className="text-2xl font-light text-gray-900 mb-8 leading-relaxed">
                         "{testimonial.content}"
                       </blockquote>
+                      
+                      {/* Success Metric */}
+                      <div className="bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white rounded-2xl p-4 mb-8 inline-block">
+                        <div className="text-3xl font-bold">{testimonial.metricValue}</div>
+                        <div className="text-sm opacity-90">{testimonial.metric}</div>
+                      </div>
+                      
                       <div className="flex items-center justify-center">
                         <div className="w-16 h-16 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full flex items-center justify-center mr-4">
                           <User className="h-8 w-8 text-white" />
@@ -475,13 +538,14 @@ export default function Portfolio() {
             <div className={`transform transition-all duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}>
-              <form className="space-y-6">
+              <form onSubmit={handleFormSubmit} className="space-y-6">
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">Name</label>
                   <input 
                     type="text" 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
                     placeholder="Your name"
+                    required
                   />
                 </div>
                 <div>
@@ -490,6 +554,7 @@ export default function Portfolio() {
                     type="email" 
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
                     placeholder="your@email.com"
+                    required
                   />
                 </div>
                 <div>
@@ -498,13 +563,24 @@ export default function Portfolio() {
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
                     placeholder="Tell us about your project..."
+                    required
                   />
                 </div>
                 <button 
                   type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
                 >
-                  Send Message
+                  {formSubmitted ? (
+                    <>
+                      <CheckCircle className="h-5 w-5 mr-2" />
+                      Message Sent!
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5 mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>
@@ -559,9 +635,30 @@ export default function Portfolio() {
                 height={40}
                 className="h-10 w-auto mb-6 filter brightness-0 invert"
               />
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed mb-6">
                 Building digital excellence through innovative software solutions and strategic marketing campaigns.
               </p>
+              
+              {/* Newsletter Signup */}
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold mb-3">Stay Updated</h4>
+                <form onSubmit={handleNewsletterSubmit} className="flex">
+                  <input
+                    type="email"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg focus:ring-2 focus:ring-[#ef3a5d] focus:border-transparent transition-all duration-300"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-r-lg hover:from-[#d62f4f] hover:to-[#c42a47] transition-all duration-300"
+                  >
+                    <Send className="h-4 w-4" />
+                  </button>
+                </form>
+              </div>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Services</h3>
@@ -583,7 +680,7 @@ export default function Portfolio() {
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Connect</h3>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 mb-6">
                 {[Github, Linkedin, Twitter, Instagram].map((Icon, index) => (
                   <a
                     key={index}
@@ -594,13 +691,32 @@ export default function Portfolio() {
                   </a>
                 ))}
               </div>
+              
+              {/* Trust Signals */}
+              <div className="space-y-3">
+                <div className="flex items-center text-sm text-gray-400">
+                  <Shield className="h-4 w-4 mr-2" />
+                  SSL Secured
+                </div>
+                <div className="flex items-center text-sm text-gray-400">
+                  <Globe className="h-4 w-4 mr-2" />
+                  Eco-Friendly Hosting
+                </div>
+                <div className="flex items-center text-sm text-gray-400">
+                  <Award className="h-4 w-4 mr-2" />
+                  Award Winning
+                </div>
+              </div>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Aqstoria. All rights reserved.</p>
+            <p>&copy; 2024 Aqstoria. All rights reserved. | Powered by sustainable hosting</p>
           </div>
         </div>
       </footer>
+
+      {/* AI Chatbot */}
+      <Chatbot />
     </div>
   )
 }
