@@ -1,4 +1,4 @@
-import { Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Database, Link, FileCode, Puzzle, Shield, Headphones, Zap, CreditCard, MessageCircle, Globe, Cpu, BarChart3, SmartphoneIcon, Monitor, Camera, Users, Target, Rocket, Settings, Globe2, ShieldCheck, Zap as Lightning, Palette as Design, Code2, Smartphone2, ShoppingBag, TrendingUp2, Server2, Database2, Link2, FileCode2, Puzzle2, Shield2, Headphones2, Zap2, CreditCard2, MessageCircle2 } from "lucide-react"
+import { Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Database, Link, FileCode, Puzzle, Shield, Headphones, Zap, CreditCard, MessageCircle, Globe, Cpu, BarChart3, SmartphoneIcon, Monitor, Camera, Users, Target, Rocket, Settings, Globe2, ShieldCheck, Zap as Lightning, Palette as Design, Code2, Smartphone2, ShoppingBag, TrendingUp2, Server2, Database2, Link2, FileCode2, Puzzle2, Shield2, Headphones2, Zap2, CreditCard2, MessageCircle2, Cloud } from "lucide-react"
 
 export const services = [
   {
