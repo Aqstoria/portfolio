@@ -106,11 +106,11 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a1a2e] via-[#1a2a3e] to-[#2a3a4e]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       {/* Animated Background Canvas */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-30"
+        className="absolute inset-0 w-full h-full opacity-10"
         style={{ zIndex: 1 }}
       />
 
@@ -128,7 +128,7 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}>
             {/* Main Headline with Word-by-Word Animation */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-8 leading-tight text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-8 leading-tight text-[#0a1a2e]">
               <span className={`inline-block transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}>
@@ -143,7 +143,7 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
             </h1>
 
             {/* Subheadline with Fade-in */}
-            <p className={`text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed transition-all duration-1000 delay-1000 ${
+            <p className={`text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed transition-all duration-1000 delay-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}>
               {subheadline}
@@ -176,15 +176,15 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
             }`}>
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#ef3a5d] mb-2">150+</div>
-                <div className="text-gray-400 text-sm">Projects Completed</div>
+                <div className="text-gray-600 text-sm">Projects Completed</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#ef3a5d] mb-2">50+</div>
-                <div className="text-gray-400 text-sm">Happy Clients</div>
+                <div className="text-gray-600 text-sm">Happy Clients</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#ef3a5d] mb-2">5+</div>
-                <div className="text-gray-400 text-sm">Years Experience</div>
+                <div className="text-gray-600 text-sm">Years Experience</div>
               </div>
             </div>
           </div>

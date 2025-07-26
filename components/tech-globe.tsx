@@ -81,7 +81,7 @@ export default function FloatingTechIcons({ isVisible }: FloatingTechIconsProps)
       {/* Floating Tech Icons Container */}
       <div 
         ref={containerRef}
-        className="relative w-96 h-96 mx-auto bg-gradient-to-br from-[#0a1a2e]/50 to-[#1a2a3e]/50 rounded-3xl border border-[#ef3a5d]/20 overflow-hidden"
+        className="relative w-96 h-96 mx-auto bg-gradient-to-br from-gray-50 to-white rounded-3xl border border-[#ef3a5d]/20 overflow-hidden shadow-xl"
       >
         {/* Background Animation */}
         <div className="absolute inset-0">
@@ -142,7 +142,7 @@ export default function FloatingTechIcons({ isVisible }: FloatingTechIconsProps)
                 )}
 
                 {/* Floating Animation */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-[#ef3a5d]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
               </div>
             </div>
           )
