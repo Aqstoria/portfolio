@@ -189,58 +189,56 @@ export default function Portfolio() {
 
   const services = [
     {
-      title: "Graphic Design & Branding",
-      description: "Complete visual identity solutions from concept to implementation",
+      title: "UI/UX Design",
+      description: "Professional user interface and experience design services",
       icon: Palette,
       features: [
-        "Logo Design & Brand Identity",
-        "Marketing Materials Design",
-        "Print Design & Packaging",
-        "Business Cards & Brochures",
-        "Social Media Graphics",
-        "Brand Guidelines",
-        "Corporate Identity",
-        "Creative Consultation",
+        "User Interface Design",
+        "User Experience Design",
+        "Wireframing & Prototyping",
+        "Design Systems",
+        "Mobile App Design",
+        "Web Design",
       ],
-      color: "from-red-500 to-red-600",
+      color: "from-blue-500 to-blue-600",
       category: "design",
-      slug: "graphic-design-branding",
+      slug: "ui-ux-design",
     },
     {
-      title: "MERN Stack Development",
-      description: "Full-stack web applications using MongoDB, Express.js, React, and Node.js",
+      title: "Web Development",
+      description: "Modern, responsive web applications built with cutting-edge technologies",
       icon: Code,
       features: [
-        "React.js Frontend Development",
+        "React.js & Next.js Development",
         "Node.js & Express.js Backend",
-        "MongoDB Database Design",
+        "Database Design & Integration",
         "RESTful API Development",
         "Authentication & Authorization",
-        "Real-time Features (Socket.io)",
-        "State Management (Redux/Context)",
         "Performance Optimization",
+        "SEO Implementation",
+        "Responsive Design",
       ],
-      color: "from-gray-700 to-gray-800",
+      color: "from-cyan-600 to-cyan-700",
       category: "development",
-      slug: "mern-stack-development",
+      slug: "web-development",
     },
     {
-      title: "MEAN Stack Development",
-      description: "Enterprise applications using MongoDB, Express.js, Angular, and Node.js",
-      icon: Code,
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile applications for iOS and Android",
+      icon: Smartphone,
       features: [
-        "Angular Frontend Development",
-        "Node.js & Express.js Backend",
-        "MongoDB Database Integration",
-        "TypeScript Development",
-        "Angular Material UI",
-        "Enterprise Architecture",
-        "Scalable Solutions",
-        "Testing & Documentation",
+        "React Native Development",
+        "Flutter Development",
+        "iOS App Development",
+        "Android App Development",
+        "App Store Optimization",
+        "Push Notifications",
+        "Offline Functionality",
+        "Performance Optimization",
       ],
-      color: "from-red-600 to-red-700",
+      color: "from-blue-600 to-blue-700",
       category: "development",
-      slug: "mean-stack-development",
+      slug: "mobile-app-development",
     },
     {
       title: "Shopify Development",
@@ -274,7 +272,7 @@ export default function Portfolio() {
         "Security Implementation",
         "Maintenance & Support",
       ],
-      color: "from-red-500 to-red-600",
+      color: "from-blue-500 to-blue-600",
       category: "cms",
       slug: "wordpress-development",
     },
@@ -310,7 +308,7 @@ export default function Portfolio() {
         "In-app Purchases",
         "Offline Functionality",
       ],
-      color: "from-red-600 to-red-700",
+      color: "from-cyan-600 to-cyan-700",
       category: "mobile",
       slug: "mobile-app-development",
     },
@@ -346,7 +344,7 @@ export default function Portfolio() {
         "Reporting Systems",
         "Multi-user Access Control",
       ],
-      color: "from-red-500 to-red-600",
+      color: "from-blue-500 to-blue-600",
       category: "enterprise",
       slug: "erp-enterprise-solutions",
     },
@@ -382,7 +380,7 @@ export default function Portfolio() {
         "Database Security",
         "Scalability Planning",
       ],
-      color: "from-red-600 to-red-700",
+      color: "from-blue-600 to-blue-700",
       category: "development",
       slug: "database-design-management",
     },
@@ -418,7 +416,7 @@ export default function Portfolio() {
         "Link Building",
         "SEO Audits & Reports",
       ],
-      color: "from-red-500 to-red-600",
+      color: "from-blue-500 to-blue-600",
       category: "marketing",
       slug: "seo-analytics",
     },
@@ -454,7 +452,7 @@ export default function Portfolio() {
         "International Payments",
         "PCI Compliance",
       ],
-      color: "from-red-600 to-red-700",
+      color: "from-blue-600 to-blue-700",
       category: "development",
       slug: "payment-gateway-integration",
     },
@@ -490,7 +488,7 @@ export default function Portfolio() {
         "Performance Optimization",
         "Maintenance & Support",
       ],
-      color: "from-red-500 to-red-600",
+      color: "from-blue-500 to-blue-600",
       category: "development",
       slug: "custom-software-development",
     },
@@ -526,7 +524,7 @@ export default function Portfolio() {
         "Bug Tracking & Reporting",
         "Quality Assurance Reports",
       ],
-      color: "from-red-600 to-red-700",
+      color: "from-blue-600 to-blue-700",
       category: "qa",
       slug: "quality-assurance-testing",
     },
@@ -632,7 +630,7 @@ export default function Portfolio() {
       speciality: "Strategic Leadership & MERN/MEAN Stack Development",
       image: "/placeholder.svg?height=150&width=150",
       icon: Crown,
-      color: "from-red-500 to-red-600",
+      color: "from-blue-500 to-blue-600",
     },
     {
       name: "Rania",
@@ -648,7 +646,7 @@ export default function Portfolio() {
       speciality: "Full-Stack Development & System Architecture",
       image: "/placeholder.svg?height=150&width=150",
       icon: Code,
-      color: "from-red-600 to-red-700",
+      color: "from-blue-600 to-blue-700",
     },
     {
       name: "Fatima Ahmed",
@@ -664,7 +662,7 @@ export default function Portfolio() {
       speciality: "Backend Development & Database Design",
       image: "/placeholder.svg?height=150&width=150",
       icon: Database,
-      color: "from-red-500 to-red-600",
+      color: "from-blue-500 to-blue-600",
     },
     {
       name: "Zainab Malik",
@@ -680,7 +678,7 @@ export default function Portfolio() {
       speciality: "DevOps & Cloud Infrastructure",
       image: "/placeholder.svg?height=150&width=150",
       icon: Server,
-      color: "from-red-600 to-red-700",
+      color: "from-blue-600 to-blue-700",
     },
     {
       name: "Ayesha Tariq",
@@ -696,7 +694,7 @@ export default function Portfolio() {
       speciality: "E-commerce & Shopify Development",
       image: "/placeholder.svg?height=150&width=150",
       icon: ShoppingCart,
-      color: "from-red-500 to-red-600",
+      color: "from-blue-500 to-blue-600",
     },
     {
       name: "Sana Iqbal",
@@ -793,9 +791,9 @@ export default function Portfolio() {
   ]
 
   const stats = [
-    { label: "Projects Completed", value: "300+", icon: Star, color: "text-red-500" },
+    { label: "Projects Completed", value: "300+", icon: Star, color: "text-blue-500" },
     { label: "Happy Clients", value: "150+", icon: Users, color: "text-gray-700" },
-    { label: "Team Members", value: "20+", icon: Users, color: "text-red-600" },
+    { label: "Team Members", value: "20+", icon: Users, color: "text-blue-600" },
     { label: "Years Experience", value: "5+", icon: Calendar, color: "text-gray-600" },
   ]
 
@@ -933,8 +931,8 @@ export default function Portfolio() {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
         {/* Animated Background */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-red-200/20 to-gray-200/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-gray-200/20 to-red-200/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-gray-200/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-gray-200/20 to-blue-200/20 rounded-full blur-3xl animate-pulse" />
         </div>
 
         {/* Header */}
@@ -943,21 +941,21 @@ export default function Portfolio() {
             <Button
               variant="ghost"
               onClick={() => navigateToPage("home")}
-              className="mb-8 text-red-600 hover:text-red-700 hover:bg-red-50/50 transition-all duration-300 group"
+              className="mb-8 text-blue-600 hover:text-blue-700 hover:bg-blue-50/50 transition-all duration-300 group"
             >
               <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
               Back to Home
             </Button>
             <div className="text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 via-gray-800 to-red-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-cyan-800 to-blue-600 bg-clip-text text-transparent">
                 Our Services
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Comprehensive digital solutions tailored to your business needs. From MERN/MEAN stack development to
-                Shopify stores and enterprise systems.
+                Comprehensive digital solutions tailored to your business needs. From web development to
+                mobile apps and enterprise systems.
               </p>
               <div className="mt-8 flex justify-center">
-                <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-700 rounded-full" />
+                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full" />
               </div>
             </div>
           </div>
@@ -967,13 +965,13 @@ export default function Portfolio() {
         <div className="relative py-12 px-6">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-wrap justify-center gap-4 mb-16">
-              {[
-                { key: "all", label: "All Services", color: "from-red-600 to-gray-700" },
-                { key: "design", label: "Design", color: "from-red-500 to-red-600" },
-                { key: "development", label: "Development", color: "from-gray-700 to-gray-800" },
-                { key: "ecommerce", label: "E-commerce", color: "from-red-600 to-red-700" },
-                { key: "marketing", label: "Marketing", color: "from-gray-600 to-gray-700" },
-              ].map((category) => (
+                          {[
+              { key: "all", label: "All Services", color: "from-blue-600 to-cyan-600" },
+              { key: "design", label: "Design", color: "from-blue-500 to-blue-600" },
+              { key: "development", label: "Development", color: "from-cyan-600 to-cyan-700" },
+              { key: "ecommerce", label: "E-commerce", color: "from-blue-600 to-blue-700" },
+              { key: "marketing", label: "Marketing", color: "from-cyan-500 to-cyan-600" },
+            ].map((category) => (
                 <Button
                   key={category.key}
                   variant={activeService === category.key ? "default" : "outline"}
@@ -983,7 +981,7 @@ export default function Portfolio() {
                     ${
                       activeService === category.key
                         ? `bg-gradient-to-r ${category.color} text-white shadow-lg border-0`
-                        : "border-2 border-gray-300 text-gray-700 hover:border-red-400 hover:bg-red-50/50"
+                        : "border-2 border-gray-300 text-gray-700 hover:border-blue-400 hover:bg-blue-50/50"
                     }
                   `}
                 >
@@ -1024,7 +1022,7 @@ export default function Portfolio() {
                     <ul className="space-y-3 mb-8">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center group/item">
-                          <CheckCircle className="h-4 w-4 text-red-500 mr-3 group-hover/item:scale-110 transition-transform duration-200" />
+                          <CheckCircle className="h-4 w-4 text-blue-500 mr-3 group-hover/item:scale-110 transition-transform duration-200" />
                           <span className="text-gray-700 text-sm group-hover/item:text-gray-900 transition-colors duration-200">
                             {feature}
                           </span>
@@ -1044,7 +1042,7 @@ export default function Portfolio() {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="flex-1 hover:bg-red-50 transition-colors duration-300 bg-transparent border-red-200"
+                          className="flex-1 hover:bg-blue-50 transition-colors duration-300 bg-transparent border-blue-200"
                         >
                           <Phone className="h-4 w-4 mr-1" />
                           Call
@@ -1068,22 +1066,22 @@ export default function Portfolio() {
             {/* WordPress Pricing */}
             <div className="mb-20">
               <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-red-600 to-gray-700 bg-clip-text text-transparent">
+                <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
                   WordPress Development Pricing
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-700 rounded-full mx-auto" />
+                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mx-auto" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {pricingPlans.wordpress.map((plan, index) => (
                   <Card
                     key={index}
                     className={`relative bg-white/90 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
-                      plan.popular ? "ring-2 ring-red-500 scale-105" : ""
+                      plan.popular ? "ring-2 ring-blue-500 scale-105" : ""
                     }`}
                   >
                     {plan.popular && (
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <Badge className="bg-gradient-to-r from-red-500 to-gray-700 text-white px-6 py-2 shadow-lg">
+                        <Badge className="bg-gradient-to-r from-blue-500 to-gray-700 text-white px-6 py-2 shadow-lg">
                           <Flame className="h-4 w-4 mr-1" />
                           Most Popular
                         </Badge>
@@ -1091,9 +1089,9 @@ export default function Portfolio() {
                     )}
                     <CardHeader className="text-center pb-4">
                       <div className="mb-6">
-                        <Monitor className="h-16 w-16 mx-auto mb-4 text-red-600" />
+                        <Monitor className="h-16 w-16 mx-auto mb-4 text-blue-600" />
                         <CardTitle className="text-2xl mb-2 font-bold">{plan.name}</CardTitle>
-                        <div className="text-4xl font-bold text-red-600 mb-2">{plan.price}</div>
+                        <div className="text-4xl font-bold text-blue-600 mb-2">{plan.price}</div>
                         <p className="text-gray-600 text-sm">One-time payment</p>
                       </div>
                     </CardHeader>
@@ -1101,7 +1099,7 @@ export default function Portfolio() {
                       <ul className="space-y-4 mb-8">
                         {plan.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center">
-                            <CheckCircle className="h-5 w-5 text-red-500 mr-3" />
+                            <CheckCircle className="h-5 w-5 text-blue-500 mr-3" />
                             <span className="text-gray-700 text-sm">{feature}</span>
                           </li>
                         ))}
@@ -1109,7 +1107,7 @@ export default function Portfolio() {
                       <Button
                         className={`w-full ${
                           plan.popular
-                            ? "bg-gradient-to-r from-red-600 to-gray-700 hover:from-red-700 hover:to-gray-800"
+                            ? "bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800"
                             : "bg-gray-600 hover:bg-gray-700"
                         } text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold`}
                         onClick={() => scrollToSection("contact")}
@@ -1125,10 +1123,10 @@ export default function Portfolio() {
             {/* Shopify Pricing */}
             <div className="mb-20">
               <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-red-600 bg-clip-text text-transparent">
+                <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-blue-600 bg-clip-text text-transparent">
                   Shopify Development Pricing
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-gray-700 to-red-500 rounded-full mx-auto" />
+                <div className="w-24 h-1 bg-gradient-to-r from-gray-700 to-blue-500 rounded-full mx-auto" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {pricingPlans.shopify.map((plan, index) => (
@@ -1140,7 +1138,7 @@ export default function Portfolio() {
                   >
                     {plan.popular && (
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <Badge className="bg-gradient-to-r from-gray-700 to-red-500 text-white px-6 py-2 shadow-lg">
+                        <Badge className="bg-gradient-to-r from-gray-700 to-blue-500 text-white px-6 py-2 shadow-lg">
                           <Flame className="h-4 w-4 mr-1" />
                           Most Popular
                         </Badge>
@@ -1166,7 +1164,7 @@ export default function Portfolio() {
                       <Button
                         className={`w-full ${
                           plan.popular
-                            ? "bg-gradient-to-r from-gray-700 to-red-600 hover:from-gray-800 hover:to-red-700"
+                            ? "bg-gradient-to-r from-gray-700 to-blue-600 hover:from-gray-800 hover:to-blue-700"
                             : "bg-gray-600 hover:bg-gray-700"
                         } text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold`}
                         onClick={() => scrollToSection("contact")}
@@ -1180,7 +1178,7 @@ export default function Portfolio() {
             </div>
 
             {/* Contact CTA */}
-            <div className="text-center bg-gradient-to-r from-red-50/50 to-gray-50/50 backdrop-blur-sm rounded-3xl p-12 border border-white/20 shadow-xl">
+            <div className="text-center bg-gradient-to-r from-blue-50/50 to-gray-50/50 backdrop-blur-sm rounded-3xl p-12 border border-white/20 shadow-xl">
               <h3 className="text-3xl font-bold mb-6 text-gray-800">Need a Custom Solution?</h3>
               <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
                 Every business is unique. Let's discuss your specific requirements and create a tailored solution that
@@ -1188,7 +1186,7 @@ export default function Portfolio() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  className="bg-gradient-to-r from-red-600 to-gray-700 hover:from-red-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
+                  className="bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
                   onClick={() => {
                     navigateToPage("home")
                     setTimeout(() => scrollToSection("contact"), 100)
@@ -1219,8 +1217,8 @@ export default function Portfolio() {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
         {/* Animated Background */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-red-200/20 to-gray-200/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-gray-200/20 to-red-200/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-gray-200/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-gray-200/20 to-blue-200/20 rounded-full blur-3xl animate-pulse" />
         </div>
 
         {/* Header */}
@@ -1229,13 +1227,13 @@ export default function Portfolio() {
             <Button
               variant="ghost"
               onClick={() => navigateToPage("home")}
-              className="mb-8 text-red-600 hover:text-red-700 hover:bg-red-50/50 transition-all duration-300 group"
+              className="mb-8 text-blue-600 hover:text-blue-700 hover:bg-blue-50/50 transition-all duration-300 group"
             >
               <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
               Back to Home
             </Button>
             <div className="text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 via-gray-800 to-red-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-gray-800 to-blue-600 bg-clip-text text-transparent">
                 Case Studies
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -1243,7 +1241,7 @@ export default function Portfolio() {
                 and achieve remarkable results.
               </p>
               <div className="mt-8 flex justify-center">
-                <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-700 rounded-full" />
+                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full" />
               </div>
             </div>
           </div>
@@ -1267,7 +1265,7 @@ export default function Portfolio() {
                       <div className="flex items-center gap-4 mb-8">
                         <Badge
                           variant="outline"
-                          className="text-red-600 border-red-200 bg-red-50/50 px-4 py-2 font-semibold"
+                          className="text-blue-600 border-blue-200 bg-blue-50/50 px-4 py-2 font-semibold"
                         >
                           {study.industry}
                         </Badge>
@@ -1278,13 +1276,13 @@ export default function Portfolio() {
                       </div>
 
                       <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 leading-tight">{study.title}</h2>
-                      <p className="text-xl text-red-600 font-semibold mb-8">{study.client}</p>
+                      <p className="text-xl text-blue-600 font-semibold mb-8">{study.client}</p>
 
                       {/* Challenge */}
                       <div className="mb-8">
                         <h3 className="text-lg font-semibold mb-4 text-gray-800 flex items-center">
-                          <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-3">
-                            <Target className="h-4 w-4 text-red-500" />
+                          <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <Target className="h-4 w-4 text-blue-500" />
                           </div>
                           Challenge
                         </h3>
@@ -1320,18 +1318,18 @@ export default function Portfolio() {
                     </div>
 
                     {/* Results & Image */}
-                    <div className="p-10 bg-gradient-to-br from-red-50/50 to-gray-50/50">
+                    <div className="p-10 bg-gradient-to-br from-blue-50/50 to-gray-50/50">
                       <div className="mb-8">
                         <h3 className="text-lg font-semibold mb-6 text-gray-800 flex items-center">
-                          <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-3">
-                            <BarChart3 className="h-4 w-4 text-red-500" />
+                          <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <BarChart3 className="h-4 w-4 text-blue-500" />
                           </div>
                           Results Achieved
                         </h3>
                         <div className="space-y-4 pl-11">
                           {study.results.map((result, resultIndex) => (
                             <div key={resultIndex} className="flex items-center group">
-                              <CheckCircle className="h-5 w-5 text-red-600 mr-4 group-hover:scale-110 transition-transform duration-200" />
+                              <CheckCircle className="h-5 w-5 text-blue-600 mr-4 group-hover:scale-110 transition-transform duration-200" />
                               <span className="text-gray-700 font-medium">{result}</span>
                             </div>
                           ))}
@@ -1339,16 +1337,16 @@ export default function Portfolio() {
                       </div>
 
                       {/* Project Image Placeholder */}
-                      <div className="aspect-video bg-gradient-to-br from-red-200/50 to-gray-200/50 rounded-2xl flex items-center justify-center mb-8 border border-white/20 shadow-inner">
+                      <div className="aspect-video bg-gradient-to-br from-blue-200/50 to-gray-200/50 rounded-2xl flex items-center justify-center mb-8 border border-white/20 shadow-inner">
                         <div className="text-center">
-                          <TrendingUp className="h-20 w-20 text-red-600 mx-auto mb-4" />
-                          <p className="text-red-600 font-semibold text-lg">Project Screenshot</p>
+                          <TrendingUp className="h-20 w-20 text-blue-600 mx-auto mb-4" />
+                          <p className="text-blue-600 font-semibold text-lg">Project Screenshot</p>
                         </div>
                       </div>
 
                       <div className="flex space-x-4">
                         <Button
-                          className="flex-1 bg-gradient-to-r from-red-600 to-gray-700 hover:from-red-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
+                          className="flex-1 bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
                           onClick={() => {
                             navigateToPage("home")
                             setTimeout(() => scrollToSection("contact"), 100)
@@ -1362,6 +1360,7 @@ export default function Portfolio() {
                           className="flex-1 border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-transparent font-semibold"
                           onClick={() => navigateToPage("services")}
                         >
+                          <MessageCircle className="h-4 w-4 mr-1" />
                           Similar Solution
                         </Button>
                       </div>
@@ -1372,7 +1371,7 @@ export default function Portfolio() {
             </div>
 
             {/* CTA Section */}
-            <div className="mt-20 text-center bg-gradient-to-r from-red-50/50 to-gray-50/50 backdrop-blur-sm rounded-3xl p-16 border border-white/20 shadow-xl">
+            <div className="mt-20 text-center bg-gradient-to-r from-blue-50/50 to-gray-50/50 backdrop-blur-sm rounded-3xl p-16 border border-white/20 shadow-xl">
               <h2 className="text-4xl font-bold mb-6 text-gray-800">Ready to Create Your Success Story?</h2>
               <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
                 Join our growing list of successful clients. Let's discuss how we can help transform your business with
@@ -1385,7 +1384,7 @@ export default function Portfolio() {
                     navigateToPage("home")
                     setTimeout(() => scrollToSection("contact"), 100)
                   }}
-                  className="bg-gradient-to-r from-red-600 to-gray-700 hover:from-red-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
+                  className="bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
                 >
                   <Rocket className="h-5 w-5 mr-2" />
                   Start Your Project
@@ -1396,6 +1395,7 @@ export default function Portfolio() {
                   onClick={() => navigateToPage("services")}
                   className="border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
                 >
+                  <MessageCircle className="mr-3 h-5 w-5" />
                   View Our Services
                 </Button>
               </div>
@@ -1418,8 +1418,8 @@ export default function Portfolio() {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
         {/* Animated Background */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-red-200/20 to-gray-200/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-gray-200/20 to-red-200/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-gray-200/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-gray-200/20 to-blue-200/20 rounded-full blur-3xl animate-pulse" />
         </div>
 
         {/* Header */}
@@ -1429,7 +1429,7 @@ export default function Portfolio() {
               <Button
                 variant="ghost"
                 onClick={() => navigateToPage("services")}
-                className="text-red-600 hover:text-red-700 hover:bg-red-50/50 transition-all duration-300 group"
+                className="text-blue-600 hover:text-blue-700 hover:bg-blue-50/50 transition-all duration-300 group"
               >
                 <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
                 Back to Services
@@ -1448,7 +1448,7 @@ export default function Portfolio() {
                 <service.icon className="h-16 w-16 text-white" />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-600 to-gray-700 bg-clip-text text-transparent">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
                   {service.title}
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">{service.description}</p>
@@ -1469,7 +1469,7 @@ export default function Portfolio() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {service.features.map((feature, index) => (
                         <div key={index} className="flex items-center group">
-                          <CheckCircle className="h-5 w-5 text-red-600 mr-4 group-hover:scale-110 transition-transform duration-200" />
+                          <CheckCircle className="h-5 w-5 text-blue-600 mr-4 group-hover:scale-110 transition-transform duration-200" />
                           <span className="text-gray-700">{feature}</span>
                         </div>
                       ))}
@@ -1483,8 +1483,8 @@ export default function Portfolio() {
                     <CardContent className="p-10">
                       <h2 className="text-3xl font-bold mb-8 text-gray-800">MERN Stack Expertise</h2>
                       <div className="space-y-8">
-                        <div className="p-6 rounded-2xl bg-gradient-to-r from-red-50 to-gray-50 border border-red-100">
-                          <h3 className="text-xl font-semibold mb-4 text-red-600 flex items-center">
+                        <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-50 to-gray-50 border border-blue-100">
+                          <h3 className="text-xl font-semibold mb-4 text-blue-600 flex items-center">
                             <Code className="h-6 w-6 mr-3" />
                             Frontend Development (React)
                           </h3>
@@ -1493,21 +1493,21 @@ export default function Portfolio() {
                             API, and component-based architecture.
                           </p>
                           <div className="flex flex-wrap gap-2">
-                            <Badge variant="secondary" className="bg-red-100 text-red-700 font-medium">
+                            <Badge variant="secondary" className="bg-blue-100 text-blue-700 font-medium">
                               React 18
                             </Badge>
-                            <Badge variant="secondary" className="bg-red-100 text-red-700 font-medium">
+                            <Badge variant="secondary" className="bg-blue-100 text-blue-700 font-medium">
                               Redux Toolkit
                             </Badge>
-                            <Badge variant="secondary" className="bg-red-100 text-red-700 font-medium">
+                            <Badge variant="secondary" className="bg-blue-100 text-blue-700 font-medium">
                               React Router
                             </Badge>
-                            <Badge variant="secondary" className="bg-red-100 text-red-700 font-medium">
+                            <Badge variant="secondary" className="bg-blue-100 text-blue-700 font-medium">
                               Material-UI
                             </Badge>
                           </div>
                         </div>
-                        <div className="p-6 rounded-2xl bg-gradient-to-r from-gray-50 to-red-50 border border-gray-100">
+                        <div className="p-6 rounded-2xl bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-100">
                           <h3 className="text-xl font-semibold mb-4 text-gray-700 flex items-center">
                             <Server className="h-6 w-6 mr-3" />
                             Backend Development (Node.js & Express)
@@ -1531,8 +1531,8 @@ export default function Portfolio() {
                             </Badge>
                           </div>
                         </div>
-                        <div className="p-6 rounded-2xl bg-gradient-to-r from-red-50 to-gray-50 border border-red-100">
-                          <h3 className="text-xl font-semibold mb-4 text-red-600 flex items-center">
+                        <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-50 to-gray-50 border border-blue-100">
+                          <h3 className="text-xl font-semibold mb-4 text-blue-600 flex items-center">
                             <Database className="h-6 w-6 mr-3" />
                             Database (MongoDB)
                           </h3>
@@ -1541,16 +1541,16 @@ export default function Portfolio() {
                             pipelines, and performance optimization.
                           </p>
                           <div className="flex flex-wrap gap-2">
-                            <Badge variant="secondary" className="bg-red-100 text-red-700 font-medium">
+                            <Badge variant="secondary" className="bg-blue-100 text-blue-700 font-medium">
                               MongoDB
                             </Badge>
-                            <Badge variant="secondary" className="bg-red-100 text-red-700 font-medium">
+                            <Badge variant="secondary" className="bg-blue-100 text-blue-700 font-medium">
                               Mongoose
                             </Badge>
-                            <Badge variant="secondary" className="bg-red-100 text-red-700 font-medium">
+                            <Badge variant="secondary" className="bg-blue-100 text-blue-700 font-medium">
                               Atlas Cloud
                             </Badge>
-                            <Badge variant="secondary" className="bg-red-100 text-red-700 font-medium">
+                            <Badge variant="secondary" className="bg-blue-100 text-blue-700 font-medium">
                               Aggregation
                             </Badge>
                           </div>
@@ -1565,7 +1565,7 @@ export default function Portfolio() {
                     <CardContent className="p-10">
                       <h2 className="text-3xl font-bold mb-8 text-gray-800">Shopify Solutions</h2>
                       <div className="space-y-8">
-                        <div className="p-6 rounded-2xl bg-gradient-to-r from-gray-50 to-red-50 border border-gray-100">
+                        <div className="p-6 rounded-2xl bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-100">
                           <h3 className="text-xl font-semibold mb-4 text-gray-700 flex items-center">
                             <Palette className="h-6 w-6 mr-3" />
                             Custom Theme Development
@@ -1575,8 +1575,8 @@ export default function Portfolio() {
                             business requirements.
                           </p>
                         </div>
-                        <div className="p-6 rounded-2xl bg-gradient-to-r from-red-50 to-gray-50 border border-red-100">
-                          <h3 className="text-xl font-semibold mb-4 text-red-600 flex items-center">
+                        <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-50 to-gray-50 border border-blue-100">
+                          <h3 className="text-xl font-semibold mb-4 text-blue-600 flex items-center">
                             <Code className="h-6 w-6 mr-3" />
                             Shopify App Development
                           </h3>
@@ -1584,7 +1584,7 @@ export default function Portfolio() {
                             Build custom Shopify apps to extend functionality and integrate with third-party services.
                           </p>
                         </div>
-                        <div className="p-6 rounded-2xl bg-gradient-to-r from-gray-50 to-red-50 border border-gray-100">
+                        <div className="p-6 rounded-2xl bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-100">
                           <h3 className="text-xl font-semibold mb-4 text-gray-700 flex items-center">
                             <Zap className="h-6 w-6 mr-3" />
                             Store Optimization
@@ -1609,7 +1609,7 @@ export default function Portfolio() {
                           title: "Discovery & Planning",
                           description:
                             "We analyze your requirements, target audience, and business goals to create a comprehensive project plan.",
-                          color: "from-red-500 to-red-600",
+                          color: "from-blue-500 to-blue-600",
                         },
                         {
                           step: 2,
@@ -1623,7 +1623,7 @@ export default function Portfolio() {
                           title: "Development & Testing",
                           description:
                             "Build your solution using best practices, with continuous testing and quality assurance.",
-                          color: "from-red-600 to-red-700",
+                          color: "from-blue-600 to-blue-700",
                         },
                         {
                           step: 4,
@@ -1677,7 +1677,7 @@ export default function Portfolio() {
                       </Button>
                       <Button
                         variant="outline"
-                        className="w-full hover:bg-red-50 transition-all duration-300 bg-transparent border-red-200 font-semibold"
+                        className="w-full hover:bg-blue-50 transition-all duration-300 bg-transparent border-blue-200 font-semibold"
                       >
                         <Phone className="mr-2 h-4 w-4" />
                         Call Now
@@ -1691,7 +1691,7 @@ export default function Portfolio() {
                   <CardContent className="p-8">
                     <h3 className="text-2xl font-bold mb-6 text-gray-800">Starting From</h3>
                     <div className="text-center">
-                      <div className="text-4xl font-bold text-red-600 mb-3">
+                      <div className="text-4xl font-bold text-blue-600 mb-3">
                         {service.slug === "wordpress-development"
                           ? "PKR 15,000"
                           : service.slug === "shopify-development"
@@ -1711,7 +1711,7 @@ export default function Portfolio() {
                         size="sm"
                         variant="outline"
                         onClick={() => navigateToPage("services")}
-                        className="hover:bg-red-50 transition-colors duration-300 border-red-200 font-semibold"
+                        className="hover:bg-blue-50 transition-colors duration-300 border-blue-200 font-semibold"
                       >
                         View Pricing Plans
                       </Button>
@@ -1731,10 +1731,10 @@ export default function Portfolio() {
                           <button
                             key={index}
                             onClick={() => navigateToServicePage(relatedService.slug)}
-                            className="w-full text-left p-4 rounded-xl border border-gray-200 hover:border-red-300 hover:bg-red-50/50 transition-all duration-300 transform hover:scale-105 group"
+                            className="w-full text-left p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-300 transform hover:scale-105 group"
                           >
                             <div className="flex items-center">
-                              <relatedService.icon className="h-6 w-6 text-red-600 mr-4 group-hover:scale-110 transition-transform duration-200" />
+                              <relatedService.icon className="h-6 w-6 text-blue-600 mr-4 group-hover:scale-110 transition-transform duration-200" />
                               <span className="font-medium text-gray-800">{relatedService.title}</span>
                             </div>
                           </button>
@@ -1748,7 +1748,7 @@ export default function Portfolio() {
                   <CardContent className="p-8">
                     <h3 className="text-2xl font-bold mb-6 text-gray-800">Client Success</h3>
                     <div className="text-center">
-                      <Quote className="h-10 w-10 text-red-600 mx-auto mb-4" />
+                      <Quote className="h-10 w-10 text-blue-600 mx-auto mb-4" />
                       <p className="text-gray-700 mb-6 italic leading-relaxed">
                         {service.slug === "mern-stack-development"
                           ? "The MERN stack solution transformed our business operations completely. Outstanding technical expertise!"
@@ -1758,7 +1758,7 @@ export default function Portfolio() {
                       </p>
                       <div className="flex justify-center space-x-1 mb-4">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 fill-red-400 text-red-400" />
+                          <Star key={i} className="h-5 w-5 fill-blue-400 text-blue-400" />
                         ))}
                       </div>
                       <p className="text-sm text-gray-600 font-medium">Verified Client Review</p>
@@ -1785,8 +1785,8 @@ export default function Portfolio() {
             top: `${mousePosition.y - 200}px`,
           }}
         />
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-red-200/20 to-gray-200/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-gray-200/20 to-red-200/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-gray-200/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-gray-200/20 to-blue-200/20 rounded-full blur-3xl animate-pulse" />
       </div>
 
       {/* Navigation */}
@@ -1814,10 +1814,10 @@ export default function Portfolio() {
                 <button
                   key={index}
                   onClick={item.action}
-                  className="text-gray-700 hover:text-red-600 transition-all duration-300 font-semibold relative group"
+                  className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-semibold relative group"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-red-600 to-gray-700 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-gray-700 group-hover:w-full transition-all duration-300" />
                 </button>
               ))}
             </div>
@@ -1828,7 +1828,7 @@ export default function Portfolio() {
                 href="https://wa.me/923001234567"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl"
                 title="Contact us on WhatsApp"
               >
                 <MessageCircle className="h-5 w-5" />
@@ -1858,7 +1858,7 @@ export default function Portfolio() {
                 <button
                   key={index}
                   onClick={item.action}
-                  className="block py-3 text-gray-700 hover:text-red-600 transition-colors duration-300 w-full text-left font-semibold"
+                  className="block py-3 text-gray-700 hover:text-blue-600 transition-colors duration-300 w-full text-left font-semibold"
                 >
                   {item.label}
                 </button>
@@ -2096,12 +2096,12 @@ export default function Portfolio() {
                 <CardContent className="p-8">
                   <div
                     className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r ${
-                      stat.color === "text-red-500"
-                        ? "from-red-500 to-red-600"
+                      stat.color === "text-blue-500"
+                        ? "from-blue-500 to-blue-600"
                         : stat.color === "text-gray-700"
                           ? "from-gray-700 to-gray-800"
-                          : stat.color === "text-red-600"
-                            ? "from-red-600 to-red-700"
+                          : stat.color === "text-blue-600"
+                            ? "from-blue-600 to-blue-700"
                             : "from-gray-600 to-gray-700"
                     } flex items-center justify-center shadow-lg`}
                   >
@@ -2117,19 +2117,19 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 px-6 bg-gradient-to-r from-red-50/50 to-gray-50/50 relative">
+      <section id="about" className="py-24 px-6 bg-gradient-to-r from-blue-50/50 to-gray-50/50 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
               About Aqstoria
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-700 rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <p className="text-xl leading-relaxed text-gray-700">
-                <strong className="text-2xl bg-gradient-to-r from-red-600 to-gray-700 bg-clip-text text-transparent">
+                <strong className="text-2xl bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
                   Aqstoria
                 </strong>{" "}
                 is a comprehensive digital solutions agency founded by Aqsa Khan, bringing together a team of 20+
@@ -2150,9 +2150,9 @@ export default function Portfolio() {
 
               <div className="grid grid-cols-2 gap-6 mt-12">
                 {[
-                  { icon: Target, label: "Innovation-Driven", color: "from-red-500 to-red-600" },
+                  { icon: Target, label: "Innovation-Driven", color: "from-blue-500 to-blue-600" },
                   { icon: Lightbulb, label: "Modern Tech Stack", color: "from-gray-600 to-gray-700" },
-                  { icon: CheckCircle, label: "Quality Guaranteed", color: "from-red-600 to-red-700" },
+                  { icon: CheckCircle, label: "Quality Guaranteed", color: "from-blue-600 to-blue-700" },
                   { icon: Headphones, label: "24/7 Support", color: "from-gray-700 to-gray-800" },
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3 group">
@@ -2172,7 +2172,7 @@ export default function Portfolio() {
                 {
                   icon: Code,
                   title: "Modern Development",
-                  color: "from-red-500 to-red-600",
+                  color: "from-blue-500 to-blue-600",
                   items: [
                     "MERN & MEAN Stack Expertise",
                     "Shopify & WordPress Development",
@@ -2194,7 +2194,7 @@ export default function Portfolio() {
                 {
                   icon: Settings,
                   title: "Enterprise Solutions",
-                  color: "from-red-600 to-red-700",
+                  color: "from-blue-600 to-blue-700",
                   items: ["Custom ERP systems", "System integration", "Scalable architecture", "Quality assurance"],
                 },
               ].map((category, index) => (
@@ -2214,7 +2214,7 @@ export default function Portfolio() {
                     <ul className="space-y-3 text-gray-700">
                       {category.items.map((item, itemIndex) => (
                         <li key={itemIndex} className="flex items-center">
-                          <div className="w-2 h-2 bg-gradient-to-r from-red-500 to-gray-700 rounded-full mr-3" />
+                          <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mr-3" />
                           {item}
                         </li>
                       ))}
@@ -2231,7 +2231,7 @@ export default function Portfolio() {
       <section id="team" className="py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
               Meet Our Expert Team
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -2239,7 +2239,7 @@ export default function Portfolio() {
               and innovation.
             </p>
             <div className="mt-8 flex justify-center">
-              <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-700 rounded-full" />
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full" />
             </div>
           </div>
 
@@ -2262,7 +2262,7 @@ export default function Portfolio() {
                       </div>
                     </div>
                     {(member.name === "Aqsa Khan" || member.name === "Rania") && (
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-red-500 to-gray-700 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full flex items-center justify-center shadow-lg">
                         <Crown className="h-4 w-4 text-white" />
                       </div>
                     )}
@@ -2270,7 +2270,7 @@ export default function Portfolio() {
                   <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
                     {member.name}
                   </h3>
-                  <p className="text-red-600 font-semibold mb-3 text-sm">{member.role}</p>
+                  <p className="text-blue-600 font-semibold mb-3 text-sm">{member.role}</p>
                   <p className="text-gray-600 text-xs leading-relaxed">{member.speciality}</p>
                 </CardContent>
               </Card>
@@ -2278,7 +2278,7 @@ export default function Portfolio() {
           </div>
 
           <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-red-50/50 to-gray-50/50 backdrop-blur-sm rounded-3xl p-12 border border-white/20 shadow-xl">
+            <div className="bg-gradient-to-r from-blue-50/50 to-gray-50/50 backdrop-blur-sm rounded-3xl p-12 border border-white/20 shadow-xl">
               <h3 className="text-2xl font-bold mb-4 text-gray-800">Join Our Growing Team!</h3>
               <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
                 We're always looking for talented individuals to join our mission of delivering exceptional digital
@@ -2286,7 +2286,7 @@ export default function Portfolio() {
               </p>
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-gradient-to-r from-red-600 to-gray-700 hover:from-red-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
+                className="bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
               >
                 <Users className="mr-2 h-4 w-4" />
                 Join Our Team
@@ -2297,10 +2297,10 @@ export default function Portfolio() {
       </section>
 
       {/* Services Preview Section */}
-      <section id="services" className="py-24 px-6 bg-gradient-to-r from-gray-50/50 to-red-50/50 relative">
+      <section id="services" className="py-24 px-6 bg-gradient-to-r from-gray-50/50 to-blue-50/50 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
               Our Core Services
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -2308,7 +2308,7 @@ export default function Portfolio() {
               services including MERN/MEAN stacks, Shopify, WordPress, and enterprise systems tailored to your business
               needs.
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-700 rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -2340,7 +2340,7 @@ export default function Portfolio() {
                   <ul className="space-y-2 mb-8">
                     {service.features.slice(0, 4).map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center group/item">
-                        <CheckCircle className="h-4 w-4 text-red-500 mr-3 group-hover/item:scale-110 transition-transform duration-200" />
+                        <CheckCircle className="h-4 w-4 text-blue-500 mr-3 group-hover/item:scale-110 transition-transform duration-200" />
                         <span className="text-gray-700 text-sm group-hover/item:text-gray-900 transition-colors duration-200">
                           {feature}
                         </span>
@@ -2364,7 +2364,7 @@ export default function Portfolio() {
             <Button
               size="lg"
               onClick={() => navigateToPage("services")}
-              className="bg-gradient-to-r from-red-600 to-gray-700 hover:from-red-700 hover:to-gray-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
+                              className="bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
             >
               <Flame className="mr-2 h-5 w-5" />
               View All Services
@@ -2425,22 +2425,22 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 px-6 bg-gradient-to-r from-red-50/50 to-gray-50/50 relative">
+      <section id="projects" className="py-24 px-6 bg-gradient-to-r from-blue-50/50 to-gray-50/50 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
               Featured Projects
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-700 rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mx-auto" />
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             {[
-              { key: "all", label: "All Projects", color: "from-red-600 to-gray-700" },
+              { key: "all", label: "All Projects", color: "from-blue-600 to-gray-700" },
               { key: "ecommerce", label: "E-commerce", color: "from-gray-700 to-gray-800" },
-              { key: "shopify", label: "Shopify", color: "from-red-500 to-red-600" },
+              { key: "shopify", label: "Shopify", color: "from-blue-500 to-blue-600" },
               { key: "erp", label: "Enterprise", color: "from-gray-600 to-gray-700" },
-              { key: "design", label: "Design", color: "from-red-600 to-red-700" },
+              { key: "design", label: "Design", color: "from-blue-600 to-blue-700" },
             ].map((category) => (
               <Button
                 key={category.key}
@@ -2451,7 +2451,7 @@ export default function Portfolio() {
                   ${
                     activeProject === category.key
                       ? `bg-gradient-to-r ${category.color} text-white shadow-lg border-0`
-                      : "border-2 border-gray-300 text-gray-700 hover:border-red-400 hover:bg-red-50/50"
+                      : "border-2 border-gray-300 text-gray-700 hover:border-blue-400 hover:bg-blue-50/50"
                   }
                 `}
               >
@@ -2469,23 +2469,23 @@ export default function Portfolio() {
                   animationDelay: `${index * 100}ms`,
                 }}
               >
-                <div className="aspect-video bg-gradient-to-br from-red-100/50 to-gray-100/50 flex items-center justify-center relative overflow-hidden">
+                <div className="aspect-video bg-gradient-to-br from-blue-100/50 to-gray-100/50 flex items-center justify-center relative overflow-hidden">
                   <div className="text-center z-10">
-                    {project.category === "design" && <Palette className="h-20 w-20 text-red-600 mx-auto mb-4" />}
+                    {project.category === "design" && <Palette className="h-20 w-20 text-blue-600 mx-auto mb-4" />}
                     {project.category === "website" && <Monitor className="h-20 w-20 text-gray-700 mx-auto mb-4" />}
                     {project.category === "ecommerce" && (
-                      <ShoppingCart className="h-20 w-20 text-red-600 mx-auto mb-4" />
+                      <ShoppingCart className="h-20 w-20 text-blue-600 mx-auto mb-4" />
                     )}
                     {project.category === "shopify" && <Package className="h-20 w-20 text-gray-700 mx-auto mb-4" />}
-                    {project.category === "android" && <Smartphone className="h-20 w-20 text-red-600 mx-auto mb-4" />}
+                    {project.category === "android" && <Smartphone className="h-20 w-20 text-blue-600 mx-auto mb-4" />}
                     {project.category === "erp" && <Settings className="h-20 w-20 text-gray-700 mx-auto mb-4" />}
-                    {project.category === "wordpress" && <Monitor className="h-20 w-20 text-red-600 mx-auto mb-4" />}
+                    {project.category === "wordpress" && <Monitor className="h-20 w-20 text-blue-600 mx-auto mb-4" />}
                     {project.category === "realtime" && (
                       <MessageCircle className="h-20 w-20 text-gray-700 mx-auto mb-4" />
                     )}
                   </div>
                   {project.featured && (
-                    <Badge className="absolute top-4 right-4 bg-gradient-to-r from-red-500 to-gray-700 text-white shadow-lg">
+                    <Badge className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-gray-700 text-white shadow-lg">
                       <Award className="h-3 w-3 mr-1" />
                       Featured
                     </Badge>
@@ -2503,7 +2503,7 @@ export default function Portfolio() {
                       <Badge
                         key={techIndex}
                         variant="secondary"
-                        className="bg-gray-100 text-gray-700 border-gray-200 text-xs hover:bg-red-100 hover:text-red-700 transition-colors duration-200 font-medium"
+                        className="bg-gray-100 text-gray-700 border-gray-200 text-xs hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200 font-medium"
                       >
                         {tech}
                       </Badge>
@@ -2523,7 +2523,7 @@ export default function Portfolio() {
                     <Button
                       size="sm"
                       onClick={() => scrollToSection("contact")}
-                      className="flex-1 bg-gradient-to-r from-red-600 to-gray-700 hover:from-red-700 hover:to-gray-800 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
+                      className="flex-1 bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Get Quote
@@ -2538,7 +2538,7 @@ export default function Portfolio() {
             <Button
               size="lg"
               onClick={() => navigateToPage("case-studies")}
-              className="bg-gradient-to-r from-red-600 to-gray-700 hover:from-red-700 hover:to-gray-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
+              className="bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
             >
               <BarChart3 className="mr-2 h-5 w-5" />
               View Case Studies
@@ -2552,10 +2552,10 @@ export default function Portfolio() {
       <section id="testimonials" className="py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
               What Our Clients Say
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-700 rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -2569,21 +2569,21 @@ export default function Portfolio() {
               >
                 <CardContent className="p-8">
                   <div className="mb-6">
-                    <Quote className="h-10 w-10 text-red-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
+                    <Quote className="h-10 w-10 text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
                     <p className="mb-6 leading-relaxed text-gray-700 italic">"{testimonial.content}"</p>
                   </div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div>
-                      <p className="font-bold text-gray-800">{testimonial.name}</p>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                                      <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <p className="font-bold text-gray-800">{testimonial.name}</p>
+                        <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      </div>
+                      <div className="flex space-x-1">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="h-5 w-5 fill-blue-400 text-blue-400" />
+                        ))}
+                      </div>
                     </div>
-                    <div className="flex space-x-1">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-red-400 text-red-400" />
-                      ))}
-                    </div>
-                  </div>
-                  <Badge variant="outline" className="text-xs border-red-200 text-red-600 bg-red-50 font-medium">
+                  <Badge variant="outline" className="text-xs border-blue-200 text-blue-600 bg-blue-50 font-medium">
                     {testimonial.service}
                   </Badge>
                 </CardContent>
@@ -2594,13 +2594,13 @@ export default function Portfolio() {
       </section>
 
       {/* Contact & Quote Section */}
-      <section id="contact" className="py-24 px-6 bg-gradient-to-r from-red-50/50 to-gray-50/50 relative">
+      <section id="contact" className="py-24 px-6 bg-gradient-to-r from-blue-50/50 to-gray-50/50 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-gray-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-gray-700 bg-clip-text text-transparent">
               Get Your Free Quote Today
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-700 rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-gray-700 rounded-full mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -2614,17 +2614,17 @@ export default function Portfolio() {
 
               <div className="space-y-8">
                 {[
-                  { icon: Mail, label: "Email", value: "hello@aqstoria.com", color: "from-red-500 to-red-600" },
+                  { icon: Mail, label: "Email", value: "hello@aqstoria.com", color: "from-blue-500 to-blue-600" },
                   { icon: Phone, label: "Phone", value: "+92 300 123 4567", color: "from-gray-600 to-gray-700" },
                   {
                     icon: MessageCircle,
                     label: "WhatsApp",
                     value: "+92 300 123 4567",
-                    color: "from-red-600 to-red-700",
+                    color: "from-blue-600 to-blue-700",
                     link: "https://wa.me/923001234567",
                   },
                   { icon: Globe, label: "Website", value: "aqstoria.com", color: "from-gray-700 to-gray-800" },
-                  { icon: Headphones, label: "Support", value: "24/7 Available", color: "from-red-500 to-red-600" },
+                  { icon: Headphones, label: "Support", value: "24/7 Available", color: "from-blue-500 to-blue-600" },
                 ].map((contact, index) => (
                   <div key={index} className="flex items-center space-x-6 group">
                     <div
@@ -2639,7 +2639,7 @@ export default function Portfolio() {
                           href={contact.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-red-600 hover:text-red-700 transition-colors duration-300 font-semibold"
+                          className="text-blue-600 hover:text-blue-700 transition-colors duration-300 font-semibold"
                         >
                           {contact.value}
                         </a>
@@ -2664,7 +2664,7 @@ export default function Portfolio() {
                       <Input
                         id="fullName"
                         placeholder="Your Full Name"
-                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-blue-500 h-12 rounded-xl font-medium"
                       />
                     </div>
                     <div>
@@ -2675,7 +2675,7 @@ export default function Portfolio() {
                         id="email"
                         type="email"
                         placeholder="your@email.com"
-                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-blue-500 h-12 rounded-xl font-medium"
                       />
                     </div>
                   </div>
@@ -2687,7 +2687,7 @@ export default function Portfolio() {
                       <Input
                         id="phone"
                         placeholder="+92 300 123 4567"
-                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-blue-500 h-12 rounded-xl font-medium"
                       />
                     </div>
                     <div>
@@ -2697,7 +2697,7 @@ export default function Portfolio() {
                       <Input
                         id="company"
                         placeholder="Your Company Name"
-                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-blue-500 h-12 rounded-xl font-medium"
                       />
                     </div>
                   </div>
@@ -2707,7 +2707,7 @@ export default function Portfolio() {
                     </label>
                     <select
                       id="budget"
-                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-red-500 focus:outline-none h-12 font-medium"
+                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-blue-500 focus:outline-none h-12 font-medium"
                     >
                       <option>Select Budget</option>
                       <option>PKR 10,000 - PKR 50,000</option>
@@ -2724,10 +2724,10 @@ export default function Portfolio() {
                       id="projectDescription"
                       rows={4}
                       placeholder="Describe your project in detail"
-                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-red-500 focus:outline-none font-medium"
+                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-blue-500 focus:outline-none font-medium"
                     />
                   </div>
-                  <Button className="bg-gradient-to-r from-red-600 to-gray-700 hover:from-red-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
+                  <Button className="bg-gradient-to-r from-blue-600 to-gray-700 hover:from-blue-700 hover:to-gray-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
                     Get Detailed Quote
                   </Button>
                 </form>
