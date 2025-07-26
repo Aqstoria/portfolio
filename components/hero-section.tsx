@@ -128,7 +128,7 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}>
             {/* Main Headline with Word-by-Word Animation */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-8 leading-tight text-[#0a1a2e]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 leading-tight text-[#0a1a2e]">
               <span className={`inline-block transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}>
@@ -141,6 +141,13 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
                 Amplify Your Brand.
               </span>
             </h1>
+
+            {/* Subtitle */}
+            <p className={`text-lg md:text-xl text-[#ef3a5d] font-semibold mb-8 transition-all duration-1000 delay-750 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}>
+              Custom software and marketing solutions for growth
+            </p>
 
             {/* Subheadline with Fade-in */}
             <p className={`text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed transition-all duration-1000 delay-1000 ${
@@ -155,7 +162,7 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
             }`}>
               <button className="group relative px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-2xl font-semibold shadow-2xl hover:shadow-[0_20px_40px_rgba(239,58,93,0.3)] transition-all duration-300 transform hover:scale-105 overflow-hidden">
                 <span className="relative z-10 flex items-center">
-                  Start Your Project
+                  Get Started Today
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#ff6b6b] to-[#ef3a5d] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -175,7 +182,7 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#ef3a5d] mb-2">150+</div>
+                <div className="text-4xl font-bold text-[#ef3a5d] mb-2">150+</div>
                 <div className="text-gray-600 text-sm">Projects Completed</div>
               </div>
               <div className="text-center">

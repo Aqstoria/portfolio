@@ -247,7 +247,7 @@ export default function Portfolio() {
                 alt="Aqstoria Logo"
                 width={120}
                 height={40}
-                className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
+                className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
               />
             </div>
 
@@ -337,16 +337,16 @@ export default function Portfolio() {
                 }`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:rotate-3`}>
-                  <service.icon className="h-7 w-7 text-white group-hover:scale-110 transition-transform duration-300" />
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:rotate-3`}>
+                  <service.icon className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h3 className="text-lg font-bold mb-3 text-[#0a1a2e] group-hover:text-[#ef3a5d] transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-3 text-[#0a1a2e] group-hover:text-[#ef3a5d] transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm mb-3 group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-gray-600 leading-relaxed text-sm mb-4 group-hover:text-gray-700 transition-colors duration-300">
                   {service.description}
                 </p>
-                <p className="text-[#ef3a5d] font-semibold text-xs group-hover:text-[#ff6b6b] transition-colors duration-300">
+                <p className="text-[#ef3a5d] font-semibold text-sm group-hover:text-[#ff6b6b] transition-colors duration-300">
                   {service.title === "Custom Software Development" && "Build scalable apps with cutting-edge tech"}
                   {service.title === "Mobile App Development" && "Native performance with cross-platform reach"}
                   {service.title === "UI/UX Design" && "User-centered design that converts visitors to customers"}
@@ -433,6 +433,13 @@ export default function Portfolio() {
                       <Code className="h-8 w-8 text-white" />
                     </div>
                   </div>
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                    <button className="px-6 py-3 bg-white text-[#ef3a5d] rounded-full font-semibold transform scale-95 group-hover:scale-100 transition-transform duration-300 shadow-lg">
+                      Learn More
+                    </button>
+                  </div>
                 </div>
 
                 {/* Project Details */}
@@ -458,7 +465,7 @@ export default function Portfolio() {
                   </div>
 
                   {/* Project Stats */}
-                  <div className="flex items-center justify-between text-xs text-gray-500">
+                  <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
                     <div className="flex items-center">
                       <Calendar className="h-3 w-3 mr-1" />
                       <span>3-6 months</span>
@@ -468,6 +475,11 @@ export default function Portfolio() {
                       <span>Team of 4-6</span>
                     </div>
                   </div>
+                  
+                  {/* View Case Study Button */}
+                  <button className="w-full px-4 py-2 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                    View Case Study →
+                  </button>
                 </div>
                 
                 {/* Floating Elements on Hover */}
@@ -638,9 +650,22 @@ export default function Portfolio() {
                     placeholder="Tell us about your project..."
                   />
                 </div>
+                
+                {/* Privacy Checkbox */}
+                <div className="flex items-start space-x-3">
+                  <input
+                    type="checkbox"
+                    required
+                    className="mt-1 w-4 h-4 text-[#ef3a5d] bg-gray-100 border-gray-300 rounded focus:ring-[#ef3a5d] focus:ring-2"
+                  />
+                  <label className="text-sm text-gray-600">
+                    I agree to the <a href="#" className="text-[#ef3a5d] hover:underline">Privacy Policy</a> and consent to being contacted about my project.
+                  </label>
+                </div>
+                
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="w-full px-8 py-5 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg"
                 >
                   Send Message
                 </button>
@@ -858,12 +883,17 @@ export default function Portfolio() {
                   <a
                     key={index}
                     href="#"
-                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#ef3a5d] transition-all duration-300"
+                    className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#ef3a5d] hover:scale-110 transition-all duration-300"
                   >
-                    <Icon className="h-5 w-5" />
+                    <Icon className="h-6 w-6" />
                   </a>
                 ))}
               </div>
+              
+              {/* Request Quote CTA */}
+              <button className="w-full px-6 py-3 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 mb-6">
+                Request a Quote
+              </button>
               
               {/* Trust Signals */}
               <div className="space-y-3">
