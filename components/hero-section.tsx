@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { MessageCircle, Code, TrendingUp, Globe, ArrowRight, Play, Pause } from 'lucide-react'
+import TechGlobe from './tech-globe'
 
 interface HeroSectionProps {
   isVisible: boolean
@@ -207,71 +208,11 @@ export default function HeroSection({ isVisible }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* Right Column - 3D Interactive Globe */}
+          {/* Right Column - Tech Stack Globe */}
           <div className={`transform transition-all duration-2000 delay-500 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}>
-            <div className="relative">
-              {/* 3D Globe Container */}
-              <div className="relative w-96 h-96 mx-auto">
-                {/* Globe Base */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ef3a5d]/20 to-[#ff6b6b]/20 rounded-full blur-2xl animate-pulse-slow" />
-                
-                {/* Interactive Globe */}
-                <div className="relative w-full h-full bg-gradient-to-br from-[#0a1a2e] to-[#1a2a3e] rounded-full border-2 border-[#ef3a5d]/30 shadow-2xl overflow-hidden group">
-                  {/* Globe Surface */}
-                  <div className="absolute inset-4 bg-gradient-to-br from-[#ef3a5d]/10 to-[#ff6b6b]/10 rounded-full" />
-                  
-                  {/* Floating Elements */}
-                  <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-[#ef3a5d] to-[#ff6b6b] rounded-full flex items-center justify-center shadow-lg animate-float">
-                    <Code className="h-8 w-8 text-white" />
-                  </div>
-                  
-                  <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-gradient-to-br from-[#ff6b6b] to-[#ef3a5d] rounded-full flex items-center justify-center shadow-lg animate-float" style={{ animationDelay: '1s' }}>
-                    <TrendingUp className="h-6 w-6 text-white" />
-                  </div>
-                  
-                  <div className="absolute bottom-1/4 left-1/3 w-14 h-14 bg-gradient-to-br from-[#ef3a5d] to-[#ff6b6b] rounded-full flex items-center justify-center shadow-lg animate-float" style={{ animationDelay: '2s' }}>
-                    <Globe className="h-7 w-7 text-white" />
-                  </div>
-
-                  {/* Connection Lines */}
-                  <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }}>
-                    <line x1="25%" y1="25%" x2="75%" y2="33%" stroke="#ef3a5d" strokeWidth="2" opacity="0.6" />
-                    <line x1="75%" y1="33%" x2="33%" y2="75%" stroke="#ff6b6b" strokeWidth="2" opacity="0.6" />
-                    <line x1="33%" y1="75%" x2="25%" y2="25%" stroke="#ef3a5d" strokeWidth="2" opacity="0.6" />
-                  </svg>
-
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#ef3a5d]/0 to-[#ff6b6b]/0 group-hover:from-[#ef3a5d]/20 group-hover:to-[#ff6b6b]/20 transition-all duration-500 rounded-full" />
-                </div>
-
-                {/* Orbiting Elements */}
-                <div className="absolute inset-0 animate-spin-slow">
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#ef3a5d] rounded-full shadow-lg" />
-                </div>
-                <div className="absolute inset-0 animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '8s' }}>
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-[#ff6b6b] rounded-full shadow-lg" />
-                </div>
-              </div>
-
-              {/* Interactive Hotspots */}
-              <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-6 h-6 bg-[#ef3a5d] rounded-full animate-pulse cursor-pointer group">
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-[#0a1a2e] text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                    Software Solutions
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute top-1/3 right-1/4 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-6 h-6 bg-[#ff6b6b] rounded-full animate-pulse cursor-pointer group">
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-[#0a1a2e] text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                    Social Media Impact
-                  </div>
-                </div>
-              </div>
-            </div>
+            <TechGlobe isVisible={isVisible} />
           </div>
         </div>
       </div>
