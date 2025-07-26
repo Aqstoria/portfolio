@@ -200,7 +200,7 @@ export default function Portfolio() {
         "Mobile App Design",
         "Web Design",
       ],
-      color: "from-red-500 to-red-600",
+      color: "from-[#ef3a5d] to-[#d62f4f]",
       category: "design",
       slug: "ui-ux-design",
     },
@@ -218,7 +218,7 @@ export default function Portfolio() {
         "SEO Implementation",
         "Responsive Design",
       ],
-      color: "from-red-600 to-red-700",
+      color: "from-[#ef3a5d] to-[#c42a47]",
       category: "development",
       slug: "web-development",
     },
@@ -236,7 +236,7 @@ export default function Portfolio() {
         "Offline Functionality",
         "Performance Optimization",
       ],
-      color: "from-red-700 to-red-800",
+      color: "from-[#ef3a5d] to-[#b3253f]",
       category: "development",
       slug: "mobile-app-development",
     },
@@ -254,7 +254,7 @@ export default function Portfolio() {
         "Performance Optimization",
         "Store Migration",
       ],
-      color: "from-red-500 to-red-600",
+      color: "from-[#ef3a5d] to-[#d62f4f]",
       category: "ecommerce",
       slug: "shopify-development",
     },
@@ -272,7 +272,7 @@ export default function Portfolio() {
         "Security Implementation",
         "Maintenance & Support",
       ],
-      color: "from-red-600 to-red-700",
+      color: "from-[#ef3a5d] to-[#c42a47]",
       category: "cms",
       slug: "wordpress-development",
     },
@@ -290,7 +290,7 @@ export default function Portfolio() {
         "Lead Generation",
         "Conversion Optimization",
       ],
-      color: "from-red-700 to-red-800",
+      color: "from-[#ef3a5d] to-[#b3253f]",
       category: "marketing",
       slug: "digital-marketing",
     },
@@ -1732,13 +1732,13 @@ export default function Portfolio() {
         <div
           className="absolute w-96 h-96 rounded-full opacity-20 blur-3xl transition-all duration-1000"
           style={{
-            background: `radial-gradient(circle, rgba(239, 68, 68, 0.4), rgba(220, 38, 38, 0.4), transparent 70%)`,
+            background: `radial-gradient(circle, rgba(239, 58, 93, 0.4), rgba(214, 47, 79, 0.4), transparent 70%)`,
             left: `${mousePosition.x - 200}px`,
             top: `${mousePosition.y - 200}px`,
           }}
         />
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-red-200/20 to-red-300/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-red-300/20 to-red-400/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#ef3a5d]/20 to-[#d62f4f]/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#ef3a5d]/20 to-[#c42a47]/20 rounded-full blur-3xl animate-pulse" />
       </div>
 
       {/* Navigation */}
@@ -1769,7 +1769,7 @@ export default function Portfolio() {
                   className="text-gray-700 hover:text-red-600 transition-all duration-300 font-semibold relative group"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-red-600 to-red-700 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] group-hover:w-full transition-all duration-300" />
                 </button>
               ))}
             </div>
@@ -1780,7 +1780,7 @@ export default function Portfolio() {
                 href="https://wa.me/923001234567"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] hover:from-[#d62f4f] hover:to-[#c42a47] text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl"
                 title="Contact us on WhatsApp"
               >
                 <MessageCircle className="h-5 w-5" />
@@ -1823,11 +1823,11 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100">
         {/* Beautiful Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Elegant Gradient Orbs */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-red-400/20 to-red-600/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-red-500/20 to-red-700/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-red-300/15 to-red-600/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }} />
+                  <div className="absolute inset-0 overflow-hidden">
+            {/* Elegant Gradient Orbs */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#ef3a5d]/20 to-[#d62f4f]/20 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-[#ef3a5d]/20 to-[#c42a47]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[#ef3a5d]/15 to-[#d62f4f]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }} />
           
           {/* Sophisticated Grid Pattern */}
           <div className="absolute inset-0 opacity-5">
@@ -1846,7 +1846,7 @@ export default function Portfolio() {
             }`}>
               {/* Elegant Badge */}
               <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg mb-8">
-                <div className="w-2 h-2 bg-gradient-to-r from-red-600 to-red-700 rounded-full mr-3 animate-pulse" />
+                <div className="w-2 h-2 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full mr-3 animate-pulse" />
                 <span className="text-sm font-semibold text-gray-700">Award-Winning Digital Agency</span>
               </div>
 
@@ -1855,7 +1855,7 @@ export default function Portfolio() {
                 <span className="block">
                   We Create
                 </span>
-                <span className="block bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-[#ef3a5d] via-[#d62f4f] to-[#c42a47] bg-clip-text text-transparent">
                   Digital Excellence
                 </span>
               </h1>
@@ -1863,19 +1863,19 @@ export default function Portfolio() {
               {/* Elegant Subtitle */}
               <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
                 Empowering businesses with innovative{" "}
-                <span className="text-red-600 font-semibold">digital solutions</span> and{" "}
-                <span className="text-red-700 font-semibold">strategic growth</span>
+                <span className="text-[#ef3a5d] font-semibold">digital solutions</span> and{" "}
+                <span className="text-[#d62f4f] font-semibold">strategic growth</span>
               </p>
 
               {/* Elegant Service Pills */}
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
-                  { name: "Web Development", color: "from-red-500 to-red-600" },
-                  { name: "Mobile Apps", color: "from-red-600 to-red-700" },
-                  { name: "UI/UX Design", color: "from-red-700 to-red-800" },
-                  { name: "E-commerce", color: "from-red-500 to-red-600" },
-                  { name: "Digital Marketing", color: "from-red-600 to-red-700" },
-                  { name: "Cloud Solutions", color: "from-red-700 to-red-800" },
+                  { name: "Web Development", color: "from-[#ef3a5d] to-[#d62f4f]" },
+                  { name: "Mobile Apps", color: "from-[#ef3a5d] to-[#c42a47]" },
+                  { name: "UI/UX Design", color: "from-[#ef3a5d] to-[#b3253f]" },
+                  { name: "E-commerce", color: "from-[#ef3a5d] to-[#d62f4f]" },
+                  { name: "Digital Marketing", color: "from-[#ef3a5d] to-[#c42a47]" },
+                  { name: "Cloud Solutions", color: "from-[#ef3a5d] to-[#b3253f]" },
                 ].map((service, index) => (
                   <div
                     key={index}
@@ -1892,7 +1892,7 @@ export default function Portfolio() {
                 <Button
                   size="lg"
                   onClick={() => navigateToPage("contact")}
-                  className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold"
+                  className="bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] hover:from-[#d62f4f] hover:to-[#c42a47] text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold"
                 >
                   <Rocket className="mr-3 h-5 w-5" />
                   Start Your Project
@@ -1902,7 +1902,7 @@ export default function Portfolio() {
                   variant="outline"
                   size="lg"
                   onClick={() => navigateToPage("services")}
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-red-400 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold bg-white/80 backdrop-blur-sm"
+                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-[#ef3a5d] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold bg-white/80 backdrop-blur-sm"
                 >
                   <MessageCircle className="mr-3 h-5 w-5" />
                   Explore Services
@@ -1922,7 +1922,7 @@ export default function Portfolio() {
                     href={social.href}
                     target={social.href.startsWith("http") ? "_blank" : undefined}
                     rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-gray-400 hover:text-red-600 transition-all duration-300 transform hover:scale-110 group"
+                    className="text-gray-400 hover:text-[#ef3a5d] transition-all duration-300 transform hover:scale-110 group"
                     title={social.label}
                   >
                     <social.icon className="h-6 w-6" />
@@ -2254,17 +2254,17 @@ export default function Portfolio() {
       {/* Services Preview Section */}
       <section id="services" className="py-24 px-6 bg-gradient-to-r from-gray-50/50 to-red-50/50 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
-              Our Core Services
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              From creative design to cutting-edge technology solutions, our expert team delivers comprehensive digital
-              services including MERN/MEAN stacks, Shopify, WordPress, and enterprise systems tailored to your business
-              needs.
-            </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto" />
-          </div>
+                      <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] bg-clip-text text-transparent">
+                Our Core Services
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+                From creative design to cutting-edge technology solutions, our expert team delivers comprehensive digital
+                services including MERN/MEAN stacks, Shopify, WordPress, and enterprise systems tailored to your business
+                needs.
+              </p>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] rounded-full mx-auto" />
+            </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {services.slice(0, 6).map((service, index) => (
@@ -2295,7 +2295,7 @@ export default function Portfolio() {
                   <ul className="space-y-2 mb-8">
                     {service.features.slice(0, 4).map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center group/item">
-                        <CheckCircle className="h-4 w-4 text-red-500 mr-3 group-hover/item:scale-110 transition-transform duration-200" />
+                        <CheckCircle className="h-4 w-4 text-[#ef3a5d] mr-3 group-hover/item:scale-110 transition-transform duration-200" />
                         <span className="text-gray-700 text-sm group-hover/item:text-gray-900 transition-colors duration-200">
                           {feature}
                         </span>
@@ -2319,7 +2319,7 @@ export default function Portfolio() {
             <Button
               size="lg"
               onClick={() => navigateToPage("services")}
-              className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
+              className="bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] hover:from-[#d62f4f] hover:to-[#c42a47] text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
             >
               <Flame className="mr-2 h-5 w-5" />
               View All Services
@@ -2329,61 +2329,11 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-24 px-6 relative">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
-              Our Expertise
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {expertise.map((skill, index) => (
-              <Card
-                key={index}
-                className="group bg-white/90 backdrop-blur-sm border-0 hover:scale-105 transition-all duration-500 shadow-xl hover:shadow-2xl"
-                style={{
-                  animationDelay: `${index * 50}ms`,
-                }}
-              >
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <skill.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <span className="text-lg font-bold text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
-                        {skill.name}
-                      </span>
-                      <Badge
-                        variant="outline"
-                        className="ml-2 text-xs border-red-200 text-red-600 bg-red-50 font-medium"
-                      >
-                        {skill.category}
-                      </Badge>
-                    </div>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-4 mb-3 overflow-hidden">
-                    <div
-                      className="bg-gradient-to-r from-red-500 to-red-600 h-4 rounded-full transition-all duration-1000 shadow-sm"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                  <div className="text-right text-sm text-gray-600 font-semibold">{skill.level}%</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
       <section id="projects" className="py-24 px-6 bg-gradient-to-r from-red-50/50 to-gray-50/50 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] bg-clip-text text-transparent">
               Featured Projects
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto" />
@@ -2391,11 +2341,11 @@ export default function Portfolio() {
 
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             {[
-              { key: "all", label: "All Projects", color: "from-red-600 to-red-700" },
-              { key: "ecommerce", label: "E-commerce", color: "from-red-500 to-red-600" },
-              { key: "shopify", label: "Shopify", color: "from-red-600 to-red-700" },
-              { key: "erp", label: "Enterprise", color: "from-red-700 to-red-800" },
-              { key: "design", label: "Design", color: "from-red-500 to-red-600" },
+              { key: "all", label: "All Projects", color: "from-[#ef3a5d] to-[#d62f4f]" },
+              { key: "ecommerce", label: "E-commerce", color: "from-[#ef3a5d] to-[#d62f4f]" },
+              { key: "shopify", label: "Shopify", color: "from-[#ef3a5d] to-[#c42a47]" },
+              { key: "erp", label: "Enterprise", color: "from-[#ef3a5d] to-[#b3253f]" },
+              { key: "design", label: "Design", color: "from-[#ef3a5d] to-[#d62f4f]" },
             ].map((category) => (
               <Button
                 key={category.key}
@@ -2406,7 +2356,7 @@ export default function Portfolio() {
                   ${
                     activeProject === category.key
                       ? `bg-gradient-to-r ${category.color} text-white shadow-lg border-0`
-                      : "border-2 border-gray-300 text-gray-700 hover:border-red-400 hover:bg-red-50/50"
+                      : "border-2 border-gray-300 text-gray-700 hover:border-[#ef3a5d] hover:bg-[#ef3a5d]/5"
                   }
                 `}
               >
@@ -2440,7 +2390,7 @@ export default function Portfolio() {
                     )}
                   </div>
                   {project.featured && (
-                    <Badge className="absolute top-4 right-4 bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg">
+                    <Badge className="absolute top-4 right-4 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] text-white shadow-lg">
                       <Award className="h-3 w-3 mr-1" />
                       Featured
                     </Badge>
@@ -2458,7 +2408,7 @@ export default function Portfolio() {
                       <Badge
                         key={techIndex}
                         variant="secondary"
-                        className="bg-gray-100 text-gray-700 border-gray-200 text-xs hover:bg-red-100 hover:text-red-700 transition-colors duration-200 font-medium"
+                        className="bg-gray-100 text-gray-700 border-gray-200 text-xs hover:bg-[#ef3a5d]/10 hover:text-[#ef3a5d] transition-colors duration-200 font-medium"
                       >
                         {tech}
                       </Badge>
@@ -2478,7 +2428,7 @@ export default function Portfolio() {
                     <Button
                       size="sm"
                       onClick={() => scrollToSection("contact")}
-                      className="flex-1 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
+                      className="flex-1 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] hover:from-[#d62f4f] hover:to-[#c42a47] text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold"
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Get Quote
@@ -2493,7 +2443,7 @@ export default function Portfolio() {
             <Button
               size="lg"
               onClick={() => navigateToPage("case-studies")}
-              className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
+              className="bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] hover:from-[#d62f4f] hover:to-[#c42a47] text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 font-semibold"
             >
               <BarChart3 className="mr-2 h-5 w-5" />
               View Case Studies
@@ -2509,7 +2459,7 @@ export default function Portfolio() {
       <section id="contact" className="py-24 px-6 bg-gradient-to-r from-red-50/50 to-gray-50/50 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] bg-clip-text text-transparent">
               Get Your Free Quote Today
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto" />
@@ -2526,17 +2476,17 @@ export default function Portfolio() {
 
               <div className="space-y-8">
                 {[
-                  { icon: Mail, label: "Email", value: "hello@aqstoria.com", color: "from-red-500 to-red-600" },
-                  { icon: Phone, label: "Phone", value: "+92 300 123 4567", color: "from-red-600 to-red-700" },
+                  { icon: Mail, label: "Email", value: "hello@aqstoria.com", color: "from-[#ef3a5d] to-[#d62f4f]" },
+                  { icon: Phone, label: "Phone", value: "+92 300 123 4567", color: "from-[#ef3a5d] to-[#c42a47]" },
                   {
                     icon: MessageCircle,
                     label: "WhatsApp",
                     value: "+92 300 123 4567",
-                    color: "from-red-700 to-red-800",
+                    color: "from-[#ef3a5d] to-[#b3253f]",
                     link: "https://wa.me/923001234567",
                   },
-                  { icon: Globe, label: "Website", value: "aqstoria.com", color: "from-red-500 to-red-600" },
-                  { icon: Headphones, label: "Support", value: "24/7 Available", color: "from-red-600 to-red-700" },
+                  { icon: Globe, label: "Website", value: "aqstoria.com", color: "from-[#ef3a5d] to-[#d62f4f]" },
+                  { icon: Headphones, label: "Support", value: "24/7 Available", color: "from-[#ef3a5d] to-[#c42a47]" },
                 ].map((contact, index) => (
                   <div key={index} className="flex items-center space-x-6 group">
                     <div
@@ -2551,7 +2501,7 @@ export default function Portfolio() {
                           href={contact.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-red-600 hover:text-red-700 transition-colors duration-300 font-semibold"
+                          className="text-[#ef3a5d] hover:text-[#d62f4f] transition-colors duration-300 font-semibold"
                         >
                           {contact.value}
                         </a>
@@ -2576,7 +2526,7 @@ export default function Portfolio() {
                       <Input
                         id="fullName"
                         placeholder="Your Full Name"
-                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-[#ef3a5d] h-12 rounded-xl font-medium"
                       />
                     </div>
                     <div>
@@ -2587,7 +2537,7 @@ export default function Portfolio() {
                         id="email"
                         type="email"
                         placeholder="your@email.com"
-                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-[#ef3a5d] h-12 rounded-xl font-medium"
                       />
                     </div>
                   </div>
@@ -2599,7 +2549,7 @@ export default function Portfolio() {
                       <Input
                         id="phone"
                         placeholder="+92 300 123 4567"
-                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-[#ef3a5d] h-12 rounded-xl font-medium"
                       />
                     </div>
                     <div>
@@ -2609,7 +2559,7 @@ export default function Portfolio() {
                       <Input
                         id="company"
                         placeholder="Your Company Name"
-                        className="bg-white/50 border-gray-300 focus:border-red-500 h-12 rounded-xl font-medium"
+                        className="bg-white/50 border-gray-300 focus:border-[#ef3a5d] h-12 rounded-xl font-medium"
                       />
                     </div>
                   </div>
@@ -2619,7 +2569,7 @@ export default function Portfolio() {
                     </label>
                     <select
                       id="budget"
-                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-red-500 focus:outline-none h-12 font-medium"
+                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-[#ef3a5d] focus:outline-none h-12 font-medium"
                     >
                       <option>Select Budget</option>
                       <option>PKR 10,000 - PKR 50,000</option>
@@ -2636,10 +2586,10 @@ export default function Portfolio() {
                       id="projectDescription"
                       rows={4}
                       placeholder="Describe your project in detail"
-                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-red-500 focus:outline-none font-medium"
+                      className="w-full p-4 border border-gray-300 rounded-xl bg-white/50 focus:border-[#ef3a5d] focus:outline-none font-medium"
                     />
                   </div>
-                  <Button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
+                  <Button className="bg-gradient-to-r from-[#ef3a5d] to-[#d62f4f] hover:from-[#d62f4f] hover:to-[#c42a47] text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 font-semibold">
                     Get Detailed Quote
                   </Button>
                 </form>
@@ -2662,11 +2612,11 @@ export default function Portfolio() {
               <Card className="h-full bg-white/90 backdrop-blur-sm border-0 shadow-xl flex flex-col justify-between">
                 <CardContent className="p-10 flex flex-col h-full">
                   <div className="flex items-center mb-6">
-                    <Quote className="h-8 w-8 text-red-400 mr-3" />
-                    <span className="text-red-400 font-bold text-lg">"Aqstoria's UI/UX design services are world-class. They redesigned our entire product interface, resulting in a 60% increase in user engagement and a 45% reduction in support tickets. The design is both beautiful and functional."</span>
+                    <Quote className="h-8 w-8 text-[#ef3a5d] mr-3" />
+                    <span className="text-[#ef3a5d] font-bold text-lg">"Aqstoria's UI/UX design services are world-class. They redesigned our entire product interface, resulting in a 60% increase in user engagement and a 45% reduction in support tickets. The design is both beautiful and functional."</span>
                   </div>
                   <div className="flex items-center mt-8">
-                    <div className="w-14 h-14 rounded-full bg-red-500 flex items-center justify-center mr-4">
+                    <div className="w-14 h-14 rounded-full bg-[#ef3a5d] flex items-center justify-center mr-4">
                       <UserIcon className="h-8 w-8 text-white" />
                     </div>
                     <div>
@@ -2685,10 +2635,10 @@ export default function Portfolio() {
             </div>
             {/* Results Card */}
             <div>
-              <Card className="h-full bg-red-50/80 border-0 shadow-xl flex flex-col justify-between">
+              <Card className="h-full bg-[#ef3a5d]/5 border-0 shadow-xl flex flex-col justify-between">
                 <CardContent className="p-8 flex flex-col h-full">
                   <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mr-3">
+                    <div className="w-10 h-10 rounded-full bg-[#ef3a5d] flex items-center justify-center mr-3">
                       <PenTool className="h-6 w-6 text-white" />
                     </div>
                     <div>
