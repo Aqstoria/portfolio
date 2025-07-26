@@ -54,6 +54,8 @@ import {
   Flame,
 } from "lucide-react"
 import Footer from "@/components/footer"
+import TestimonialsSlider from "@/components/testimonials-slider"
+import BlogSection from "@/components/blog-section"
 
 export default function Portfolio() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -81,23 +83,19 @@ export default function Portfolio() {
     }
   }, [])
 
-  const skills = [
-    { name: "Graphic Design", level: 95, icon: Palette, category: "Design" },
-    { name: "MERN Stack", level: 94, icon: Code, category: "Development" },
-    { name: "MEAN Stack", level: 92, icon: Code, category: "Development" },
-    { name: "React/Next.js", level: 96, icon: Code, category: "Frontend" },
-    { name: "Node.js/Express", level: 93, icon: Server, category: "Backend" },
-    { name: "MongoDB", level: 91, icon: Database, category: "Database" },
-    { name: "Angular", level: 89, icon: Code, category: "Frontend" },
-    { name: "Shopify Development", level: 88, icon: ShoppingCart, category: "E-commerce" },
-    { name: "WordPress", level: 90, icon: Monitor, category: "CMS" },
+  const expertise = [
+    { name: "Web Development", level: 95, icon: Monitor, category: "Development" },
+    { name: "Mobile Apps", level: 94, icon: Smartphone, category: "Development" },
+    { name: "UI/UX Design", level: 96, icon: Palette, category: "Design" },
     { name: "E-commerce", level: 92, icon: ShoppingCart, category: "Development" },
-    { name: "Android Development", level: 88, icon: Smartphone, category: "Mobile" },
-    { name: "ERP Systems", level: 85, icon: Settings, category: "Enterprise" },
     { name: "Digital Marketing", level: 90, icon: TrendingUp, category: "Marketing" },
     { name: "SEO Optimization", level: 87, icon: Search, category: "Marketing" },
-    { name: "UI/UX Design", level: 92, icon: PenTool, category: "Design" },
-    { name: "API Development", level: 89, icon: Link, category: "Backend" },
+    { name: "Brand Identity", level: 93, icon: PenTool, category: "Design" },
+    { name: "Cloud Solutions", level: 89, icon: Server, category: "Technology" },
+    { name: "API Development", level: 91, icon: Link, category: "Development" },
+    { name: "WordPress", level: 88, icon: Monitor, category: "CMS" },
+    { name: "Shopify Development", level: 90, icon: ShoppingCart, category: "E-commerce" },
+    { name: "Enterprise Solutions", level: 85, icon: Settings, category: "Enterprise" },
   ]
 
   const projects = [
@@ -1871,101 +1869,96 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
-        {/* Modern Background Elements */}
+      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        {/* Professional Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Gradient Orbs */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-cyan-600/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+          {/* Subtle Gradient Orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-cyan-600/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-400/10 to-blue-600/10 rounded-full blur-3xl" />
           
-          {/* Floating Shapes */}
-          <div className="absolute top-1/3 right-1/3 w-4 h-4 bg-blue-500 rounded-full animate-bounce opacity-60" />
-          <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-cyan-600 rounded-full animate-bounce opacity-60" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-teal-400 rounded-full animate-bounce opacity-60" style={{ animationDelay: '2s' }} />
-          
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-5">
+          {/* Professional Grid Pattern */}
+          <div className="absolute inset-0 opacity-3">
             <div className="absolute inset-0" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0)`,
-              backgroundSize: '40px 40px'
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)`,
+              backgroundSize: '50px 50px'
             }} />
           </div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Content */}
             <div className={`transform transition-all duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}>
-              {/* Badge */}
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200 mb-8">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse" />
-                <span className="text-sm font-semibold text-gray-700">Leading Digital Agency</span>
+              {/* Professional Badge */}
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white border border-gray-200 shadow-sm mb-8">
+                <div className="w-2 h-2 bg-blue-600 rounded-full mr-3" />
+                <span className="text-sm font-semibold text-gray-700">Award-Winning Digital Agency</span>
               </div>
 
-              {/* Main Heading */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 leading-tight">
-                <span className="block bg-gradient-to-r from-gray-900 via-blue-600 to-gray-900 bg-clip-text text-transparent">
-                  We Build
+              {/* Professional Main Heading */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight text-gray-900">
+                <span className="block">
+                  We Create
                 </span>
-                <span className="block bg-gradient-to-r from-blue-600 via-cyan-800 to-blue-600 bg-clip-text text-transparent">
-                  Digital Dreams
+                <span className="block bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                  Digital Excellence
                 </span>
               </h1>
 
-              {/* Subtitle */}
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed font-medium">
-                Transform your business with cutting-edge{" "}
-                <span className="text-blue-600 font-bold">web solutions</span> and{" "}
-                <span className="text-cyan-800 font-bold">innovative design</span>
+              {/* Professional Subtitle */}
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
+                Empowering businesses with innovative{" "}
+                <span className="text-blue-600 font-semibold">digital solutions</span> and{" "}
+                <span className="text-cyan-600 font-semibold">strategic growth</span>
               </p>
 
-              {/* Tech Stack Pills */}
+              {/* Professional Service Pills */}
               <div className="flex flex-wrap gap-3 mb-10">
                 {[
-                  { name: "MERN Stack", color: "from-blue-500 to-blue-600" },
-                  { name: "MEAN Stack", color: "from-cyan-600 to-cyan-700" },
-                  { name: "Shopify", color: "from-teal-600 to-teal-700" },
-                  { name: "WordPress", color: "from-blue-600 to-blue-700" },
-                  { name: "Mobile Apps", color: "from-cyan-500 to-cyan-600" },
-                  { name: "E-commerce", color: "from-teal-500 to-teal-600" },
-                ].map((tech, index) => (
+                  { name: "Web Development", color: "from-blue-500 to-blue-600" },
+                  { name: "Mobile Apps", color: "from-cyan-600 to-cyan-700" },
+                  { name: "UI/UX Design", color: "from-teal-600 to-teal-700" },
+                  { name: "E-commerce", color: "from-blue-600 to-blue-700" },
+                  { name: "Digital Marketing", color: "from-cyan-500 to-cyan-600" },
+                  { name: "Cloud Solutions", color: "from-teal-500 to-teal-600" },
+                ].map((service, index) => (
                   <div
                     key={index}
-                    className={`px-4 py-2 rounded-full bg-gradient-to-r ${tech.color} text-white text-sm font-semibold shadow-lg transform hover:scale-105 transition-all duration-300`}
+                    className={`px-4 py-2 rounded-full bg-gradient-to-r ${service.color} text-white text-sm font-medium shadow-md transform hover:scale-105 transition-all duration-300`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    {tech.name}
+                    {service.name}
                   </div>
                 ))}
               </div>
 
-              {/* CTA Buttons */}
+              {/* Professional CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Button
                   size="lg"
                   onClick={() => navigateToPage("contact")}
-                  className="bg-gradient-to-r from-blue-600 to-cyan-700 hover:from-blue-700 hover:to-cyan-800 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-bold group"
+                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold"
                 >
-                  <Rocket className="mr-3 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <Rocket className="mr-3 h-5 w-5" />
                   Start Your Project
-                  <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="ml-3 h-5 w-5" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   onClick={() => navigateToPage("services")}
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-blue-400 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-bold bg-white/80 backdrop-blur-sm"
+                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-blue-400 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 px-8 py-4 text-lg font-semibold bg-white"
                 >
                   <MessageCircle className="mr-3 h-5 w-5" />
-                  View Services
+                  Explore Services
                 </Button>
               </div>
 
-              {/* Social Links */}
+              {/* Professional Social Links */}
               <div className="flex items-center space-x-6">
-                <span className="text-sm text-gray-500 font-medium">Follow us:</span>
+                <span className="text-sm text-gray-500 font-medium">Connect with us:</span>
                 {[
                   { icon: Github, href: "#", label: "GitHub" },
                   { icon: Linkedin, href: "#", label: "LinkedIn" },
@@ -1976,24 +1969,24 @@ export default function Portfolio() {
                     href={social.href}
                     target={social.href.startsWith("http") ? "_blank" : undefined}
                     rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-gray-400 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group"
+                    className="text-gray-400 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 group"
                     title={social.label}
                   >
-                    <social.icon className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+                    <social.icon className="h-6 w-6" />
                   </a>
                 ))}
               </div>
             </div>
 
-            {/* Right Column - Visual Elements */}
+            {/* Right Column - Professional Visual Elements */}
             <div className={`transform transition-all duration-1000 delay-300 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}>
               <div className="relative">
-                {/* Main Visual Container */}
-                <div className="relative w-full h-96 lg:h-[500px] bg-gradient-to-br from-blue-50 via-white to-cyan-50 rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
-                  {/* Floating Cards */}
-                  <div className="absolute top-8 left-8 w-32 h-20 bg-white rounded-2xl shadow-xl border border-gray-100 transform rotate-12 animate-float">
+                {/* Professional Visual Container */}
+                <div className="relative w-full h-96 lg:h-[500px] bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+                  {/* Professional Floating Elements */}
+                  <div className="absolute top-8 left-8 w-32 h-20 bg-white rounded-xl shadow-lg border border-gray-200 transform rotate-6">
                     <div className="p-4">
                       <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg mb-2" />
                       <div className="w-16 h-2 bg-gray-200 rounded" />
@@ -2385,14 +2378,14 @@ export default function Portfolio() {
       <section id="skills" className="py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 to-gray-700 bg-clip-text text-transparent">
-              Our Technical Expertise
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              Our Core Services
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-gray-700 rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skills.map((skill, index) => (
+            {expertise.map((skill, index) => (
               <Card
                 key={index}
                 className="group bg-white/90 backdrop-blur-sm border-0 hover:scale-105 transition-all duration-500 shadow-xl hover:shadow-2xl"
@@ -2402,7 +2395,7 @@ export default function Portfolio() {
               >
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-red-500 to-gray-700 flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-600 flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <skill.icon className="h-6 w-6 text-white" />
                     </div>
                     <div className="flex-1">
@@ -2411,7 +2404,7 @@ export default function Portfolio() {
                       </span>
                       <Badge
                         variant="outline"
-                        className="ml-2 text-xs border-red-200 text-red-600 bg-red-50 font-medium"
+                        className="ml-2 text-xs border-blue-200 text-blue-600 bg-blue-50 font-medium"
                       >
                         {skill.category}
                       </Badge>
@@ -2419,7 +2412,7 @@ export default function Portfolio() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-4 mb-3 overflow-hidden">
                     <div
-                      className="bg-gradient-to-r from-red-500 to-gray-700 h-4 rounded-full transition-all duration-1000 shadow-sm"
+                      className="bg-gradient-to-r from-blue-500 to-cyan-600 h-4 rounded-full transition-all duration-1000 shadow-sm"
                       style={{ width: `${skill.level}%` }}
                     />
                   </div>
@@ -2742,6 +2735,18 @@ export default function Portfolio() {
             </Card>
           </div>
         </div>
+      </section>
+
+      {/* Phase 2: Interactive Features */}
+      
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <TestimonialsSlider />
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-20 bg-white">
+        <BlogSection />
       </section>
 
       {/* Footer Section */}
