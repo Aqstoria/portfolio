@@ -349,13 +349,21 @@ export default function Portfolio() {
 
             {/* Desktop Menu */}
             <nav className="hidden md:flex space-x-8">
-              {["Home", "Services", "Portfolio", "About", "Contact"].map((item) => (
+              {[
+                { name: "Home", href: "#home" },
+                { name: "Services", href: "#services" },
+                { name: "Portfolio", href: "#portfolio" },
+                { name: "Store", href: "/store" },
+                { name: "Social Media", href: "/social-media" },
+                { name: "About", href: "#about" },
+                { name: "Contact", href: "#contact" }
+              ].map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.name}
+                  href={item.href}
                   className="text-gray-700 dark:text-gray-200 hover:text-[#ef3a5d] transition-all duration-300 font-medium relative group"
                 >
-                  {item}
+                  {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
@@ -392,14 +400,22 @@ export default function Portfolio() {
           {isMobileMenuOpen && (
             <div className="md:hidden mt-4 py-4 border-t border-gray-200 dark:border-gray-600">
               <nav className="flex flex-col space-y-4">
-                {["Home", "Services", "Portfolio", "About", "Contact"].map((item) => (
+                {[
+                  { name: "Home", href: "#home" },
+                  { name: "Services", href: "#services" },
+                  { name: "Portfolio", href: "#portfolio" },
+                  { name: "Store", href: "/store" },
+                  { name: "Social Media", href: "/social-media" },
+                  { name: "About", href: "#about" },
+                  { name: "Contact", href: "#contact" }
+                ].map((item) => (
                   <a
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
+                    key={item.name}
+                    href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-gray-700 dark:text-gray-200 hover:text-[#ef3a5d] transition-all duration-300 font-medium"
                   >
-                    {item}
+                    {item.name}
                   </a>
                 ))}
                 <button className="w-full px-6 py-3 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover-bounce">
