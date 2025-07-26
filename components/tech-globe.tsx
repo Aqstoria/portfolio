@@ -3,26 +3,18 @@
 import { useState, useEffect, useRef } from 'react'
 import { 
   Code, 
-  Smartphone, 
-  Palette, 
+  Cpu, 
+  Server, 
+  Box, 
   Database, 
-  Globe, 
+  Database2, 
+  Cloud, 
   Zap, 
-  Shield, 
-  Cloud,
-  Cpu,
-  Server,
-  Database2,
-  GitBranch,
-  FileCode,
-  Settings,
-  Package,
-  Layers,
-  Box,
-  HardDrive,
-  Network,
-  Monitor,
-  ShoppingBag
+  Palette, 
+  Layers, 
+  GitBranch, 
+  ShoppingBag, 
+  Globe 
 } from 'lucide-react'
 
 interface TechIcon {
@@ -37,12 +29,12 @@ interface TechIcon {
 const techStack: TechIcon[] = [
   // Frontend
   { id: 'react', icon: Cpu, name: 'React', category: 'frontend', position: { x: 0.8, y: 0.2, z: 0.6 }, color: '#61DAFB' },
-  { id: 'typescript', icon: FileCode, name: 'TypeScript', category: 'frontend', position: { x: -0.7, y: 0.3, z: 0.7 }, color: '#3178C6' },
+  { id: 'typescript', icon: Code, name: 'TypeScript', category: 'frontend', position: { x: -0.7, y: 0.3, z: 0.7 }, color: '#3178C6' },
   { id: 'nextjs', icon: Code, name: 'Next.js', category: 'frontend', position: { x: 0.6, y: -0.4, z: 0.7 }, color: '#000000' },
   
   // Backend
   { id: 'nodejs', icon: Server, name: 'Node.js', category: 'backend', position: { x: -0.8, y: -0.2, z: 0.6 }, color: '#339933' },
-  { id: 'python', icon: Package, name: 'Python', category: 'backend', position: { x: 0.3, y: 0.8, z: 0.5 }, color: '#3776AB' },
+  { id: 'python', icon: Box, name: 'Python', category: 'backend', position: { x: 0.3, y: 0.8, z: 0.5 }, color: '#3776AB' },
   { id: 'docker', icon: Box, name: 'Docker', category: 'backend', position: { x: -0.5, y: 0.7, z: 0.5 }, color: '#2496ED' },
   
   // Database
