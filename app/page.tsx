@@ -364,10 +364,7 @@ export default function Portfolio() {
                     { name: "UI/UX Design", href: "/services/ui-ux-design" },
                     { name: "E-commerce Development", href: "/services/ecommerce-development" },
                     { name: "Digital Marketing", href: "/services/digital-marketing" },
-                    { name: "Cloud Solutions", href: "/services/cloud-solutions" },
-                    { name: "API Development", href: "/services/api-development" },
-                    { name: "Database Design", href: "/services/database-design" },
-                    { name: "Maintenance & Support", href: "/services/maintenance-support" }
+                    { name: "Cloud Solutions", href: "/services/cloud-solutions" }
                   ]
                 },
                 { name: "Portfolio", href: "#portfolio" },
@@ -469,10 +466,7 @@ export default function Portfolio() {
                       { name: "UI/UX Design", href: "/services/ui-ux-design" },
                       { name: "E-commerce Development", href: "/services/ecommerce-development" },
                       { name: "Digital Marketing", href: "/services/digital-marketing" },
-                      { name: "Cloud Solutions", href: "/services/cloud-solutions" },
-                      { name: "API Development", href: "/services/api-development" },
-                      { name: "Database Design", href: "/services/database-design" },
-                      { name: "Maintenance & Support", href: "/services/maintenance-support" }
+                      { name: "Cloud Solutions", href: "/services/cloud-solutions" }
                     ]
                   },
                   { name: "Portfolio", href: "#portfolio" },
