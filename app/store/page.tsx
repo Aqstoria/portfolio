@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ShoppingCart, Download, Star, Eye, Code, Database, Globe, Shield, Zap, Package } from 'lucide-react'
+import SharedLayout from '@/components/shared-layout'
 
 const scripts = [
   {
@@ -119,7 +120,8 @@ export default function StorePage() {
     .reduce((total, script) => total + script.price, 0)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <SharedLayout>
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] py-20">
         <div className="absolute inset-0 bg-black/10"></div>
@@ -349,6 +351,7 @@ export default function StorePage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </SharedLayout>
   )
 } 

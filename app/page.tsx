@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User, Users, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, Play, Pause, Filter, CheckCircle, Send, Eye, Zap, Award, Shield, Globe, Moon, Sun, Menu, X } from "lucide-react"
+import { MessageCircle, Code, Smartphone, Palette, ShoppingCart, TrendingUp, Server, Quote, Star, ArrowRight, Calendar, User, Users, Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, Play, Pause, Filter, CheckCircle, Send, Eye, Zap, Award, Shield, Globe, Moon, Sun, Menu, X, ChevronDown } from "lucide-react"
 import { services } from '@/lib/data'
 import Chatbot from '@/components/chatbot'
 import HeroSection from '@/components/hero-section'
+import SharedLayout from '@/components/shared-layout'
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false)
@@ -18,6 +19,7 @@ export default function Portfolio() {
   const [newsletterEmail, setNewsletterEmail] = useState("")
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
 
   // Dark mode functionality
   useEffect(() => {
@@ -351,21 +353,75 @@ export default function Portfolio() {
             <nav className="hidden md:flex space-x-8">
               {[
                 { name: "Home", href: "#home" },
-                { name: "Services", href: "#services" },
+                { 
+                  name: "Services", 
+                  href: "#services",
+                  hasDropdown: true,
+                  dropdownItems: [
+                    { name: "All Services", href: "#services" },
+                    { name: "Custom Software Development", href: "/services/custom-software-development" },
+                    { name: "Mobile App Development", href: "/services/mobile-app-development" },
+                    { name: "UI/UX Design", href: "/services/ui-ux-design" },
+                    { name: "E-commerce Development", href: "/services/ecommerce-development" },
+                    { name: "Digital Marketing", href: "/services/digital-marketing" },
+                    { name: "Cloud Solutions", href: "/services/cloud-solutions" },
+                    { name: "API Development", href: "/services/api-development" },
+                    { name: "Database Design", href: "/services/database-design" },
+                    { name: "Maintenance & Support", href: "/services/maintenance-support" }
+                  ]
+                },
                 { name: "Portfolio", href: "#portfolio" },
                 { name: "Store", href: "/store" },
                 { name: "Social Media", href: "/social-media" },
+                { name: "Case Studies", href: "/case-studies" },
+                { name: "Blog", href: "/blog" },
                 { name: "About", href: "#about" },
                 { name: "Contact", href: "#contact" }
               ].map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 dark:text-gray-200 hover:text-[#ef3a5d] transition-all duration-300 font-medium relative group"
-                >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] group-hover:w-full transition-all duration-300" />
-                </a>
+                <div key={item.name} className="relative">
+                  {item.hasDropdown ? (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setIsServicesDropdownOpen(true)}
+                      onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                    >
+                      <button className="flex items-center text-gray-700 dark:text-gray-200 hover:text-[#ef3a5d] transition-all duration-300 font-medium relative group">
+                        {item.name}
+                        <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] group-hover:w-full transition-all duration-300" />
+                      </button>
+                      
+                      {/* Dropdown Menu */}
+                      {isServicesDropdownOpen && (
+                        <div className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-4 z-50">
+                          <div className="px-4 py-2">
+                            <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Our Services</h3>
+                            <div className="grid grid-cols-1 gap-2">
+                              {item.dropdownItems?.map((dropdownItem, index) => (
+                                <a
+                                  key={index}
+                                  href={dropdownItem.href}
+                                  className="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-[#ef3a5d] rounded-lg transition-all duration-200"
+                                >
+                                  <ChevronRight className="h-4 w-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                                  {dropdownItem.name}
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="text-gray-700 dark:text-gray-200 hover:text-[#ef3a5d] transition-all duration-300 font-medium relative group"
+                    >
+                      {item.name}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] group-hover:w-full transition-all duration-300" />
+                    </a>
+                  )}
+                </div>
               ))}
             </nav>
 
@@ -402,21 +458,66 @@ export default function Portfolio() {
               <nav className="flex flex-col space-y-4">
                 {[
                   { name: "Home", href: "#home" },
-                  { name: "Services", href: "#services" },
+                  { 
+                    name: "Services", 
+                    href: "#services",
+                    hasDropdown: true,
+                    dropdownItems: [
+                      { name: "All Services", href: "#services" },
+                      { name: "Custom Software Development", href: "/services/custom-software-development" },
+                      { name: "Mobile App Development", href: "/services/mobile-app-development" },
+                      { name: "UI/UX Design", href: "/services/ui-ux-design" },
+                      { name: "E-commerce Development", href: "/services/ecommerce-development" },
+                      { name: "Digital Marketing", href: "/services/digital-marketing" },
+                      { name: "Cloud Solutions", href: "/services/cloud-solutions" },
+                      { name: "API Development", href: "/services/api-development" },
+                      { name: "Database Design", href: "/services/database-design" },
+                      { name: "Maintenance & Support", href: "/services/maintenance-support" }
+                    ]
+                  },
                   { name: "Portfolio", href: "#portfolio" },
                   { name: "Store", href: "/store" },
                   { name: "Social Media", href: "/social-media" },
+                  { name: "Case Studies", href: "/case-studies" },
+                  { name: "Blog", href: "/blog" },
                   { name: "About", href: "#about" },
                   { name: "Contact", href: "#contact" }
                 ].map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-gray-700 dark:text-gray-200 hover:text-[#ef3a5d] transition-all duration-300 font-medium"
-                  >
-                    {item.name}
-                  </a>
+                  <div key={item.name}>
+                    {item.hasDropdown ? (
+                      <div>
+                        <button
+                          onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                          className="flex items-center justify-between w-full text-gray-700 dark:text-gray-200 hover:text-[#ef3a5d] transition-all duration-300 font-medium"
+                        >
+                          {item.name}
+                          <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                        </button>
+                        {isServicesDropdownOpen && (
+                          <div className="ml-4 mt-2 space-y-2">
+                            {item.dropdownItems?.map((dropdownItem, index) => (
+                              <a
+                                key={index}
+                                href={dropdownItem.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="block text-sm text-gray-600 dark:text-gray-400 hover:text-[#ef3a5d] transition-all duration-300"
+                              >
+                                {dropdownItem.name}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <a
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-gray-700 dark:text-gray-200 hover:text-[#ef3a5d] transition-all duration-300 font-medium"
+                      >
+                        {item.name}
+                      </a>
+                    )}
+                  </div>
                 ))}
                 <button className="w-full px-6 py-3 bg-gradient-to-r from-[#ef3a5d] to-[#ff6b6b] text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover-bounce">
                   Get Started
@@ -1031,10 +1132,17 @@ export default function Portfolio() {
             <div>
               <h3 className="text-xl font-bold mb-6">Services</h3>
               <ul className="space-y-3">
-                {["Custom Software Development", "Mobile App Development", "UI/UX Design", "Digital Marketing", "Cloud Solutions"].map((service, index) => (
+                {[
+                  { name: "Custom Software Development", href: "#services" },
+                  { name: "Mobile App Development", href: "#services" },
+                  { name: "UI/UX Design", href: "#services" },
+                  { name: "Digital Marketing", href: "#services" },
+                  { name: "Social Media Management", href: "/social-media" },
+                  { name: "Cloud Solutions", href: "#services" }
+                ].map((service, index) => (
                   <li key={index}>
-                    <a href="#" className="text-gray-300 hover:text-[#ef3a5d] transition-colors duration-300 hover:translate-x-1 inline-block">
-                      {service}
+                    <a href={service.href} className="text-gray-300 hover:text-[#ef3a5d] transition-colors duration-300 hover:translate-x-1 inline-block">
+                      {service.name}
                     </a>
                   </li>
                 ))}
@@ -1045,10 +1153,18 @@ export default function Portfolio() {
             <div>
               <h3 className="text-xl font-bold mb-6">Company</h3>
               <ul className="space-y-3">
-                {["About Us", "Our Team", "Careers", "Blog", "Contact"].map((item, index) => (
+                {[
+                  { name: "About Us", href: "#about" },
+                  { name: "Our Team", href: "#team" },
+                  { name: "Case Studies", href: "/case-studies" },
+                  { name: "Blog", href: "/blog" },
+                  { name: "Store", href: "/store" },
+                  { name: "Social Media", href: "/social-media" },
+                  { name: "Contact", href: "#contact" }
+                ].map((item, index) => (
                   <li key={index}>
-                    <a href="#" className="text-gray-300 hover:text-[#ef3a5d] transition-colors duration-300 hover:translate-x-1 inline-block">
-                      {item}
+                    <a href={item.href} className="text-gray-300 hover:text-[#ef3a5d] transition-colors duration-300 hover:translate-x-1 inline-block">
+                      {item.name}
                     </a>
                   </li>
                 ))}

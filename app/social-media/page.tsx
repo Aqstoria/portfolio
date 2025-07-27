@@ -49,6 +49,7 @@ import {
   Crown,
   Sparkles
 } from "lucide-react"
+import SharedLayout from '@/components/shared-layout'
 
 export default function SocialMediaPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -268,7 +269,8 @@ export default function SocialMediaPage() {
   const selectedPackageData = packages.find(pkg => pkg.id === selectedPackage)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f8f1e9] to-[#e8f4f8] dark:from-[#0a1a2e] dark:to-[#1a2a3e] transition-all duration-300">
+    <SharedLayout>
+      <div className="min-h-screen bg-gradient-to-br from-[#f8f1e9] to-[#e8f4f8] dark:from-[#0a1a2e] dark:to-[#1a2a3e] transition-all duration-300">
       {/* Hero Section */}
       <section className="relative py-20 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -651,6 +653,7 @@ export default function SocialMediaPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </SharedLayout>
   )
 } 

@@ -1,15 +1,25 @@
-# Aqsa Portfolio
+# Aqstoria - Digital Agency Portfolio
 
-A modern portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+A modern digital agency website built with Next.js, TypeScript, and Tailwind CSS. Features comprehensive services including custom software development, social media management, and digital marketing solutions.
 
-## 🚀 Features
+## 📄 Pages & Features
 
-- Modern React with Next.js 15
-- TypeScript for type safety
-- Tailwind CSS for styling
-- Radix UI components
-- Responsive design
-- Dark/Light theme support
+### Main Pages
+- **Homepage** - Hero section, services showcase, portfolio, testimonials
+- **Store** - Script marketplace with PKR pricing and filtering
+- **Social Media Management** - Service packages with detailed pricing
+- **Case Studies** - Detailed project breakdowns and success stories
+- **Blog** - Articles with categories and search functionality
+- **About** - Team information and company details
+- **Contact** - Contact form and information
+
+### Key Features
+- **Interactive Animations** - Smooth transitions and micro-interactions
+- **Glassmorphism Design** - Modern glass-like UI elements
+- **Dark/Light Theme** - Toggle between themes
+- **Responsive Design** - Mobile-first approach
+- **AI Chatbot** - Interactive customer support
+- **Dynamic Content** - Real-time updates and filtering
 
 ## 📦 Installation
 
