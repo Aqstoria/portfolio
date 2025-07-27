@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react'
-import { ShoppingCart, Download, Star, Eye, Code, Database, Globe, Shield, Zap, Package } from 'lucide-react'
+import { ShoppingCart, Download, Star, Eye, Code, Database, Globe, Shield, Zap, Package, Search, Filter, Heart, Share2, MessageCircle, Clock, Users, Award, TrendingUp, Sparkles } from 'lucide-react'
 import SharedLayout from '@/components/shared-layout'
 
 const scripts = [
@@ -18,7 +18,9 @@ const scripts = [
     downloads: 156,
     image: "/placeholder.jpg",
     demo: "https://demo.dashboard.com",
-    icon: Code
+    icon: Code,
+    isNew: true,
+    isFeatured: true
   },
   {
     id: 2,
@@ -33,7 +35,9 @@ const scripts = [
     downloads: 89,
     image: "/placeholder.jpg",
     demo: "https://demo.erp.com",
-    icon: Database
+    icon: Database,
+    isNew: false,
+    isFeatured: true
   },
   {
     id: 3,
@@ -48,7 +52,9 @@ const scripts = [
     downloads: 203,
     image: "/placeholder.jpg",
     demo: "https://demo.social.com",
-    icon: Globe
+    icon: Globe,
+    isNew: true,
+    isFeatured: false
   },
   {
     id: 4,
@@ -63,7 +69,9 @@ const scripts = [
     downloads: 67,
     image: "/placeholder.jpg",
     demo: "https://demo.security.com",
-    icon: Shield
+    icon: Shield,
+    isNew: false,
+    isFeatured: false
   },
   {
     id: 5,
@@ -78,7 +86,9 @@ const scripts = [
     downloads: 134,
     image: "/placeholder.jpg",
     demo: "https://demo.performance.com",
-    icon: Zap
+    icon: Zap,
+    isNew: false,
+    isFeatured: false
   },
   {
     id: 6,
@@ -93,19 +103,104 @@ const scripts = [
     downloads: 78,
     image: "/placeholder.jpg",
     demo: "https://demo.api.com",
-    icon: Package
+    icon: Package,
+    isNew: true,
+    isFeatured: true
+  },
+  {
+    id: 7,
+    name: "AI Chatbot Script",
+    description: "Intelligent chatbot with natural language processing and custom responses",
+    price: 35000,
+    originalPrice: 45000,
+    category: "AI",
+    features: ["NLP integration", "Custom responses", "Multi-language", "Analytics"],
+    rating: 4.9,
+    reviews: 12,
+    downloads: 45,
+    image: "/placeholder.jpg",
+    demo: "https://demo.chatbot.com",
+    icon: MessageCircle,
+    isNew: true,
+    isFeatured: true
+  },
+  {
+    id: 8,
+    name: "Real-time Analytics",
+    description: "Advanced analytics dashboard with real-time data visualization",
+    price: 28000,
+    originalPrice: 38000,
+    category: "Analytics",
+    features: ["Real-time data", "Interactive charts", "Custom reports", "Export options"],
+    rating: 4.7,
+    reviews: 28,
+    downloads: 92,
+    image: "/placeholder.jpg",
+    demo: "https://demo.analytics.com",
+    icon: TrendingUp,
+    isNew: false,
+    isFeatured: false
   }
 ]
 
-const categories = ["All", "Dashboard", "ERP", "Automation", "Security", "Performance", "API"]
+const categories = ["All", "Dashboard", "ERP", "Automation", "Security", "Performance", "API", "AI", "Analytics"]
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Ahmed Khan",
+    role: "CTO, TechCorp",
+    content: "The dashboard script saved us months of development time. Highly recommended!",
+    rating: 5,
+    avatar: "/placeholder-user.jpg"
+  },
+  {
+    id: 2,
+    name: "Sara Ahmed",
+    role: "Developer, StartupXYZ",
+    content: "Excellent quality scripts with great documentation. Will buy again!",
+    rating: 5,
+    avatar: "/placeholder-user.jpg"
+  },
+  {
+    id: 3,
+    name: "Muhammad Ali",
+    role: "Lead Developer, DigitalAgency",
+    content: "The ERP module is exactly what we needed. Professional and reliable.",
+    rating: 4,
+    avatar: "/placeholder-user.jpg"
+  }
+]
 
 export default function StorePage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [cart, setCart] = useState<number[]>([])
+  const [searchQuery, setSearchQuery] = useState("")
+  const [sortBy, setSortBy] = useState("featured")
+  const [showNewOnly, setShowNewOnly] = useState(false)
 
-  const filteredScripts = selectedCategory === "All" 
-    ? scripts 
-    : scripts.filter(script => script.category === selectedCategory)
+  const filteredScripts = scripts
+    .filter(script => {
+      const matchesCategory = selectedCategory === "All" || script.category === selectedCategory
+      const matchesSearch = script.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           script.description.toLowerCase().includes(searchQuery.toLowerCase())
+      const matchesNew = !showNewOnly || script.isNew
+      return matchesCategory && matchesSearch && matchesNew
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case "price-low":
+          return a.price - b.price
+        case "price-high":
+          return b.price - a.price
+        case "rating":
+          return b.rating - a.rating
+        case "downloads":
+          return b.downloads - a.downloads
+        default:
+          return b.isFeatured ? 1 : -1
+      }
+    })
 
   const addToCart = (scriptId: number) => {
     setCart(prev => [...prev, scriptId])
@@ -133,7 +228,7 @@ export default function StorePage() {
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               Premium scripts and tools to accelerate your development
             </p>
-            <div className="flex justify-center space-x-4">
+            <div className="flex justify-center space-x-4 mb-8">
               <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
                 <div className="text-3xl font-bold">{scripts.length}</div>
                 <div className="text-sm opacity-80">Available Scripts</div>
@@ -145,6 +240,20 @@ export default function StorePage() {
               <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
                 <div className="text-3xl font-bold">4.8</div>
                 <div className="text-sm opacity-80">Average Rating</div>
+              </div>
+            </div>
+            
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <input
+                  type="text"
+                  placeholder="Search scripts..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/90 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
+                />
               </div>
             </div>
           </div>
@@ -183,23 +292,51 @@ export default function StorePage() {
         </div>
       )}
 
-      {/* Categories */}
-      <section className="py-12">
+      {/* Filters and Categories */}
+      <section className="py-8 bg-white dark:bg-gray-800 shadow-sm">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {categories.map(category => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-[#ef3a5d] text-white shadow-lg'
-                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-                }`}
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            {/* Categories */}
+            <div className="flex flex-wrap gap-2">
+              {categories.map(category => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                    selectedCategory === category
+                      ? 'bg-[#ef3a5d] text-white shadow-lg'
+                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
+            {/* Sort and Filters */}
+            <div className="flex items-center gap-4">
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300"
               >
-                {category}
-              </button>
-            ))}
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+                <option value="downloads">Most Downloaded</option>
+              </select>
+              
+              <label className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  checked={showNewOnly}
+                  onChange={(e) => setShowNewOnly(e.target.checked)}
+                  className="rounded"
+                />
+                <span className="text-sm text-gray-700 dark:text-gray-300">New Only</span>
+              </label>
+            </div>
           </div>
         </div>
       </section>
@@ -207,41 +344,49 @@ export default function StorePage() {
       {/* Scripts Grid */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredScripts.map((script) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filteredScripts.map(script => (
               <div
                 key={script.id}
-                className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
               >
-                {/* Image */}
-                <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-t-2xl overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <script.icon className="h-16 w-16 text-[#ef3a5d]" />
+                {/* Badge */}
+                <div className="relative">
+                  <div className="absolute top-3 left-3 z-10 flex gap-2">
+                    {script.isNew && (
+                      <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                        NEW
+                      </span>
+                    )}
+                    {script.isFeatured && (
+                      <span className="bg-[#ef3a5d] text-white text-xs px-2 py-1 rounded-full">
+                        FEATURED
+                      </span>
+                    )}
                   </div>
-                  {script.originalPrice > script.price && (
-                    <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-                      {Math.round(((script.originalPrice - script.price) / script.originalPrice) * 100)}% OFF
-                    </div>
-                  )}
+                  
+                  {/* Image Placeholder */}
+                  <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                    <script.icon className="h-16 w-16 text-gray-400" />
+                  </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-medium text-[#ef3a5d] bg-[#ef3a5d]/10 px-3 py-1 rounded-full">
-                      {script.category}
-                    </span>
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-3">
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-white line-clamp-2">
+                      {script.name}
+                    </h3>
                     <div className="flex items-center space-x-1">
                       <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400">{script.rating}</span>
+                      <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                        {script.rating}
+                      </span>
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white group-hover:text-[#ef3a5d] transition-colors">
-                    {script.name}
-                  </h3>
-
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+                  {/* Description */}
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
                     {script.description}
                   </p>
 
@@ -298,6 +443,9 @@ export default function StorePage() {
                     <button className="px-4 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">
                       <Eye className="h-4 w-4" />
                     </button>
+                    <button className="px-4 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                      <Heart className="h-4 w-4" />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -306,8 +454,47 @@ export default function StorePage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Testimonials Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">
+              What Our Customers Say
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Join thousands of satisfied developers who trust our scripts
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map(testimonial => (
+              <div key={testimonial.id} className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mr-4">
+                    <Users className="h-6 w-6 text-gray-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-800 dark:text-white">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{testimonial.content}</p>
+                <div className="flex items-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">

@@ -148,9 +148,9 @@ export default function SocialMediaPage() {
         "Daily stories",
         "Reels creation",
         "Hashtag strategy",
-        "Engagement management",
-        "IGTV content",
-        "Shopping integration"
+        "Engagement monitoring",
+        "Influencer outreach",
+        "Analytics dashboard"
       ]
     },
     {
@@ -158,12 +158,25 @@ export default function SocialMediaPage() {
       icon: Facebook,
       price: 12000,
       features: [
-        "Page optimization",
-        "Community management",
-        "Live video support",
-        "Ad campaign management",
-        "Event promotion",
-        "Messenger integration"
+        "Page management",
+        "Ad campaign setup",
+        "Community engagement",
+        "Content scheduling",
+        "Performance tracking",
+        "Lead generation"
+      ]
+    },
+    {
+      platform: "Twitter",
+      icon: Twitter,
+      price: 10000,
+      features: [
+        "Tweet scheduling",
+        "Trend monitoring",
+        "Hashtag research",
+        "Engagement tracking",
+        "Thread creation",
+        "Analytics reporting"
       ]
     },
     {
@@ -171,26 +184,113 @@ export default function SocialMediaPage() {
       icon: Linkedin,
       price: 18000,
       features: [
-        "Professional content",
-        "Company page optimization",
-        "Thought leadership posts",
+        "Company page management",
+        "Thought leadership content",
         "B2B networking",
+        "Lead generation",
         "Industry insights",
-        "Lead generation"
+        "Professional branding"
+      ]
+    },
+    {
+      platform: "YouTube",
+      icon: Youtube,
+      price: 25000,
+      features: [
+        "Video content creation",
+        "SEO optimization",
+        "Thumbnail design",
+        "Comment management",
+        "Analytics tracking",
+        "Monetization setup"
       ]
     },
     {
       platform: "TikTok",
-      icon: Video,
+      icon: TrendingUp,
       price: 20000,
       features: [
-        "Trending content",
-        "Viral video creation",
-        "Hashtag challenges",
-        "Duet collaborations",
-        "Live streaming",
-        "Analytics tracking"
+        "Viral content creation",
+        "Trend analysis",
+        "Hashtag strategy",
+        "Engagement boosting",
+        "Influencer collaboration",
+        "Performance analytics"
       ]
+    }
+  ]
+
+  // Statistics data
+  const statistics = [
+    {
+      icon: Users,
+      value: "500+",
+      label: "Clients Served",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: TrendingUp,
+      value: "2.5M+",
+      label: "Total Reach",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: MessageCircle,
+      value: "150K+",
+      label: "Engagement Rate",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: Award,
+      value: "98%",
+      label: "Client Satisfaction",
+      color: "from-orange-500 to-red-500"
+    }
+  ]
+
+  // Case studies
+  const caseStudies = [
+    {
+      id: 1,
+      title: "E-commerce Brand Growth",
+      company: "Fashion Forward",
+      industry: "Fashion & Retail",
+      results: {
+        followers: "50K → 250K",
+        engagement: "2.1% → 8.5%",
+        sales: "PKR 500K → PKR 2.5M"
+      },
+      duration: "6 months",
+      platforms: ["Instagram", "Facebook", "TikTok"],
+      image: "/placeholder.jpg"
+    },
+    {
+      id: 2,
+      title: "B2B Lead Generation",
+      company: "Tech Solutions Ltd",
+      industry: "Technology",
+      results: {
+        followers: "2K → 15K",
+        engagement: "1.2% → 6.8%",
+        leads: "50 → 300/month"
+      },
+      duration: "4 months",
+      platforms: ["LinkedIn", "Twitter", "YouTube"],
+      image: "/placeholder.jpg"
+    },
+    {
+      id: 3,
+      title: "Restaurant Local Marketing",
+      company: "Cafe Delight",
+      industry: "Food & Beverage",
+      results: {
+        followers: "1K → 25K",
+        engagement: "3.5% → 12.2%",
+        orders: "100 → 500/day"
+      },
+      duration: "3 months",
+      platforms: ["Instagram", "Facebook", "Google My Business"],
+      image: "/placeholder.jpg"
     }
   ]
 
@@ -322,6 +422,35 @@ export default function SocialMediaPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Dashboard */}
+      <section className="py-16 bg-white dark:bg-[#0a1a2e]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#0a1a2e] dark:text-white mb-4">
+              Our Impact in Numbers
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Real results from real clients across all industries
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {statistics.map((stat, index) => (
+              <div
+                key={index}
+                className={`bg-gradient-to-r ${stat.color} rounded-2xl p-6 text-white text-center transform hover:scale-105 transition-all duration-300`}
+              >
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold mb-2">{stat.value}</div>
+                <div className="text-sm opacity-90">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -556,6 +685,76 @@ export default function SocialMediaPage() {
           </div>
         </section>
       )}
+
+      {/* Case Studies Section */}
+      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#0a1a2e] dark:text-white mb-4">
+              Success Stories
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Real results from our social media management campaigns
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {caseStudies.map((study, index) => (
+              <div
+                key={study.id}
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300"
+              >
+                {/* Image Placeholder */}
+                <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
+                  <Globe className="h-16 w-16 text-gray-400" />
+                </div>
+
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-sm font-medium text-[#ef3a5d] bg-[#ef3a5d]/10 px-3 py-1 rounded-full">
+                      {study.industry}
+                    </span>
+                    <span className="text-sm text-gray-500">{study.duration}</span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                    {study.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">
+                    {study.company}
+                  </p>
+
+                  {/* Results */}
+                  <div className="space-y-3 mb-4">
+                    {Object.entries(study.results).map(([key, value]) => (
+                      <div key={key} className="flex justify-between items-center">
+                        <span className="text-sm text-gray-600 dark:text-gray-400 capitalize">
+                          {key.replace(/([A-Z])/g, ' $1').trim()}:
+                        </span>
+                        <span className="text-sm font-semibold text-gray-800 dark:text-white">
+                          {value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Platforms */}
+                  <div className="flex flex-wrap gap-2">
+                    {study.platforms.map((platform, platformIndex) => (
+                      <span
+                        key={platformIndex}
+                        className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 px-2 py-1 rounded"
+                      >
+                        {platform}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Testimonials Section */}
       <section className="py-16 px-6 bg-white dark:bg-[#0a1a2e]">
